@@ -1,15 +1,48 @@
 /* -- Site fonts */
 
-/* -- Esfera Regular */
+/* -- Agane */
+/* https://www.fontsquirrel.com/fonts/agane */
 
 @font-face {
-    font-family: 'esfera';
-    src: local('esfera-webfont'),
-         url('{{ baseUrl }}fonts/esfera-webfont.eot');
-    src: url('{{ baseUrl }}fonts/esfera-webfont.eot?#iefix') format('embedded-opentype'),
-         url('{{ baseUrl }}fonts/esfera-webfont.woff2') format('woff2'),
-         url('{{ baseUrl }}fonts/esfera-webfont.woff') format('woff'),
-         url('{{ baseUrl }}fonts/esfera-webfont.ttf') format('truetype');
-    font-weight: 400;
+    font-family: 'Agane Extra Bold';
+    src: url('{{ baseUrl }}fonts/Agane75.eot');
+    src: url('{{ baseUrl }}fonts/Agane75.eot?#iefix') format('embedded-opentype'),
+        url('{{ baseUrl }}fonts/Agane75.woff2') format('woff2'),
+        url('{{ baseUrl }}fonts/Agane75.woff') format('woff'),
+        url('{{ baseUrl }}fonts/Agane75.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Agane Bold';
+    src: url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/{{ baseUrl }}fonts/Agane65.eot');
+    src: url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/{{ baseUrl }}fonts/Agane65.eot?#iefix') format('embedded-opentype'),
+        url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/{{ baseUrl }}fonts/Agane65.woff2') format('woff2'),
+        url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/{{ baseUrl }}fonts/Agane65.woff') format('woff'),
+        url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/{{ baseUrl }}fonts/Agane65.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Agane Regular';
+    src: url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/Aan55.eot');
+    src: url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/Aan55.eot?#iefix') format('embedded-opentype'),
+        url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/Aan55.woff2') format('woff2'),
+        url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/Aan55.woff') format('woff'),
+        url('{{ baseUrl }}fonts/{{ baseUrl }}fonts/Aan55.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Agane Light';
+    src: url('{{ baseUrl }}fonts/Agane45.eot');
+    src: url('{{ baseUrl }}fonts/Agane45.eot?#iefix') format('embedded-opentype'),
+        url('{{ baseUrl }}fonts/Agane45.woff2') format('woff2'),
+        url('{{ baseUrl }}fonts/Agane45.woff') format('woff'),
+        url('{{ baseUrl }}fonts/Agane45.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
 }

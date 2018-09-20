@@ -3,26 +3,24 @@
 if (document.documentElement.className.indexOf( "fonts-loaded" ) < 0 ) {
     var fontello = new FontFaceObserver("fontello", {
     });
-    var BrandonRegular = new FontFaceObserver("brandon", {
-        weight: 400,
+    var AganeExtraBold = new FontFaceObserver("Agane Extra Bold", {
+        weight: 900,
     });
-    var BrandonRegularItalic = new FontFaceObserver("brandon", {
-        weight: 400,
-        style: "italic",
+    var AganeBold = new FontFaceObserver("Agane Bold", {
+        weight: 'bold',
     });
-    var BrandonBold = new FontFaceObserver("brandon", {
-        weight: 700,
+    var AganeRegular = new FontFaceObserver("Agane Regular", {
     });
-    var Esfera = new FontFaceObserver("esfera", {
-        weight: 400,
+    var AganeLight = new FontFaceObserver("Agane Light", {
+        weight: 300,
     });
 
     Promise.all([
         fontello.load(''),
-        BrandonRegular.load(),
-        BrandonRegularItalic.load(),
-        BrandonBold.load(),
-        Esfera.load(),
+        AganeExtraBold.load(),
+        AganeBold.load(),
+        AganeRegular.load(),
+        AganeLight.load(),
     ]).then(function() {
 
       document.documentElement.className += " fonts-loaded";
