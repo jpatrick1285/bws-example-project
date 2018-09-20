@@ -46,7 +46,7 @@ return [
         // Custom site-specific config settings
         'custom' => [
             'craftEnv' => CRAFT_ENVIRONMENT,
-            'staticAssetsVersion' => 5,
+            'staticAssetsVersion' => 6,
         ]
     ],
 
