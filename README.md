@@ -1,12 +1,7 @@
+## Boyer Web Studios
+This project contains the full site for [Boyer Web Studios](https://www.boyerwebstudios.com), built on Craft 3. 
 
-Below is the entire intact, unmodified `README.md` from nystudio107's [nystudio107/craft](https://github.com/nystudio107/craft):
-
-.....
-
-## About nystudio107/craft
-
-This is an alternate scaffolding package for Craft 3 CMS projects to Pixel & Tonic's canonical [craftcms/craft](https://github.com/craftcms/craft) package.
-
+## About 
 In addition to setting up a new Craft 3 CMS project, this project sets up:
  
 * [Craft 3 Multi-Environment](https://github.com/nystudio107/craft3-multi-environment) as described in the [Multi-Environment Config for Craft CMS](https://nystudio107.com/blog/multi-environment-config-for-craft-cms) article
@@ -20,25 +15,9 @@ In addition to setting up a new Craft 3 CMS project, this project sets up:
 * [Simple Static Asset Versioning in Craft CMS](https://nystudio107.com/blog/simple-static-asset-versioning)
 * [Enhancing a Craft CMS 3 Website with a Custom Module](https://nystudio107.com/blog/simple-static-asset-versioning)
 
-It also installs a few base plugins that I use on every project. You can read more about it in the [Setting up a New Craft 3 CMS Project](https://nystudio107.com/blog/enhancing-a-craft-cms-3-website-with-a-custom-module) article.
+It also installs a few base plugins described in the [Setting up a New Craft 3 CMS Project](https://nystudio107.com/blog/enhancing-a-craft-cms-3-website-with-a-custom-module) article.
 
-## Assumptions Made
-
-Since this is boilerplate that nystudio107 uses for projects, it is by definition opinionated, and has a number of assumptions:
-
-* Gulp is used as a the frontend workflow automation tool
-* [Vue](https://github.com/vuejs/vue) is used as the frontend JavaScript framework, with [Axios](https://github.com/axios/axios) providing the http client
-* [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind) is used as the utility-first CSS framework
-* Nginx with `ssi on;` is used as the web server
-* Redis is used as the PHP Session and Craft data caching method
-* Critical CSS is used site-wide
-* FontFaceObserver is used for font loading
-* Craft-Scripts are used for db/asset synching
-* Craft 3 Multi-Environment is used for the Craft 3 multi-environment setup
-
-Obviously you're free to remove whatever components you don't need/want to use.
-
-## Using nystudio107/craft
+## Installation
 
 This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
 
@@ -64,10 +43,6 @@ If you ever delete the `vendor` folder or such, just re-run:
     ./nys-setup
 
 ...and it will re-create the symlink to your `.env.sh`; don't worry, it won't stomp on any changes you've made.
-
-Below is the entire intact, unmodified `README.md` from Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft):
-
-.....
 
 ## About Craft CMS
 
