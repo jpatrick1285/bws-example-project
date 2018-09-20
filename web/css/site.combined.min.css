@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Thu, Sep 20, 2018 11:15 AM ET
- * @release        39ce79b58973bd64981ce644cd7205ee89b8e28e [master]
+ * @build          Thu, Sep 20, 2018 12:03 PM ET
+ * @release        bbdc2ba3c251ea9ec40c508479329d9192f921ed [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5476,6 +5476,49 @@ a.tag:hover {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+/* Global Typography Styles */
+body, html {
+  font-family: "Agane Regular", sans-serif;
+  color: #3f4142;
+  font-size: 20px; }
+  @media (min-width: 2000px) {
+    body, html {
+      font-size: 22px; } }
+  @media (max-width: 1000px) {
+    body, html {
+      font-size: calc(14px + .4vw); } }
+
+h1, h2, h3 {
+  line-height: 1.2em;
+  margin-bottom: 0.8em; }
+
+h1.extra-large {
+  font-family: "Agane Extra Bold", sans-serif;
+  font-size: 6rem;
+  color: #0e1112; }
+
+h1 {
+  font-family: "Agane Extra Bold", sans-serif;
+  font-size: 3.5rem;
+  color: #0e1112; }
+
+h2 {
+  font-family: "Agane Extra Bold", sans-serif;
+  font-size: 2.25rem;
+  color: #0e1112; }
+
+h3 {
+  font-family: "Agane Bold", sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0e1112; }
+
+p {
+  line-height: 1.6em;
+  letter-spacing: 0.02em; }
+
+/* Common Layout Classes */
 
 
 

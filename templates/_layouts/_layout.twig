@@ -100,30 +100,24 @@
     
     {# -- HTML Body -- #}
     <body>
-        <div id="page-container">
+        {# -- Info header, including _navbar.twig -- #}
+        {% include "_partials/_info_header.twig" %}
 
-            {# -- Info header, including _navbar.twig -- #}
-            {% include "_partials/_info_header.twig" %}
-    
-            <div id="content-container" class="container mx-auto">
-                <main>
-                    {# -- Primary content block -- #}
-                    {% block content %}
-                    {% endblock %}
-                </main>
-            </div>
-            
-            {# -- Content that appears below the primary content block -- #}
-            {% block subcontent %}
+        <main>
+            {# -- Primary content block -- #}
+            {% block content %}
             {% endblock %}
-            
-            {# -- Info footer -- #}
-            {% include "_partials/_info_footer.twig" %}
-            
-            {# -- HTML Footer -- #}
-            {% include "_partials/_global_footer.twig" %}
-
-        </div>
+        </main>
+        
+        {# -- Content that appears below the primary content block -- #}
+        {% block subcontent %}
+        {% endblock %}
+        
+        {# -- Info footer -- #}
+        {% include "_partials/_info_footer.twig" %}
+        
+        {# -- HTML Footer -- #}
+        {% include "_partials/_global_footer.twig" %}
         
         {# -- VueJS & Axios, along with our main app component instantiation -- #}
         <script>

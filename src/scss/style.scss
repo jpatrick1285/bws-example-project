@@ -5,3 +5,57 @@
 //@import "~bulma/sass/components/_all";
 @import "~bulma/sass/grid/_all";
 @import "~bulma/sass/layout/_all";
+
+/* Global Typography Styles */
+body, html {
+  font-family: "Agane Regular", sans-serif;
+  color: #3f4142;
+  font-size: 20px;
+
+  // scale up a bit on huge screens 
+  @media (min-width: 2000px) {
+    font-size: 22px;
+  }
+
+  // scale down font size responsively on smaller screens
+  @media (max-width: 1000px) {
+    font-size: calc(14px + .4vw);
+  }
+}
+
+h1, h2, h3 {
+  line-height: 1.2em;
+  margin-bottom: 0.8em;
+}
+
+h1.extra-large {
+  font-family: "Agane Extra Bold", sans-serif;
+  font-size: 6rem;
+  color: #0e1112;
+}
+
+h1 {
+  font-family: "Agane Extra Bold", sans-serif;
+  font-size: 3.5rem;
+  color: #0e1112;
+}
+
+h2 {
+  font-family: "Agane Extra Bold", sans-serif;
+  font-size: 2.25rem;
+  color: #0e1112;
+}
+
+h3 {
+  font-family: "Agane Bold", sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0e1112;
+}
+
+p {
+  line-height: 1.6em;
+  letter-spacing: 0.02em;
+}
+
+/* Common Layout Classes */
