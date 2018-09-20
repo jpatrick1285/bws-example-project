@@ -1,4 +1,7 @@
-<p align="center"><a href="https://craftcms.com/" target="_blank"><img width="300" height="300" src="https://nystudio107.com/img/site/nystudio107_submark.svg" alt="nystudio107"></a></p>
+
+Below is the entire intact, unmodified `README.md` from nystudio107's [nystudio107/craft](https://github.com/nystudio107/craft):
+
+.....
 
 ## About nystudio107/craft
 
