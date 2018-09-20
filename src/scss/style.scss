@@ -95,3 +95,40 @@ p {
 .section {
   padding: 6rem 0;
 }
+
+/* General Styles */
+a.logo {
+  position: relative;
+  display: inline-block;
+
+  .svg {
+    height: 40px;
+    width: auto;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+nav.main-nav {
+  padding: 1em 0;
+
+  &.light {
+    color: #FFFFFF;
+
+    h1, h2, h3 {
+      color: #FFFFFF;
+    }
+
+    .logo svg {
+      fill: #FFFFFF;
+    }
+      
+  }
+}
