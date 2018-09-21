@@ -342,3 +342,32 @@ section.services {
     }
   }
 }
+
+footer {
+  font-size: 0.8rem;
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .columns.is-gapless > .column.address {
+    padding-right: 3rem !important;
+  }
+
+  .call-to-action {
+    font-size: 1rem;
+    
+    p {
+      max-width: 25rem;
+    }
+  }
+
+  .columns.contact {
+    flex-direction: row-reverse;
+  }
+
+  .copyright {
+    margin: 2em 0 0 0;
+  }
+}
