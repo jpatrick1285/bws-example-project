@@ -75,8 +75,9 @@ p {
 
 /* Common Layout Classes */
 .container {
-  width: 81%;
-  margin: 0 auto;
+  //width: 81%;
+  margin: 0 3.8%;
+  //margin: 0 auto;
   position: relative;
 
   &.full {
@@ -84,11 +85,13 @@ p {
   }
 
   &.large {
-    width: 96%;
+    //width: 96%;
+    margin: 0px 2%;
   }
 
   &.small {
-    width: 72%;
+    // width: 72%;
+    margin: 0px 14%;
   }
 }
 
@@ -118,6 +121,9 @@ a.logo {
 
 nav.main-nav {
   padding: 1em 0;
+  position: fixed;
+  margin: 0px auto;
+  width: 100%;
 
   &.light {
     color: #FFFFFF;
@@ -129,6 +135,5 @@ nav.main-nav {
     .logo svg {
       fill: #FFFFFF;
     }
-      
   }
 }
