@@ -77,7 +77,6 @@ h2 {
 }
 
 h3 {
-  font-family: "Agane Bold", sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
   color: $heading-copy-color;
@@ -160,11 +159,23 @@ img, audio, video {
   top: -5rem;
 }
 
-.is-dark {
+.is-dark, .is-grey {
   color: $white;
 
   h1, h2, h3, p, a {
     color: $white;
+  }
+}
+
+.has-background {
+  background-color: $white;
+
+  &.is-dark {
+    background-color: $black;
+  }
+
+  &.is-grey {
+    background-color: $grey;
   }
 }
 
@@ -309,6 +320,25 @@ section.home-cases {
         transform: scale(1.02);
         opacity: 0.6;
       }
+    }
+  }
+}
+
+section.services {
+  header {
+    padding-bottom: 5rem;
+  }
+
+  .service {
+    min-height: 20rem;
+    padding: 3rem;
+
+    h3 {
+      max-width: 17rem;
+    }
+
+    img {
+      opacity: 0.8;
     }
   }
 }
