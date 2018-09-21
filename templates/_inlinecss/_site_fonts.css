@@ -53,3 +53,15 @@
     font-style: normal;
 
 }
+
+@font-face {
+  font-family: 'fontello';
+  src: url('{{ baseUrl }}fonts/fontello.eot?13441708');
+  src: url('{{ baseUrl }}fonts/fontello.eot?13441708#iefix') format('embedded-opentype'),
+       url('{{ baseUrl }}fonts/fontello.woff2?13441708') format('woff2'),
+       url('{{ baseUrl }}fonts/fontello.woff?13441708') format('woff'),
+       url('{{ baseUrl }}fonts/fontello.ttf?13441708') format('truetype'),
+       url('{{ baseUrl }}fonts/fontello.svg?13441708#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

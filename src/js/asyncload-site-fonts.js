@@ -16,7 +16,7 @@ if (document.documentElement.className.indexOf( "fonts-loaded" ) < 0 ) {
     });
 
     Promise.all([
-        fontello.load(''),
+        fontello.load(),
         AganeExtraBold.load(),
         AganeBold.load(),
         AganeRegular.load(),
