@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+// Color variables
+$black: #0E1112;
+$white: #FFFFFF;
+$off-white: #FAFAFA;
+$accent: $black;
+$body-copy-color: #3F4142;
+$heading-copy-color: $black;
+
+// Breakpoints (overwriding Bulma).
+// Values loosely adapted from this article: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862. 
+$tablet: 700px;
+$desktop: 900px;
+$widescreen: 1200px;
+$fullhd: 1800px;
