@@ -5453,7 +5453,7 @@ a.tag:hover {
 /* Global Typography Styles */
 body, html {
   font-family: "Agane Regular", sans-serif;
-  color: #3F4142;
+  color: #4a4c4d;
   font-size: 20px; }
   @media (min-width: 2000px) {
     body, html {
@@ -5496,14 +5496,12 @@ h3 {
   color: #0E1112; }
 
 p {
-  font-weight: normal;
   line-height: 1.6em;
-  letter-spacing: 0.02em;
   margin-bottom: 1em; }
 
 p.is-subheading {
   font-weight: bold;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   color: #0E1112; }
 
 .is-dark p.is-subheading {

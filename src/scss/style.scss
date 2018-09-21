@@ -83,15 +83,13 @@ h3 {
 }
 
 p {
-  font-weight: normal;
   line-height: 1.6em;
-  letter-spacing: 0.02em;
   margin-bottom: 1em;
 }
 
 p.is-subheading {
   font-weight: bold;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   color: $heading-copy-color;
 }
 
