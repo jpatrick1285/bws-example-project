@@ -27,6 +27,10 @@
 # ASSETS
 /web/assets/*
 
+# TEMPORARY TEMPLATE FILES 
+/web/img/temp/*
+/src/img/temp/*
+
 # BUILD FILES
 /bower_components/*
 /node_modules/*

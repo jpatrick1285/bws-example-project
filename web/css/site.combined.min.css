@@ -5461,9 +5461,9 @@ body, html {
     body, html {
       font-size: calc(14px + .4vw); } }
 
-h1, h2, h3 {
+h1, h2, h3, p.is-subheading {
   line-height: 1.2em;
-  margin-bottom: 0.8em; }
+  margin-bottom: 0.6em; }
 
 h1.is-large {
   font-family: "Agane Extra Bold", sans-serif;
@@ -5475,13 +5475,19 @@ h1.is-large {
 
 h1 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #0E1112; }
+  @media screen and (min-width: 900px) {
+    h1 {
+      font-size: 3.5rem; } }
 
 h2 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 2.25rem;
+  font-size: 2rem;
   color: #0E1112; }
+  @media screen and (min-width: 900px) {
+    h2 {
+      font-size: 2.25rem; } }
 
 h3 {
   font-family: "Agane Bold", sans-serif;
@@ -5490,12 +5496,33 @@ h3 {
   color: #0E1112; }
 
 p {
+  font-weight: normal;
   line-height: 1.6em;
-  letter-spacing: 0.02em; }
+  letter-spacing: 0.02em;
+  margin-bottom: 1em; }
+
+p.is-subheading {
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  color: #0E1112; }
+
+.is-dark p.is-subheading {
+  color: #DDDDDD; }
+
+a {
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: #0E1112;
+  font-size: 0.9em; }
 
 /* Common Layout Classes */
+img,
+audio,
+video {
+  max-width: none; }
+
 .container {
-  margin: 0 3.8%;
+  margin: 0 9.5%;
   position: relative; }
   .container.is-full {
     width: 100%; }
@@ -5505,13 +5532,13 @@ p {
     margin: 0px 14%; }
 
 .section {
-  padding: 6rem 0; }
+  padding: 0; }
   .section.is-small {
     padding: 3rem 0; }
+  .section.is-medium {
+    padding: 6rem 0; }
   .section.is-large {
     padding: 10rem 0; }
-  .section.is-dark h1, .section.is-dark h2, .section.is-dark h3, .section.is-dark p {
-    color: #FFFFFF; }
 
 /* Utility Classes */
 .is-vertical-center {
@@ -5525,6 +5552,34 @@ p {
 .is-offset-up {
   position: relative;
   top: -5rem; }
+
+.is-dark {
+  color: #FFFFFF; }
+  .is-dark h1, .is-dark h2, .is-dark h3, .is-dark p, .is-dark a {
+    color: #FFFFFF; }
+
+.is-background-container {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF; }
+  .is-background-container.is-dark {
+    background: #0E1112; }
+
+.background-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden; }
+  .background-image-container img {
+    object-fit: cover;
+    object-position: center;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%; }
 
 /* General Styles */
 a.logo {
@@ -5548,7 +5603,7 @@ nav.main-nav {
   width: 100%; }
   nav.main-nav.is-light {
     color: #FFFFFF; }
-    nav.main-nav.is-light h1, nav.main-nav.is-light h2, nav.main-nav.is-light h3 {
+    nav.main-nav.is-light h1, nav.main-nav.is-light h2, nav.main-nav.is-light h3, nav.main-nav.is-light a {
       color: #FFFFFF; }
     nav.main-nav.is-light .logo svg {
       fill: #FFFFFF; }
@@ -5558,12 +5613,52 @@ nav.main-nav {
   background: #0E1112;
   text-align: left; }
   .hero.home h1, .hero.home h2, .hero.home h3 {
-    max-width: 45rem;
-    margin-bottom: 0.6em; }
+    max-width: 45rem; }
   .hero.home p {
     max-width: 35rem; }
   .hero.home .container {
     margin-top: -5rem; }
+
+section.home-cases .tile.is-child {
+  height: 60vh;
+  padding: 5rem 4rem;
+  transition: all 0.5s; }
+  @media screen and (min-width: 700px), print {
+    section.home-cases .tile.is-child {
+      height: 80vh; } }
+  @media screen and (min-width: 1200px) {
+    section.home-cases .tile.is-child {
+      padding: 6rem 5rem; } }
+  section.home-cases .tile.is-child h1, section.home-cases .tile.is-child h2, section.home-cases .tile.is-child h3, section.home-cases .tile.is-child p.is-subheading {
+    max-width: 45rem; }
+  @media screen and (min-width: 1200px) and (max-width: 1799px) {
+    section.home-cases .tile.is-child h1 {
+      font-size: 2.5rem; } }
+  section.home-cases .tile.is-child p {
+    max-width: 20rem;
+    margin-bottom: 1em; }
+  section.home-cases .tile.is-child img {
+    opacity: 0.8;
+    transition: all 0.5s; }
+  section.home-cases .tile.is-child .description {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s; }
+  section.home-cases .tile.is-child:hover {
+    -webkit-transform: scale(0.99);
+        -ms-transform: scale(0.99);
+            transform: scale(0.99); }
+    section.home-cases .tile.is-child:hover .description {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0); }
+    section.home-cases .tile.is-child:hover img {
+      -webkit-transform: scale(1.02);
+          -ms-transform: scale(1.02);
+              transform: scale(1.02);
+      opacity: 0.6; }
 
 
 

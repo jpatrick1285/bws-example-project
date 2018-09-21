@@ -41,9 +41,9 @@ body, html {
   }
 }
 
-h1, h2, h3 {
+h1, h2, h3, p.is-subheading {
   line-height: 1.2em;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.6em;
 }
 
 h1.is-large {
@@ -58,14 +58,22 @@ h1.is-large {
 
 h1 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: $heading-copy-color;
+
+  @include desktop {
+    font-size: 3.5rem;
+  }
 }
 
 h2 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 2.25rem;
+  font-size: 2rem;
   color: $heading-copy-color;
+
+  @include desktop {
+    font-size: 2.25rem;
+  }
 }
 
 h3 {
@@ -76,14 +84,37 @@ h3 {
 }
 
 p {
+  font-weight: normal;
   line-height: 1.6em;
   letter-spacing: 0.02em;
+  margin-bottom: 1em;
+}
+
+p.is-subheading {
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  color: $heading-copy-color;
+}
+
+.is-dark p.is-subheading {
+  color: #DDDDDD;
+}
+
+a {
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: $heading-copy-color;
+  font-size: 0.9em;
 }
 
 /* Common Layout Classes */
+img, audio, video {
+  max-width: none;
+}
+
 .container {
   //width: 81%;
-  margin: 0 3.8%;
+  margin: 0 9.5%;
   //margin: 0 auto;
   position: relative;
 
@@ -103,20 +134,18 @@ p {
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 0;
 
   &.is-small {
     padding: 3rem 0;
   }
 
-  &.is-large {
-    padding: 10rem 0;
+  &.is-medium {
+    padding: 6rem 0;
   }
 
-  &.is-dark {
-    h1, h2, h3, p {
-      color: $white;
-    }
+  &.is-large {
+    padding: 10rem 0;
   }
 }
 
@@ -129,6 +158,43 @@ p {
 .is-offset-up {
   position: relative;
   top: -5rem;
+}
+
+.is-dark {
+  color: $white;
+
+  h1, h2, h3, p, a {
+    color: $white;
+  }
+}
+
+.is-background-container {
+  position: relative;
+  z-index: 1;
+  background: $white;
+
+  &.is-dark {
+    background: $black;
+  }
+}
+
+.background-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+  }
 }
 
 /* General Styles */
@@ -160,7 +226,7 @@ nav.main-nav {
   &.is-light {
     color: $white;
 
-    h1, h2, h3 {
+    h1, h2, h3, a {
       color: $white;
     }
 
@@ -177,7 +243,6 @@ nav.main-nav {
 
   h1, h2, h3 {
     max-width: 45rem;
-    margin-bottom: 0.6em;
   }
 
   p {
@@ -187,5 +252,63 @@ nav.main-nav {
   // offset container to make space for the overlapping content later on
   .container {
     margin-top: -5rem;
+  }
+}
+
+section.home-cases {
+  .tile.is-child {
+    height: 60vh;
+    padding: 5rem 4rem;
+    transition: all 0.5s;
+
+    @include tablet {
+      height: 80vh;
+    }
+
+    @include widescreen {
+      padding: 6rem 5rem;
+    }
+
+    h1, h2, h3, p.is-subheading {
+      max-width: 45rem;
+    }
+
+    h1 {
+      @include widescreen-only {
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      max-width: 20rem;
+      margin-bottom: 1em;
+    }
+
+    img {
+      opacity: 0.8;
+      transition: all 0.5s;
+    }
+
+    .description {
+      visibility: hidden;
+      opacity: 0;
+
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      transform: scale(0.99);
+
+      .description {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0)
+      }
+
+      img {
+        transform: scale(1.02);
+        opacity: 0.6;
+      }
+    }
   }
 }
