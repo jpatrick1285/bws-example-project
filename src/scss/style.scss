@@ -372,8 +372,8 @@ nav.main-nav {
   .menu-background {
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.05);
-    transition: all 1500ms $easeInOutCubic;
+    transform: scale(1.01);
+    transition: all 1000ms $easeInOutCubic;
 
     &.is-active {
       visibility: visible;
