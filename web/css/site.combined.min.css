@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Fri, Sep 21, 2018 3:33 PM ET
- * @release        0f6733792b6c6bc95d2d133e7a38958c016d5a72 [master]
+ * @build          Wed, Oct 3, 2018 10:03 AM ET
+ * @release        039e638a4e3ac3f2ab440d13b41c89669b561db4 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5643,7 +5643,10 @@ nav.main-nav {
 .hero.home {
   min-height: 100vh;
   background: #0E1112;
-  text-align: left; }
+  text-align: left;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   .hero.home h1, .hero.home h2, .hero.home h3 {
     max-width: 45rem; }
   .hero.home p {
