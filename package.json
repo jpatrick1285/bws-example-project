@@ -104,6 +104,7 @@
         "distJs": [
             "./build/js/*.js",
             "./node_modules/axios/dist/axios.min.js",
+            "./node_modules/jquery/dist/jquery.min.js",
             "./node_modules/lazysizes/lazysizes.min.js",
             "./node_modules/lazysizes/plugins/bgset/ls.bgset.min.js",
             "./node_modules/picturefill/dist/picturefill.min.js",
@@ -125,10 +126,12 @@
         "siteIcon": "./web/img/site/favicon.*"
     },
     "dependencies": {
+        "awesome-sass-easing": "^1.1.2",
         "axios": "^0.17.1",
         "bulma": "^0.7.1",
         "fg-loadcss": "^1.2.0",
         "fontfaceobserver": "^2.0.5",
+        "jquery": "^3.3.1",
         "lazysizes": "^2.0.6",
         "loadjs": "^3.3.1",
         "node-sass-tilde-importer": "^1.0.2",

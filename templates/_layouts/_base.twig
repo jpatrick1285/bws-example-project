@@ -134,6 +134,10 @@
             {% block body %}
             {% endblock %}
 
+            <script>
+                loadjs(['{{ baseUrl }}js/jquery.min.js'], 'jquery');
+            </script>
+
             {# -- VueJS & Axios, along with our main app component instantiation -- #}
             <script>
                 // define a dependency bundle

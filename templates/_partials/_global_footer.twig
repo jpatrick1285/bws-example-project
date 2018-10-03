@@ -1,6 +1,13 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 {#-- Global footer --#}
 
+{# -- Main Navigation Controller Bundle -- #}
+<script>
+loadjs.ready('jquery', function() {
+    loadjs(['{{ baseUrl }}js/main-nav-controller.min.js'], 'main-nav-controller');
+});
+</script>
+
 {#-- Browser fixes --#}
 <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

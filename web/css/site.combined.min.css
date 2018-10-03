@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Wed, Oct 3, 2018 10:03 AM ET
- * @release        039e638a4e3ac3f2ab440d13b41c89669b561db4 [master]
+ * @build          Wed, Oct 3, 2018 4:31 PM ET
+ * @release        bb3dfb1a92946b2046b06d1f8a759df56634706e [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5454,7 +5454,9 @@ a.tag:hover {
 body, html {
   font-family: "Agane Regular", sans-serif;
   color: #4a4c4d;
-  font-size: 20px; }
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
   @media (min-width: 2000px) {
     body, html {
       font-size: 22px; } }
@@ -5632,13 +5634,174 @@ nav.main-nav {
   padding: 1em 0;
   position: fixed;
   margin: 0px auto;
-  width: 100%; }
+  width: 100%;
+  z-index: 150; }
+  nav.main-nav .column {
+    padding-bottom: 0; }
+  nav.main-nav button.nav-overlay-toggle {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    pointer-events: all;
+    background: 0 0;
+    outline: none; }
+    nav.main-nav button.nav-overlay-toggle:before, nav.main-nav button.nav-overlay-toggle:after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      width: 27px;
+      height: 3px;
+      background: #000000;
+      transition: -webkit-transform 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: transform 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: transform 200ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform-origin: 50% 50%;
+          -ms-transform-origin: 50% 50%;
+              transform-origin: 50% 50%; }
+    nav.main-nav button.nav-overlay-toggle:before {
+      top: 0;
+      -webkit-transform: translateY(13px);
+          -ms-transform: translateY(13px);
+              transform: translateY(13px); }
+    nav.main-nav button.nav-overlay-toggle:after {
+      bottom: 0;
+      -webkit-transform: translateY(-13px);
+          -ms-transform: translateY(-13px);
+              transform: translateY(-13px); }
+    nav.main-nav button.nav-overlay-toggle.is-active:before {
+      -webkit-transform: translateY(18.5px) rotate(135deg);
+          -ms-transform: translateY(18.5px) rotate(135deg);
+              transform: translateY(18.5px) rotate(135deg); }
+    nav.main-nav button.nav-overlay-toggle.is-active:after {
+      -webkit-transform: translateY(-18.5px) rotate(45deg);
+          -ms-transform: translateY(-18.5px) rotate(45deg);
+              transform: translateY(-18.5px) rotate(45deg); }
+    nav.main-nav button.nav-overlay-toggle .hidden-label {
+      display: block;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap; }
   nav.main-nav.is-light {
     color: #FFFFFF; }
+    nav.main-nav.is-light button.nav-overlay-toggle:before, nav.main-nav.is-light button.nav-overlay-toggle:after {
+      background: #FFFFFF; }
     nav.main-nav.is-light h1, nav.main-nav.is-light h2, nav.main-nav.is-light h3, nav.main-nav.is-light a {
       color: #FFFFFF; }
     nav.main-nav.is-light .logo svg {
       fill: #FFFFFF; }
+
+.nav-overlay {
+  position: fixed;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  min-height: 100%;
+  z-index: 149;
+  padding: 4.5rem 0 3rem 0;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .nav-overlay.is-active {
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  .nav-overlay .container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .nav-overlay .menu-background {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    transition: all 1500ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .nav-overlay .menu-background.is-active {
+      visibility: visible;
+      opacity: 0.18;
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1); }
+  .nav-overlay .links {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+    .nav-overlay .links ul {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .nav-overlay .links a {
+      position: relative;
+      display: block;
+      font-family: 'Agane Extra Bold', sans-serif;
+      font-size: 2.5rem;
+      padding: 0.1rem 0;
+      opacity: 0.6;
+      transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+      .nav-overlay .links a:before {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 130%;
+        height: 100%;
+        z-index: -1;
+        background: #0E1112;
+        -webkit-transform: translate3d(-15%, 0, 0) scaleX(0);
+                transform: translate3d(-15%, 0, 0) scaleX(0);
+        -webkit-transform-origin: 0% 50%;
+            -ms-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+        transition: -webkit-transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+      .nav-overlay .links a:hover {
+        opacity: 1; }
+        .nav-overlay .links a:hover:before {
+          -webkit-transform: translate3d(-15%, 0, 0) scaleX(0.75);
+                  transform: translate3d(-15%, 0, 0) scaleX(0.75); }
+  .nav-overlay .contact {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end; }
+    .nav-overlay .contact p {
+      margin: 0;
+      font-size: 0.9em; }
+      .nav-overlay .contact p a {
+        font-size: 1em;
+        display: inline-block;
+        padding: 0.1em 0.1em 0.1em 0;
+        opacity: 0.5;
+        font-weight: normal; }
+        .nav-overlay .contact p a:hover {
+          opacity: 1; }
 
 .hero.home {
   min-height: 100vh;

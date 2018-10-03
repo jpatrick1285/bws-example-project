@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import "variables";
+@import "animations";
 
 @import "~bulma/sass/utilities/_all";
 @import "~bulma/sass/base/_all";
@@ -24,11 +25,16 @@
 @import "~bulma/sass/elements/title.sass";
 @import "~bulma/sass/elements/other.sass";
 
+// CSS Easing functions - https://github.com/KingScooty/sass-easing
+@import "~awesome-sass-easing/_sass-easing.scss";
+
 /* Global Typography Styles */
 body, html {
   font-family: "Agane Regular", sans-serif;
   color: $body-copy-color;
   font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   // scale up a bit on huge screens 
   @media (min-width: 2000px) {
@@ -266,9 +272,70 @@ nav.main-nav {
   position: fixed;
   margin: 0px auto;
   width: 100%;
+  z-index: 150;
+
+  .column {
+    padding-bottom: 0;
+  }
+
+  button.nav-overlay-toggle {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    pointer-events: all;
+    background: 0 0;
+    outline: none;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      width: 27px;
+      height: 3px;
+      background: #000000;
+      transition: transform 200ms $easeInOutCubic; 
+
+      transform-origin: 50% 50%;
+    }
+
+    &:before {
+      top: 0;
+      transform: translateY(13px);
+    }
+
+    &:after {
+      bottom: 0;
+      transform: translateY(-13px);
+    }
+
+    &.is-active {
+      &:before {
+        transform: translateY(18.5px) rotate(135deg);
+      }
+
+      &:after {
+        transform: translateY(-18.5px) rotate(45deg);
+      }
+    }
+
+    .hidden-label {
+      display: block;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap;
+    }
+  }
 
   &.is-light {
     color: $white;
+
+    button.nav-overlay-toggle:before, button.nav-overlay-toggle:after {
+      background: $white;
+    }
 
     h1, h2, h3, a {
       color: $white;
@@ -276,6 +343,110 @@ nav.main-nav {
 
     .logo svg {
       fill: $white;
+    }
+  }
+}
+
+.nav-overlay {
+  position: fixed;
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  min-height: 100%;
+  z-index: 149;
+  padding: 4.5rem 0 3rem 0;
+  visibility: hidden;
+  transform: translate3d(0, -100%, 0);
+  transition: all 400ms $easeInOutCubic;
+
+  &.is-active {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-background {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    transition: all 1500ms $easeInOutCubic;
+
+    &.is-active {
+      visibility: visible;
+      opacity: 0.18;
+      transform: scale(1);
+    }
+  }
+
+  .links {
+    display: flex;
+    align-content: center;
+    flex-grow: 1;
+
+    ul {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      font-family: 'Agane Extra Bold', sans-serif;
+      font-size: 2.5rem;
+      padding: 0.1rem 0;
+      opacity: 0.6;
+      transition: all 600ms $easeInOutCubic;
+
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 130%;
+        height: 100%;
+        z-index: -1;
+
+        background: $black;
+        transform: translate3d(-15%, 0, 0) scaleX(0);
+        transform-origin: 0% 50%;
+
+        transition: transform 300ms $easeInOutCubic;
+      }
+
+      &:hover {
+        opacity: 1;
+
+        &:before {
+          transform: translate3d(-15%, 0, 0) scaleX(.75);
+        }
+      }
+    }
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+    p {
+      margin: 0;
+      font-size: 0.9em;
+
+      a {
+        font-size: 1em;
+        display: inline-block;
+        padding: 0.1em 0.1em 0.1em 0;
+        opacity: 0.5;
+        font-weight: normal;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 }
