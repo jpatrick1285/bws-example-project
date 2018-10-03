@@ -15,11 +15,16 @@ use mikehaertl\shellcommand\Command as ShellCommand;
 
 const INSTALL_PLUGINS = [
     'async-queue',
+    'child-me', // https://github.com/mmikkel/ChildMe-Craft
+    'cp-field-inspect', // https://github.com/mmikkel/CpFieldInspect-Craft
     'eager-beaver',
     'image-optimize',
+    'logs', // https://github.com/ethercreative/logs
+    'typedlinkfield', // https://github.com/sebastian-lenz/craft-linkfield
     'minify',
     'routemap',
-    'typogrify',
+    'super-table',
+    'typogrify'
 ];
 
 const CRAFT_SCRIPTS_SETUP = [

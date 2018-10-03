@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af5a95de06dd81e29e0a91ab743c5830",
+    "content-hash": "5eeb3172bb624be66d0dc2d3940d9fb6",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -845,6 +845,41 @@
             "time": "2018-07-19T17:21:27+00:00"
         },
         {
+            "name": "ether/logs",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ethercreative/logs.git",
+                "reference": "4f22477b6ff2f497b6342d3cbef571bb617f9b59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ethercreative/logs/zipball/4f22477b6ff2f497b6342d3cbef571bb617f9b59",
+                "reference": "4f22477b6ff2f497b6342d3cbef571bb617f9b59",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "logs",
+                "name": "Logs",
+                "developer": "Ether Creative",
+                "developerUrl": "https://ethercreative.co.uk",
+                "class": "ether\\logs\\Logs",
+                "schemaVersion": "3.0.0"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ether\\logs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Access logs from the CP",
+            "time": "2017-12-01T14:07:43+00:00"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.10.0",
             "source": {
@@ -1584,6 +1619,110 @@
                 "shell"
             ],
             "time": "2018-07-07T07:35:36+00:00"
+        },
+        {
+            "name": "mmikkel/child-me",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mmikkel/ChildMe-Craft.git",
+                "reference": "d198e514b34e523c41df527930885c374b1580af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/ChildMe-Craft/zipball/d198e514b34e523c41df527930885c374b1580af",
+                "reference": "d198e514b34e523c41df527930885c374b1580af",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Child Me!",
+                "handle": "child-me",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/ChildMe-Craft/master/CHANGELOG.md",
+                "class": "mmikkel\\childme\\ChildMe"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\childme\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "https://vaersaagod.no"
+                }
+            ],
+            "description": "Easily create child elements",
+            "keywords": [
+                "Craft",
+                "child me",
+                "cms",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "time": "2018-06-05T19:14:46+00:00"
+        },
+        {
+            "name": "mmikkel/cp-field-inspect",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mmikkel/CpFieldInspect-Craft.git",
+                "reference": "e20117d550a5696e0b199bb90d81648356dcc83c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/e20117d550a5696e0b199bb90d81648356dcc83c",
+                "reference": "e20117d550a5696e0b199bb90d81648356dcc83c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "CP Field Inspect",
+                "handle": "cp-field-inspect",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/CpFieldInspect-Craft/master/CHANGELOG.md",
+                "class": "mmikkel\\cpfieldinspect\\CpFieldInspect"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\cpfieldinspect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "http://mmikkel.no"
+                }
+            ],
+            "description": "Inspect field handles and easily edit field settings",
+            "keywords": [
+                "Craft",
+                "cms",
+                "cp field inspect",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "time": "2018-09-26T08:08:50+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2619,6 +2758,43 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
+            "name": "sebastianlenz/linkfield",
+            "version": "1.0.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastian-lenz/craft-linkfield.git",
+                "reference": "903f063b36cfe1d3158ccf7fc0eb2d9e4a4b23a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastian-lenz/craft-linkfield/zipball/903f063b36cfe1d3158ccf7fc0eb2d9e4a4b23a5",
+                "reference": "903f063b36cfe1d3158ccf7fc0eb2d9e4a4b23a5",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "php": "^7.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "typedlinkfield",
+                "name": "Typed link field",
+                "developer": "Sebastian Lenz",
+                "developerUrl": "https://github.com/sebastian-lenz/"
+            },
+            "autoload": {
+                "psr-4": {
+                    "typedlinkfield\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Craft field type for selecting links",
+            "time": "2018-09-25T15:16:23+00:00"
+        },
+        {
             "name": "seld/cli-prompt",
             "version": "1.0.3",
             "source": {
@@ -3372,6 +3548,60 @@
                 "templating"
             ],
             "time": "2018-07-13T07:18:09+00:00"
+        },
+        {
+            "name": "verbb/super-table",
+            "version": "2.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/super-table.git",
+                "reference": "d26e2dd76c1bfe65784418bd4b95204bfe7ff947"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/d26e2dd76c1bfe65784418bd4b95204bfe7ff947",
+                "reference": "d26e2dd76c1bfe65784418bd4b95204bfe7ff947",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.17"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Super Table",
+                "handle": "super-table",
+                "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+                "schemaVersion": "2.0.4",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/verbb/super-table",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/super-table/craft-3/CHANGELOG.md",
+                "class": "verbb\\supertable\\SuperTable"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\supertable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "super table"
+            ],
+            "time": "2018-09-26T11:54:43+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
