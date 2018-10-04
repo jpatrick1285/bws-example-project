@@ -35,7 +35,9 @@ let MainNavController = {
       _instance.elementWatchers.push(elementWatcher);
 
       elementWatcher.stateChange(function() {
-        navbar.toggleClass('is-light', this.isInViewport && this.isAboveViewport || $(document).scrollTop() === this.top);
+        if (this.isAboveViewport || $(document).scrollTop() === this.top) {
+          navbar.toggleClass('is-light', this.isInViewport && this.isAboveViewport || $(document).scrollTop() === this.top);
+        }
       });
 
       // If any of the elements are overlapping, add the is-light class
