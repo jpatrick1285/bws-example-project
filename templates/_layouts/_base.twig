@@ -138,9 +138,10 @@
                 loadjs(['{{ baseUrl }}js/jquery.min.js'], 'jquery');
             </script>
 
-            {# -- VueJS & Axios, along with our main app component instantiation -- #}
+            {# -- VueJS, Barba, and Axios -- #}
             <script>
                 // define a dependency bundle
+                loadjs(['{{ baseUrl }}js/barba.min.js'], 'barba');
                 loadjs(['{{ baseUrl }}js/vue.min.js'], 'vue');
                 loadjs(['{{ baseUrl }}js/axios.min.js'], 'axios');
             </script>

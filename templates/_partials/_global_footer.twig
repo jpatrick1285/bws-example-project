@@ -3,8 +3,9 @@
 
 <script>
 loadjs(['{{ baseUrl }}js/scrollMonitor.min.js'], 'scrollMonitor');
-loadjs.ready('scrollMonitor', function() {
-    loadjs(['{{ baseUrl }}js/main-nav-controller.min.js'], 'main-nav');
+
+loadjs.ready(['scrollMonitor', 'jquery', 'barba'], function() {
+    loadjs(['{{ baseUrl }}js/barba-views.min.js'], 'barba-views');
 });
 </script>
 

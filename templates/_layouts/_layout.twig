@@ -14,20 +14,25 @@
 
 {# Define the site navigation #}
 {% set nav = {
-    "": {
-        title: "Home"
+    home: {
+        title: "Home",
+        namespace: 'home'
     },
     projects: {
-        title: "Projects"
+        title: "Projects",
+        namespace: 'projects'
     },
     about: {
-        title: "About"
+        title: "About",
+        namespace: 'about'
     },
     services: {
-        title: "Services"
+        title: "Services",
+        namespace: 'services'
     },
     contact: {
-        title: "Hire Us"
+        title: "Hire Us",
+        namespace: 'contact'
     }
 } %}
 
@@ -35,6 +40,9 @@
    or the first URI segment (this is used by the parent template) #}
 {% if bodyClass is not defined %}
     {% set bodyClass = entry is defined? entry.section.handle: craft.app.request.segments | first %}
+    {% if bodyClass == "" %}
+        {% set bodyClass = "home" %}
+    {% endif %}
 {% endif %}
 
 {# Set the `title` variable to the nav item that matches the first segment #}
@@ -45,21 +53,26 @@
     {% endif %}{{ nav[bodyClass].title }}{% endset %}
 {% endif %}
 
+{# Set the namespace we'll use for Barba.js views to match our namespace in the nav. If it's not defined, use 'common' #}
+{% set namespace = nav[bodyClass] is defined? nav[bodyClass].namespace : 'common' %}
+
 {% block body %}
-    <div id="page-container">
-        {# -- Info header, including _navbar.twig -- #}
-        {% include "_partials/_info_header.twig" %}
+    <div id="barba-wrapper">
+        <div class="barba-container" data-namespace="{{ namespace }}">
+            {# -- Info header, including _navbar.twig -- #}
+            {% include "_partials/_info_header.twig" %}
 
-        <div id="page-content-container">
-            {# -- Primary content block -- #}
-            {% block content %}{% endblock %}
+            <div id="page-content-container">
+                {# -- Primary content block -- #}
+                {% block content %}{% endblock %}
+            </div>
+
+            {# -- Content that appears below the primary content block -- #}
+            {% block subcontent %}{% endblock %}
+
+            {# -- Info footer -- #}
+            {% include "_partials/_info_footer.twig" %}
         </div>
-
-        {# -- Content that appears below the primary content block -- #}
-        {% block subcontent %}{% endblock %}
-
-        {# -- Info footer -- #}
-        {% include "_partials/_info_footer.twig" %}
 
         {# -- HTML Footer -- #}
         {% include "_partials/_global_footer.twig" %}
