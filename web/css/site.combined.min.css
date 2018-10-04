@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Thu, Oct 4, 2018 4:26 PM ET
- * @release        b3ea285b9a00eb29ad215b44571319d8493fda85 [master]
+ * @build          Thu, Oct 4, 2018 4:28 PM ET
+ * @release        c2018591c0e4b16f7563ec259354b8facfe9fa2e [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5834,7 +5834,7 @@ nav.main-nav {
 @media screen and (min-width: 900px) {
   .hero.offset-image .background-image-container {
     width: auto;
-    margin-right: 9.5%;
+    margin-right: 14%;
     margin-left: 22%;
     -webkit-transform: translate3d(0, 3.5rem, 0);
             transform: translate3d(0, 3.5rem, 0); } }

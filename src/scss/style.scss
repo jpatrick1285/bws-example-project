@@ -172,11 +172,11 @@ img, audio, video {
   }
 
   &.is-large {
-    margin: 0 $container-margin-large;
+    margin: 0 $container-large-margin;
   }
 
   &.is-small {
-    margin: 0 $container-margin-small;
+    margin: 0 $container-small-margin;
   }
 }
 
@@ -488,8 +488,8 @@ nav.main-nav {
   .background-image-container {
     @include desktop {
       width: auto;
-      margin-right: $container-margin;
-      margin-left: $container-margin-small + 8%;
+      margin-right: $container-small-margin;
+      margin-left: $container-small-margin + 8%;
       transform: translate3d(0, 3.5rem, 0);
     }
   }
