@@ -54,11 +54,11 @@ h1, h2, h3, p.is-subheading {
 
 h1.is-large {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: $heading-copy-color;
 
   @include desktop {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }
 
@@ -97,10 +97,21 @@ p.is-subheading {
   font-weight: bold;
   letter-spacing: 0.1em;
   color: $heading-copy-color;
-}
 
-.is-dark p.is-subheading {
-  color: #DDDDDD;
+  &.has-dash {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 0.9em;
+      height: 3px;
+      margin-right: 0.6em;
+      vertical-align: -45%;
+      background: $white;
+    }
+  }
 }
 
 a {
@@ -152,7 +163,7 @@ img, audio, video {
 
 .container {
   //width: 81%;
-  margin: 0 9.5%;
+  margin: 0 $container-margin;
   //margin: 0 auto;
   position: relative;
 
@@ -161,13 +172,11 @@ img, audio, video {
   }
 
   &.is-large {
-    //width: 96%;
-    margin: 0px 2%;
+    margin: 0 $container-margin-large;
   }
 
   &.is-small {
-    // width: 72%;
-    margin: 0px 14%;
+    margin: 0 $container-margin-small;
   }
 }
 
@@ -399,7 +408,6 @@ nav.main-nav {
       font-family: 'Agane Extra Bold', sans-serif;
       font-size: 2.5rem;
       padding: 0.1rem 0;
-      opacity: 0.75;
       transition: all 600ms $easeInOutCubic;
 
       &:before {
@@ -441,7 +449,6 @@ nav.main-nav {
       font-size: 1em;
       display: inline-block;
       padding: 0.1em 0.1em 0.1em 0;
-      opacity: 0.75;
       font-weight: normal;
 
       &:hover {
@@ -451,11 +458,13 @@ nav.main-nav {
   }
 }
 
-.hero.home {
-  min-height: 100vh;
-  background: $black;
+.hero {
   text-align: left;
   justify-content: center;
+
+  &.is-dark {
+    background: $black;
+  }
 
   h1, h2, h3 {
     max-width: 45rem;
@@ -464,10 +473,25 @@ nav.main-nav {
   p {
     max-width: 35rem;
   }
+}
+
+.hero.home {
+  min-height: 100vh;
 
   // offset container to make space for the overlapping content later on
   .container {
     margin-top: -5rem;
+  }
+}
+
+.hero.offset-image {
+  .background-image-container {
+    @include desktop {
+      width: auto;
+      margin-right: $container-margin;
+      margin-left: $container-margin-small + 8%;
+      transform: translate3d(0, 3.5rem, 0);
+    }
   }
 }
 

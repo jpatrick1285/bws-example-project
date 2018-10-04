@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Thu, Oct 4, 2018 3:16 PM ET
- * @release        c7cc34352c8e5040d74f5367c97ef0a38ce16343 [master]
+ * @build          Thu, Oct 4, 2018 3:28 PM ET
+ * @release        8f9efbb5d92bfa881d17c75a5f03ffd2cd44762c [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -15,6 +15,7 @@
 .icon-instagram:before { content: '\f32d'; } /* '' */
 .icon-behance:before { content: '\f34e'; } /* '' */
 /* Color variables */
+/* Container Margins */
 /* Bulma Overrides */
 @-webkit-keyframes spinAround {
   from {
@@ -5470,11 +5471,11 @@ h1, h2, h3, p.is-subheading {
 
 h1.is-large {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: #0E1112; }
   @media screen and (min-width: 900px) {
     h1.is-large {
-      font-size: 6rem; } }
+      font-size: 5rem; } }
 
 h1 {
   font-family: "Agane Extra Bold", sans-serif;
@@ -5505,9 +5506,21 @@ p.is-subheading {
   font-weight: bold;
   letter-spacing: 0.1em;
   color: #0E1112; }
-
-.is-dark p.is-subheading {
-  color: #DDDDDD; }
+  p.is-subheading.has-dash {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    p.is-subheading.has-dash:before {
+      content: '';
+      display: block;
+      width: 0.9em;
+      height: 3px;
+      margin-right: 0.6em;
+      vertical-align: -45%;
+      background: #FFFFFF; }
 
 a {
   font-weight: bold;
@@ -5554,9 +5567,9 @@ video {
   .container.is-full {
     width: 100%; }
   .container.is-large {
-    margin: 0px 2%; }
+    margin: 0 2%; }
   .container.is-small {
-    margin: 0px 14%; }
+    margin: 0 14%; }
 
 .section {
   padding: 0; }
@@ -5758,7 +5771,6 @@ nav.main-nav {
       font-family: 'Agane Extra Bold', sans-serif;
       font-size: 2.5rem;
       padding: 0.1rem 0;
-      opacity: 0.75;
       transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1); }
       .nav-overlay .links a:before {
         display: block;
@@ -5798,24 +5810,34 @@ nav.main-nav {
       font-size: 1em;
       display: inline-block;
       padding: 0.1em 0.1em 0.1em 0;
-      opacity: 0.75;
       font-weight: normal; }
       .nav-overlay .contact a:hover, .nav-overlay .contact p a:hover {
         opacity: 1; }
 
-.hero.home {
-  min-height: 100vh;
-  background: #0E1112;
+.hero {
   text-align: left;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  .hero.home h1, .hero.home h2, .hero.home h3 {
+  .hero.is-dark {
+    background: #0E1112; }
+  .hero h1, .hero h2, .hero h3 {
     max-width: 45rem; }
-  .hero.home p {
+  .hero p {
     max-width: 35rem; }
+
+.hero.home {
+  min-height: 100vh; }
   .hero.home .container {
     margin-top: -5rem; }
+
+@media screen and (min-width: 900px) {
+  .hero.offset-image .background-image-container {
+    width: auto;
+    margin-right: 9.5%;
+    margin-left: 22%;
+    -webkit-transform: translate3d(0, 3.5rem, 0);
+            transform: translate3d(0, 3.5rem, 0); } }
 
 section.home-cases .tile.is-child {
   height: 60vh;

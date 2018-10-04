@@ -10,12 +10,21 @@
 {% block content %}
 
 <!-- Home Hero -->
-<section class="section is-large is-dark is-vertical-center hero home">
+<section class="section is-large is-dark is-vertical-center is-background-container hero offset-image">
+    <div class="background-image-container">
+        <img src="{{ baseUrl }}img/temp/about-header.jpg">
+    </div>
     <div class="container is-small ">
-        <p class="is-subtitle">ABOUT US</p>
+        <p class="is-subheading has-dash">ABOUT US</p>
         <h1 class="is-large">Small, personal, and friendly.</h1>
     </div>
 </section>
+
+<section class="section is-large">
+    <div class="container">
+        <h1>Bringing KC online since 2011.</h1>
+    </div>
+</div>
 
 {% endblock %}
 
