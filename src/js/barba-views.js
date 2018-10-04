@@ -5,12 +5,20 @@
     namespace: 'common',
 
     onEnterCompleted: function () {
-      MainNavController.init();
+      try {
+        MainNavController.init();
+      } catch(e) {
+        console.log(e);
+      }
     },
 
     /* Clean up scripts */
     onLeave: function() {
-      MainNavController.destroy();
+      try {
+        MainNavController.destroy();
+      } catch(e) {
+        console.log(e);
+      }
     }
   });
 
@@ -18,12 +26,18 @@
   let HomeView = CommonView.extend({
     namespace: 'home',
   });
+
+  /* -- About View -- */
+  let AboutView = CommonView.extend({
+    namespace: 'about',
+  });
   
   // import common view requirements and initialize views
   // other pages can load these later.
   loadjs(assetsBaseUrl + 'js/main-nav-controller.min.js', 'main-nav', function() {
     CommonView.init();
     HomeView.init();
+    AboutView.init();
 
     // initialize barba
     Barba.Pjax.init();

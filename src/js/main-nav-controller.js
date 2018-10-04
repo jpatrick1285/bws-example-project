@@ -1,6 +1,5 @@
 let MainNavController = {
   elementWatchers: [],
-
   init: function() {
     /* -- Overlay Toggle -- */
     let _instance = this;
@@ -49,9 +48,10 @@ let MainNavController = {
     navbar.toggleClass('is-light', isInitiallyLight);
   },
   destroy: function() {
-    elementWatchers.each(function(index) {
-      elementWatchers[index].destroy();
-    });
-    elementWatchers = [];
+    for (let i=0; i< this.elementWatchers.length; i++){
+      this.elementWatchers[i].destroy();
+    }
+
+    this.elementWatchers = [];
   },
 }
