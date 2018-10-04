@@ -49,7 +49,7 @@ body, html {
 
 h1, h2, h3, p.is-subheading {
   line-height: 1.2em;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.8em;
 }
 
 h1.is-large {
@@ -111,6 +111,14 @@ p.is-subheading {
       vertical-align: -45%;
       background: $white;
     }
+  }
+}
+
+p.is-multi-column {
+  @include desktop {
+    column-count: 2;
+    column-gap: 2.5em;
+    word-break: break-word;
   }
 }
 
