@@ -32,13 +32,13 @@
 body, html {
   font-family: "Agane Regular", sans-serif;
   color: $body-copy-color;
-  font-size: 20px;
+  font-size: 22px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   // scale up a bit on huge screens 
   @media (min-width: 2000px) {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   // scale down font size responsively on smaller screens
@@ -64,21 +64,21 @@ h1.is-large {
 
 h1 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: $heading-copy-color;
 
   @include desktop {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
 h2 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: $heading-copy-color;
 
   @include desktop {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
 
@@ -377,7 +377,7 @@ nav.main-nav {
 
     &.is-active {
       visibility: visible;
-      opacity: 0.18;
+      opacity: 0.35;
       transform: scale(1);
     }
   }
@@ -399,7 +399,7 @@ nav.main-nav {
       font-family: 'Agane Extra Bold', sans-serif;
       font-size: 2.5rem;
       padding: 0.1rem 0;
-      opacity: 0.6;
+      opacity: 0.75;
       transition: all 600ms $easeInOutCubic;
 
       &:before {
@@ -434,18 +434,18 @@ nav.main-nav {
 
     p {
       margin: 0;
-      font-size: 0.9em;
+      font-size: 0.8em;
+    }
 
-      a {
-        font-size: 1em;
-        display: inline-block;
-        padding: 0.1em 0.1em 0.1em 0;
-        opacity: 0.5;
-        font-weight: normal;
+    a, p a {
+      font-size: 1em;
+      display: inline-block;
+      padding: 0.1em 0.1em 0.1em 0;
+      opacity: 0.75;
+      font-weight: normal;
 
-        &:hover {
-          opacity: 1;
-        }
+      &:hover {
+        opacity: 1;
       }
     }
   }
@@ -498,6 +498,7 @@ section.home-cases {
     p {
       max-width: 20rem;
       margin-bottom: 1em;
+      font-weight: normal;
     }
 
     img {

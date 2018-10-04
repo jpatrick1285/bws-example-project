@@ -1,10 +1,10 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 {#-- Global footer --#}
 
-{# -- Main Navigation Controller Bundle -- #}
 <script>
-loadjs.ready('jquery', function() {
-    loadjs(['{{ baseUrl }}js/main-nav-controller.min.js'], 'main-nav-controller');
+loadjs(['{{ baseUrl }}js/scrollMonitor.min.js'], 'scrollMonitor');
+loadjs.ready('scrollMonitor', function() {
+    loadjs(['{{ baseUrl }}js/main-nav-controller.min.js'], 'main-nav');
 });
 </script>
 
