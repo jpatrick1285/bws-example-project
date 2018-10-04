@@ -27,6 +27,8 @@ $(function() {
   /* -- Color Change in Dark Sections -- */
   let navbar = $('nav.main-nav');
   let darkElements = $('.section.is-dark:not(.nav-overlay), .section.is-grey:not(.nav-overlay)');
+
+  let isInitiallyLight = false;
    
   darkElements.each(function(index) {
     let elementWatcher = scrollMonitor.create($(this).get(0));
@@ -35,11 +37,12 @@ $(function() {
       navbar.toggleClass('is-light', this.isInViewport && this.isAboveViewport || $(document).scrollTop() === this.top);
     });
 
-    // if this is the first element, check if we're overlapping on page load
-    if (index === 0) {
-      elementWatcher.update();
-      navbar.toggleClass('is-light', elementWatcher.isInViewport && elementWatcher.isAboveViewport || $(document).scrollTop() == elementWatcher.top);
+    // If any of the elements are overlapping, add the is-light class
+    // don't remove it, since elements farther down the page will incorrectly remove it
+    if (elementWatcher.isInViewport && elementWatcher.isAboveViewport || $(document).scrollTop() == elementWatcher.top) {
+      isInitiallyLight = true;
     }
   });
 
+  navbar.toggleClass('is-light', isInitiallyLight);
 });
