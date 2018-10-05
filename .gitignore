@@ -27,6 +27,9 @@
 # ASSETS
 /web/assets/*
 
+# BACKUPS
+/backups/*
+
 # TEMPORARY TEMPLATE FILES 
 /web/img/temp/*
 /src/img/temp/*
