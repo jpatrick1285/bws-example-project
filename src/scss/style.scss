@@ -182,6 +182,17 @@ img.cover {
   object-fit: cover;
 }
 
+.clearfix {
+  &:before, &:after {
+      content: "";
+      display: table;
+  }
+
+  &:after {
+      clear: both;
+  }
+}
+
 .container {
   //width: 81%;
   margin: 0 $container-margin;
@@ -637,6 +648,58 @@ section.services {
   }
 }
 
+.team-slider {
+  touch-action: pan-y;
+  padding-top: 5rem;
+  overflow-x: hidden;
+  
+  .track {
+    //overflow-x: visible;
+    white-space: nowrap;
+    //width: 1000%;
+  }
+
+  .slide {
+    width: 26rem;
+    display: inline-block;
+
+    &:not(last-child) {
+      margin-right: 5rem;
+    }
+
+    .description {
+      padding-left: 2rem; 
+      padding-top: 1rem;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.2em;
+      }
+
+      p.is-subheading {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+      }
+    }
+
+    img { 
+      width: 100%;
+      height: 26rem;
+      object-fit: cover;
+      transition: all 300ms $easeInOutCubic;
+      
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+      filter: gray; /* IE6-9 */
+      -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+    }
+
+    &:hover img {
+      filter: none;
+      -webkit-filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+  }
+}
 
 footer {
   font-size: 0.8rem;
