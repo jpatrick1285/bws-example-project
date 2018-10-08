@@ -5451,16 +5451,21 @@ a.tag:hover {
   text-align: center;
   vertical-align: top; }
 
+html {
+  background: #e5e6eb; }
+
+body {
+  max-width: 1600px;
+  margin: auto;
+  background: #FFFFFF; }
+
 /* Global Typography Styles */
 body, html {
   font-family: "Lato", sans-serif;
   color: #4a4c4d;
-  font-size: 22px;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-  @media (min-width: 2000px) {
-    body, html {
-      font-size: 24px; } }
   @media (max-width: 1000px) {
     body, html {
       font-size: calc(14px + .4vw); } }
@@ -5471,31 +5476,31 @@ h1, h2, h3, p.is-subheading {
 
 h1.is-large {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #0E1112; }
   @media screen and (min-width: 900px) {
     h1.is-large {
-      font-size: 5rem; } }
+      font-size: 4rem; } }
 
 h1 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #0E1112; }
   @media screen and (min-width: 900px) {
     h1 {
-      font-size: 3rem; } }
+      font-size: 2.2rem; } }
 
 h2 {
   font-family: "Agane Extra Bold", sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #0E1112; }
   @media screen and (min-width: 900px) {
     h2 {
-      font-size: 2rem; } }
+      font-size: 1.75rem; } }
 
 h3 {
   font-family: "Agane Regular", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #0E1112; }
 
@@ -5577,14 +5582,15 @@ img.cover {
   object-fit: cover; }
 
 .container {
-  margin: 0 9.5%;
+  margin: 0 6%;
   position: relative; }
   .container.is-full {
-    width: 100%; }
+    width: 100%;
+    margin: 0; }
   .container.is-large {
     margin: 0 2%; }
   .container.is-small {
-    margin: 0 14%; }
+    margin: 0 15%; }
 
 .section {
   padding: 0; }
@@ -5680,6 +5686,7 @@ nav.main-nav {
   position: fixed;
   margin: 0px auto;
   width: 100%;
+  max-width: 1600px;
   z-index: 150; }
   nav.main-nav .column {
     padding-bottom: 0; }
@@ -5746,6 +5753,7 @@ nav.main-nav {
   display: flex;
   overflow: auto;
   width: 100%;
+  max-width: 1600px;
   min-height: 100%;
   z-index: 149;
   padding: 4.5rem 0 3rem 0;
@@ -5866,8 +5874,8 @@ nav.main-nav {
 @media screen and (min-width: 900px) {
   .hero.offset-image .background-image-container {
     width: auto;
-    margin-right: 14%;
-    margin-left: 22%;
+    margin-right: 15%;
+    margin-left: 23%;
     -webkit-transform: translate3d(0, 3.5rem, 0);
             transform: translate3d(0, 3.5rem, 0); } }
 

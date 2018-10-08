@@ -28,18 +28,23 @@
 // CSS Easing functions - https://github.com/KingScooty/sass-easing
 @import "~awesome-sass-easing/_sass-easing.scss";
 
+html {
+  background: #e5e6eb;
+}
+
+body {
+  max-width: $body-width;
+  margin: auto;
+  background: #FFFFFF;
+}
+
 /* Global Typography Styles */
 body, html {
   font-family: $body-copy-font;
   color: $body-copy-color;
-  font-size: 22px;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  // scale up a bit on huge screens 
-  @media (min-width: 2000px) {
-    font-size: 24px;
-  }
 
   // scale down font size responsively on smaller screens
   @media (max-width: 1000px) {
@@ -54,37 +59,37 @@ h1, h2, h3, p.is-subheading {
 
 h1.is-large {
   font-family: $heading-copy-font;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: $heading-copy-color;
 
   @include desktop {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
 h1 {
   font-family: $heading-copy-font;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: $heading-copy-color;
 
   @include desktop {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 
 h2 {
   font-family: $heading-copy-font;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: $heading-copy-color;
 
   @include desktop {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 }
 
 h3 {
   font-family: $subheading-copy-font;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: $heading-copy-color;
 }
@@ -185,6 +190,7 @@ img.cover {
 
   &.is-full {
     width: 100%;
+    margin: 0;
   }
 
   &.is-large {
@@ -327,6 +333,7 @@ nav.main-nav {
   position: fixed;
   margin: 0px auto;
   width: 100%;
+  max-width: $body-width;
   z-index: 150;
 
   .column {
@@ -407,6 +414,7 @@ nav.main-nav {
   display: flex;
   overflow: auto;
   width: 100%;
+  max-width: $body-width;
   min-height: 100%;
   z-index: 149;
   padding: 4.5rem 0 3rem 0;
@@ -628,6 +636,7 @@ section.services {
     }
   }
 }
+
 
 footer {
   font-size: 0.8rem;

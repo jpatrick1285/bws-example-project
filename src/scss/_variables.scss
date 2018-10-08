@@ -12,10 +12,12 @@ $subheading-copy-font: "Agane Regular", sans-serif;
 $heading-copy-font: "Agane Extra Bold", sans-serif;
 $heading-copy-color: $black;
 
+$body-width: 1600px;
+
 /* Container Margins */
-$container-margin: 9.5%; // width: 81%
+$container-margin: 6%; // width: 81%
 $container-large-margin: 2%; // width: 98%; 
-$container-small-margin: 14%; // width: 72%;
+$container-small-margin: 15%; // width: 72%;
 
 /* Bulma Overrides */
 // Breakpoints - values loosely adapted from this article: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862. 

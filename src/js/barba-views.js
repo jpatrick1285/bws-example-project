@@ -24,12 +24,18 @@
 
   /* -- Home View -- */
   let HomeView = CommonView.extend({
-    namespace: 'home',
+    namespace: 'home'
   });
 
   /* -- About View -- */
   let AboutView = CommonView.extend({
     namespace: 'about',
+    onEnterCompleted: function () {
+      CommonView.onEnterCompleted.apply(this);
+    },
+    onLeave: function() {
+      CommonView.onLeave.apply(this);
+    }
   });
   
   // import common view requirements and initialize views
