@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Mon, Oct 8, 2018 10:40 AM ET
- * @release        a8a9d3247f9391d0492679fd2c0de7cc3073a104 [master]
+ * @build          Mon, Oct 8, 2018 4:32 PM ET
+ * @release        401d5c391b62c627890484f09ae5875f9fb67d72 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5980,9 +5980,9 @@ section.services .service {
     .team-slider .slide:hover img {
       filter: none;
       -webkit-filter: grayscale(0%);
-      -webkit-transform: scale(1.05);
-          -ms-transform: scale(1.05);
-              transform: scale(1.05); }
+      -webkit-transform: scale(1.03);
+          -ms-transform: scale(1.03);
+              transform: scale(1.03); }
 
 footer {
   font-size: 0.8rem; }

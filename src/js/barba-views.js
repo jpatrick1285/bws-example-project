@@ -37,6 +37,11 @@
       CommonView.onLeave.apply(this);
     }
   });
+
+  /* -- Services View -- */
+  let ServicesView = CommonView.extend({
+    namespace: 'services'
+  });
   
   // import common view requirements and initialize views
   // other pages can load these later.
@@ -44,6 +49,7 @@
     CommonView.init();
     HomeView.init();
     AboutView.init();
+    ServicesView.init();
 
     // initialize barba
     Barba.Pjax.init();
