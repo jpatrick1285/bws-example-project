@@ -30,7 +30,7 @@
 
 /* Global Typography Styles */
 body, html {
-  font-family: "Agane Regular", sans-serif;
+  font-family: $body-copy-font;
   color: $body-copy-color;
   font-size: 22px;
   -webkit-font-smoothing: antialiased;
@@ -53,7 +53,7 @@ h1, h2, h3, p.is-subheading {
 }
 
 h1.is-large {
-  font-family: "Agane Extra Bold", sans-serif;
+  font-family: $heading-copy-font;
   font-size: 3.5rem;
   color: $heading-copy-color;
 
@@ -63,7 +63,7 @@ h1.is-large {
 }
 
 h1 {
-  font-family: "Agane Extra Bold", sans-serif;
+  font-family: $heading-copy-font;
   font-size: 2.5rem;
   color: $heading-copy-color;
 
@@ -73,7 +73,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Agane Extra Bold", sans-serif;
+  font-family: $heading-copy-font;
   font-size: 1.75rem;
   color: $heading-copy-color;
 
@@ -83,6 +83,7 @@ h2 {
 }
 
 h3 {
+  font-family: $subheading-copy-font;
   font-size: 1.6rem;
   font-weight: bold;
   color: $heading-copy-color;
@@ -94,6 +95,7 @@ p {
 }
 
 p.is-subheading {
+  font-family: $subheading-copy-font;
   font-weight: bold;
   letter-spacing: 0.1em;
   color: $heading-copy-color;
@@ -117,7 +119,7 @@ p.is-subheading {
 p.is-multi-column {
   @include desktop {
     column-count: 2;
-    column-gap: 2.5em;
+    column-gap: 2.8em;
     word-break: break-word;
   }
 }
@@ -413,7 +415,7 @@ nav.main-nav {
     a {
       position: relative;
       display: block;
-      font-family: 'Agane Extra Bold', sans-serif;
+      font-family: $heading-copy-font;
       font-size: 2.5rem;
       padding: 0.1rem 0;
       transition: all 600ms $easeInOutCubic;

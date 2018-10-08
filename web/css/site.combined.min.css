@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Thu, Oct 4, 2018 4:35 PM ET
- * @release        998fd56fff5fdc3f29edd917fcb44738aeb323a3 [master]
+ * @build          Mon, Oct 8, 2018 10:40 AM ET
+ * @release        a8a9d3247f9391d0492679fd2c0de7cc3073a104 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5453,7 +5453,7 @@ a.tag:hover {
 
 /* Global Typography Styles */
 body, html {
-  font-family: "Agane Regular", sans-serif;
+  font-family: "Lato", sans-serif;
   color: #4a4c4d;
   font-size: 22px;
   -webkit-font-smoothing: antialiased;
@@ -5494,6 +5494,7 @@ h2 {
       font-size: 2rem; } }
 
 h3 {
+  font-family: "Agane Regular", sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
   color: #0E1112; }
@@ -5503,6 +5504,7 @@ p {
   margin-bottom: 1em; }
 
 p.is-subheading {
+  font-family: "Agane Regular", sans-serif;
   font-weight: bold;
   letter-spacing: 0.1em;
   color: #0E1112; }
@@ -5526,8 +5528,8 @@ p.is-subheading {
   p.is-multi-column {
     -webkit-column-count: 2;
             column-count: 2;
-    -webkit-column-gap: 2.5em;
-            column-gap: 2.5em;
+    -webkit-column-gap: 2.8em;
+            column-gap: 2.8em;
     word-break: break-word; } }
 
 a {
@@ -5776,7 +5778,7 @@ nav.main-nav {
     .nav-overlay .links a {
       position: relative;
       display: block;
-      font-family: 'Agane Extra Bold', sans-serif;
+      font-family: "Agane Extra Bold", sans-serif;
       font-size: 2.5rem;
       padding: 0.1rem 0;
       transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1); }

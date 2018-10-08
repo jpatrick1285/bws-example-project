@@ -57,8 +57,11 @@
             </script>
             {# -- Inline CSS block used by templates for Critical CSS #}
             {% block _inline_css %}{% endblock %}
+            
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
             <link rel="preload" href="{{ baseUrl }}css/site.combined.min.css" as="style" onload="this.rel='stylesheet'">
             <noscript><link rel="stylesheet" href="{{ baseUrl }}css/site.combined.min.css"></noscript>
+            
             <script>
                 {{ source("_inlinejs/loadCSS.min.js") }}
                 {{ source("_inlinejs/cssrelpreload.min.js") }}
