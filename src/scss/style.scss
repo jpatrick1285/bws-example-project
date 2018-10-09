@@ -701,6 +701,90 @@ section.services {
   }
 }
 
+.contact-section {
+  .background-image-container {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 50%;
+    }
+  }
+
+  h1 {
+    @include tablet {
+      position: relative;
+      transform: translateX(-40%);
+    }
+  }
+
+  form.contact-form {
+    @include desktop {
+      padding-left: 3rem;
+    }
+
+    .field {
+      padding: 1rem 0;
+      margin: 0;
+      position: relative;
+    }
+
+    .label {
+      font-size: 1rem;
+      font-family: $body-copy-font;
+      color: $body-copy-color + #111111;
+      font-weight: normal;
+      margin-bottom: 0.8em;
+    }
+
+    .input, .textarea {
+      border-radius: 0;
+      border: none;
+      background: #FFFFFF;
+      box-shadow: none;
+      border-bottom: 1px solid #CCCCCC;
+
+      &::placeholder {
+        color: $body-copy-color + #444444;
+      }
+    }
+
+    .textarea {
+      border: 1px solid #CCCCCC;
+    }
+
+    .control .select {
+      width: 100%;
+      
+      &::after {
+        border-color: #444444;
+        height: 0.5em;
+        width: 0.5em;
+        margin-top: -0.375em;
+        border-left-width: 1px;
+        border-bottom-width: 1px;
+      }
+
+      select {
+        width: 100%;
+        border-radius: 0;
+        border: 1px solid #CCCCCC;
+        box-shadow: none;
+      }
+    }
+
+    .button {
+        border-radius: 0;
+        padding: 0.8rem 1.3rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        height: auto;
+        background: $black;
+
+      }
+  }
+}
+
 footer {
   font-size: 0.8rem;
 

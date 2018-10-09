@@ -1,0 +1,78 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{% extends "_layouts/_layout.twig" %}
+
+{% block _inline_css %}
+    <style>
+        {{ source ("index_critical.min.css", ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="section is-medium is-background-container contact-section">
+    <div class="background-image-container">
+        <img src="{{ baseUrl }}img/temp/contact-phone.jpg">
+    </div>
+    
+    <div class="container is-small has-text-centered">
+        <div class="columns has-text-left">
+            <div class="column is-half is-offset-half">
+                <h1 class="is-large">Let's work together.</h1>
+                <form class="contact-form">
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" name="name" id="name" class="input" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" name="company" id="company" class="input" placeholder="Company">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="email" name="email" id="email" class="input" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="timeframe" class="label">When do you want to start?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select name="timeframe" id="timeframe">
+                                    <option>Select</option>
+                                    <option>With options</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="budget" class="label">What is your budget?</label>
+                        <div class="control">
+                            <div class="select">
+                                <select name="budget" id="budget">
+                                    <option>Select</option>
+                                    <option>With options</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="message" class="label">Describe your needs - the more we know, the better.</label>
+                        <div class="control">
+                            <textarea class="textarea" name="message" id="message" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="buttons is-right">
+                            <input class="button" type="submit" value="Get in touch">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block _inline_js %}
+{% endblock %}

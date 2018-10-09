@@ -42,6 +42,11 @@
   let ServicesView = CommonView.extend({
     namespace: 'services'
   });
+
+  /* -- Contact View -- */
+  let ContactView = CommonView.extend({
+    namespace: 'contact'
+  });
   
   // import common view requirements and initialize views
   // other pages can load these later.
@@ -50,6 +55,7 @@
     HomeView.init();
     AboutView.init();
     ServicesView.init();
+    ContactView.init();
 
     // initialize barba
     Barba.Pjax.init();

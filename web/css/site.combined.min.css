@@ -1,19 +1,11 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Mon, Oct 8, 2018 4:32 PM ET
- * @release        401d5c391b62c627890484f09ae5875f9fb67d72 [master]
+ * @build          Tue, Oct 9, 2018 9:31 AM ET
+ * @release        6067aacda19207b60aa8d54a0c7e0fa8b377b7ef [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
-
-.icon-github:before { content: '\f300'; } /* '' */
-.icon-twitter:before { content: '\f309'; } /* '' */
-.icon-facebook:before { content: '\f30c'; } /* '' */
-.icon-linkedin:before { content: '\f318'; } /* '' */
-.icon-dribbble:before { content: '\f31b'; } /* '' */
-.icon-instagram:before { content: '\f32d'; } /* '' */
-.icon-behance:before { content: '\f34e'; } /* '' */
 /* Color variables */
 /* Container Margins */
 /* Bulma Overrides */
@@ -5983,6 +5975,75 @@ section.services .service {
       -webkit-transform: scale(1.03);
           -ms-transform: scale(1.03);
               transform: scale(1.03); }
+
+.contact-section .background-image-container {
+  display: none; }
+  @media screen and (min-width: 700px), print {
+    .contact-section .background-image-container {
+      display: block;
+      width: 50%; } }
+
+@media screen and (min-width: 700px), print {
+  .contact-section h1 {
+    position: relative;
+    -webkit-transform: translateX(-40%);
+        -ms-transform: translateX(-40%);
+            transform: translateX(-40%); } }
+
+@media screen and (min-width: 900px) {
+  .contact-section form.contact-form {
+    padding-left: 3rem; } }
+
+.contact-section form.contact-form .field {
+  padding: 1rem 0;
+  margin: 0;
+  position: relative; }
+
+.contact-section form.contact-form .label {
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  color: #5b5d5e;
+  font-weight: normal;
+  margin-bottom: 0.8em; }
+
+.contact-section form.contact-form .input, .contact-section form.contact-form .textarea {
+  border-radius: 0;
+  border: none;
+  background: #FFFFFF;
+  box-shadow: none;
+  border-bottom: 1px solid #CCCCCC; }
+  .contact-section form.contact-form .input::-webkit-input-placeholder, .contact-section form.contact-form .textarea::-webkit-input-placeholder {
+    color: #8e9091; }
+  .contact-section form.contact-form .input:-ms-input-placeholder, .contact-section form.contact-form .textarea:-ms-input-placeholder {
+    color: #8e9091; }
+  .contact-section form.contact-form .input::placeholder, .contact-section form.contact-form .textarea::placeholder {
+    color: #8e9091; }
+
+.contact-section form.contact-form .textarea {
+  border: 1px solid #CCCCCC; }
+
+.contact-section form.contact-form .control .select {
+  width: 100%; }
+  .contact-section form.contact-form .control .select::after {
+    border-color: #444444;
+    height: 0.5em;
+    width: 0.5em;
+    margin-top: -0.375em;
+    border-left-width: 1px;
+    border-bottom-width: 1px; }
+  .contact-section form.contact-form .control .select select {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #CCCCCC;
+    box-shadow: none; }
+
+.contact-section form.contact-form .button {
+  border-radius: 0;
+  padding: 0.8rem 1.3rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  height: auto;
+  background: #0E1112; }
 
 footer {
   font-size: 0.8rem; }
