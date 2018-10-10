@@ -1,0 +1,97 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{% extends "_layouts/_layout.twig" %}
+
+{% block _inline_css %}
+    <style>
+        {{source ("index_critical.min.css", ignore_missing = true)}}
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Case Study Hero -->
+<section class="section is-large is-dark is-vertical-center is-background-container hero case-study">
+    <div class="background-image-container">
+        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency_background.jpg">
+    </div>
+    <div class="background-image-container secondary-image">
+        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency.jpg">
+    </div>
+    <div class="container is-small content-container">
+        <p class="is-subheading has-dash">ANTIOCH INSURANCE AGENCY</p>
+        <h1 class="is-large">Personalizing insurance in KC</h1>
+        <div class="columns is-gapless info-container">
+            <div class="column is-narrow">
+                <div class="services">
+                    <ul>
+                        <li>Web/Mobile Site</li>
+                        <li>Copywriting</li>
+                        <li>Quality Assurance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column is-narrow">
+                <div class="date">
+                    November<br>2018
+                </div>
+            </div>
+        </div>
+        <a href="#" class="button text-button">View Project</a>        
+    </div>
+</section>
+
+<section class="section is-medium has-extra-spacing-top">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-7 is-offset-4">
+                <div class="columns">
+                    <div class="column">
+                        <p>
+                            Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur. 
+                        </p>
+                        <p>
+                            Phasellus sagittis quam quis porttitor consequat. Morbi eu condimentum ipsum, eget vehicula quam. Proin velit lectus, iaculis quis nunc fermentum, ultrices ultrices erat.
+                        </p>
+                        <br>
+                        <h6>The brief</h6>
+                        <p>
+                            Create a more modern and mobile-friendly website, redesigned from the ground up to simplify the quote process and help people easily find the insurance coverage they need.
+                        </p>
+                        <h6>The results</h6>
+                        <p>
+                            Sales increased by 50% overnight. Sed in lacinia diam, ac volutpat est. Nullam pharetra semper nisl vitae malesuada. Morbi vulputate augue vel ornare luctus. Suspendisse non justo purus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container is-full">
+        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-home_preview.jpg">
+    </div>
+</section>
+
+<section>
+    <div class="container is-full">
+        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-subpage_preview.jpg">
+    </div>
+</section>
+
+<section class="section is-medium is-dark has-background has-text-centered is-background-container next-project-section">
+    <div class="background-image-container">
+        <img src="{{ baseUrl }}img/temp/cases-kansas_dairy_ingredients.jpg">
+    </div>
+    <div class="container is-medium">
+        <a href="#">
+            <p class="is-subheading">NEXT PROJECT</p>
+            <h1>Antioch Insurance Agency</h1>
+        </a>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block _inline_js %}{% endblock %}

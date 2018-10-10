@@ -1,11 +1,19 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Tue, Oct 9, 2018 9:31 AM ET
- * @release        6067aacda19207b60aa8d54a0c7e0fa8b377b7ef [master]
+ * @build          Wed, Oct 10, 2018 10:55 AM ET
+ * @release        fa34fdfda34987c6693570cb7cc6d83a4f00b476 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
+
+.icon-github:before { content: '\f300'; } /* '' */
+.icon-twitter:before { content: '\f309'; } /* '' */
+.icon-facebook:before { content: '\f30c'; } /* '' */
+.icon-linkedin:before { content: '\f318'; } /* '' */
+.icon-dribbble:before { content: '\f31b'; } /* '' */
+.icon-instagram:before { content: '\f32d'; } /* '' */
+.icon-behance:before { content: '\f34e'; } /* '' */
 /* Color variables */
 /* Container Margins */
 /* Bulma Overrides */
@@ -5462,7 +5470,7 @@ body, html {
     body, html {
       font-size: calc(14px + .4vw); } }
 
-h1, h2, h3, p.is-subheading {
+h1, h2, h3, h4, h5, h6, p.is-subheading {
   line-height: 1.2em;
   margin-bottom: 0.8em; }
 
@@ -5493,6 +5501,10 @@ h2 {
 h3 {
   font-family: "Agane Regular", sans-serif;
   font-size: 1.4rem;
+  font-weight: bold;
+  color: #0E1112; }
+
+h4, h5, h6 {
   font-weight: bold;
   color: #0E1112; }
 
@@ -5535,6 +5547,29 @@ a {
   color: #0E1112;
   font-size: 0.9em; }
 
+.button {
+  border-radius: 0;
+  padding: 0.8rem 1.3rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  height: auto;
+  background: #0E1112;
+  border: none; }
+  .button.text-button {
+    padding: 0;
+    text-decoration: underline;
+    color: #0E1112;
+    background: none;
+    font-weight: normal;
+    margin-top: 1em; }
+
+.is-dark .button {
+  background: #FFFFFF;
+  color: #0E1112; }
+  .is-dark .button.text-button {
+    color: #FFFFFF;
+    background: none; }
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
@@ -5566,7 +5601,7 @@ a {
 img,
 audio,
 video {
-  max-width: none; }
+  display: block; }
 
 img.cover {
   width: 100%;
@@ -5597,10 +5632,16 @@ img.cover {
     padding-top: 0 !important; }
   .section.is-small {
     padding: 4rem 0; }
+    .section.is-small.has-extra-spacing-top {
+      padding: 19rem 0 4rem 0; }
   .section.is-medium {
     padding: 8rem 0; }
+    .section.is-medium.has-extra-spacing-top {
+      padding: 23rem 0 8rem 0; }
   .section.is-large {
     padding: 12rem 0; }
+    .section.is-large.has-extra-spacing-top {
+      padding: 27rem 0 12rem 0; }
   @media screen and (min-width: 900px) {
     .section.is-small-desktop {
       padding: 4rem 0; } }
@@ -5635,6 +5676,13 @@ img.cover {
   .is-dark h1, .is-dark h2, .is-dark h3, .is-dark p, .is-dark a, .is-grey h1, .is-grey h2, .is-grey h3, .is-grey p, .is-grey a {
     color: #FFFFFF; }
 
+.is-bright {
+  color: #0E1112; }
+  .is-bright h1, .is-bright h2, .is-bright h3, .is-bright p, .is-bright a {
+    color: #0E1112; }
+  .is-bright p.has-dash:before {
+    background: #0E1112; }
+
 .has-background {
   background-color: #FFFFFF; }
   .has-background.is-dark {
@@ -5658,6 +5706,7 @@ img.cover {
   z-index: -1;
   overflow: hidden; }
   .background-image-container img {
+    max-width: none;
     object-fit: cover;
     object-position: center;
     left: -5%;
@@ -5878,6 +5927,35 @@ nav.main-nav {
     -webkit-transform: translate3d(0, 3.5rem, 0);
             transform: translate3d(0, 3.5rem, 0); } }
 
+.hero.case-study .background-image-container.secondary-image {
+  width: auto;
+  margin-right: 6%;
+  margin-left: 14%;
+  -webkit-transform: translate3d(0, 16rem, 0);
+          transform: translate3d(0, 16rem, 0); }
+
+.hero.case-study .content-container {
+  padding-left: 6rem; }
+
+.hero.case-study .info-container {
+  margin-top: 5rem;
+  margin-bottom: 0rem;
+  font-weight: bold;
+  font-size: 0.8em; }
+  .hero.case-study .info-container .date, .hero.case-study .info-container .services {
+    margin-right: 4rem;
+    margin-bottom: 1rem; }
+
+.next-project-section img {
+  opacity: 0.4;
+  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.next-project-section:hover img {
+  -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+          transform: scale(1.01);
+  opacity: 0.6; }
+
 section.home-cases .tile.is-child {
   height: 60vh;
   padding: 5rem 4rem;
@@ -6036,14 +6114,6 @@ section.services .service {
     border-radius: 0;
     border: 1px solid #CCCCCC;
     box-shadow: none; }
-
-.contact-section form.contact-form .button {
-  border-radius: 0;
-  padding: 0.8rem 1.3rem;
-  font-weight: bold;
-  color: #FFFFFF;
-  height: auto;
-  background: #0E1112; }
 
 .about-contact-section h1 {
   margin-bottom: 1.2em; }

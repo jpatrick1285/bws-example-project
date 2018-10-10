@@ -47,6 +47,11 @@
   let ContactView = CommonView.extend({
     namespace: 'contact'
   });
+
+  /* -- Case Study View -- */
+  let CaseStudyView = CommonView.extend({
+    namespace: 'projects'
+  });
   
   // import common view requirements and initialize views
   // other pages can load these later.
@@ -56,6 +61,7 @@
     AboutView.init();
     ServicesView.init();
     ContactView.init();
+    CaseStudyView.init();
 
     // initialize barba
     Barba.Pjax.init();

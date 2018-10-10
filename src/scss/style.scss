@@ -52,7 +52,7 @@ body, html {
   }
 }
 
-h1, h2, h3, p.is-subheading {
+h1, h2, h3, h4, h5, h6, p.is-subheading {
   line-height: 1.2em;
   margin-bottom: 0.8em;
 }
@@ -90,6 +90,11 @@ h2 {
 h3 {
   font-family: $subheading-copy-font;
   font-size: 1.4rem;
+  font-weight: bold;
+  color: $heading-copy-color;
+}
+
+h4, h5, h6 {
   font-weight: bold;
   color: $heading-copy-color;
 }
@@ -136,6 +141,35 @@ a {
   font-size: 0.9em;
 }
 
+.button {
+  border-radius: 0;
+  padding: 0.8rem 1.3rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  height: auto;
+  background: $black;
+  border: none;
+
+  &.text-button {
+    padding: 0;
+    text-decoration: underline;
+    color: $black;
+    background: none;
+    font-weight: normal;
+    margin-top: 1em;
+  }
+}
+
+.is-dark .button {
+  background: $white;
+  color: $black;
+
+  &.text-button {
+    color: $white;
+    background: none;
+  }
+}
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
@@ -173,7 +207,7 @@ a {
 
 /* Common Layout Classes */
 img, audio, video {
-  max-width: none;
+  display: block;
 }
 
 img.cover {
@@ -222,14 +256,26 @@ img.cover {
 
   &.is-small {
     padding: 4rem 0;
+
+    &.has-extra-spacing-top {
+      padding: 4rem + 15rem 0 4rem 0;
+    }
   }
 
   &.is-medium {
     padding: 8rem 0;
+
+    &.has-extra-spacing-top {
+      padding: 8rem + 15rem 0 8rem 0;
+    }
   }
 
   &.is-large {
     padding: 12rem 0;
+
+    &.has-extra-spacing-top {
+      padding: 12rem + 15rem 0 12rem 0;
+    }
   }
 
   &.is-small-desktop {
@@ -278,6 +324,18 @@ img.cover {
   }
 }
 
+.is-bright {
+  color: $black;
+
+  h1, h2, h3, p, a {
+    color: $black;
+  }
+
+  p.has-dash:before {
+    background: $black;
+  }
+}
+
 .has-background {
   background-color: $white;
 
@@ -310,6 +368,7 @@ img.cover {
   overflow: hidden;
 
   img {
+    max-width: none;
     object-fit: cover;
     object-position: center;
     left: -5%;
@@ -560,6 +619,43 @@ nav.main-nav {
   }
 }
 
+.hero.case-study {
+  .background-image-container.secondary-image {
+    width: auto;
+    margin-right: $container-margin;
+    margin-left: $container-small-margin - 1%;
+    transform: translate3d(0, 16rem, 0);
+  }
+
+  .content-container {
+    padding-left: 6rem;
+  }
+
+  .info-container {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+    font-weight: bold;
+    font-size: 0.8em;
+
+    .date, .services {
+      margin-right: 4rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.next-project-section {
+  img {
+    opacity: 0.4;
+    transition: all 400ms $easeOutCubic;
+  }
+
+  &:hover img {
+    transform: scale(1.01);
+    opacity: 0.6;
+  }
+}
+
 section.home-cases {
   .tile.is-child {
     height: 60vh;
@@ -772,16 +868,6 @@ section.services {
         box-shadow: none;
       }
     }
-
-    .button {
-        border-radius: 0;
-        padding: 0.8rem 1.3rem;
-        font-weight: bold;
-        color: #FFFFFF;
-        height: auto;
-        background: $black;
-
-      }
   }
 }
 
