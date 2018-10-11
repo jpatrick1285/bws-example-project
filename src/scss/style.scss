@@ -417,6 +417,43 @@ a.logo {
   }
 }
 
+.pullquote .quote {
+  position: relative;
+
+  .quotation-mark {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: -75px;
+
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+
+    svg {
+      fill: #DDDDDD;
+    }
+  }
+
+  .author {
+    font-size: 1rem;
+    color: #555555;
+  }
+}
+
+.is-dark.pullquote .quote, .is-dark .pullquote .quote {
+  .quotation-mark svg {
+    fill: #2b2d2e;
+  }
+
+  .author {
+    color: #CCCCCC;
+  }
+}
+
 nav.main-nav {
   padding: 1em 0;
   position: fixed;
