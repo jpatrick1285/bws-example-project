@@ -13,7 +13,7 @@
 //@import "~bulma/sass/elements/_all";
 @import "~bulma/sass/elements/box.sass";
 @import "~bulma/sass/elements/button.sass";
-//@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/content.sass";
 @import "~bulma/sass/elements/form.sass";
 @import "~bulma/sass/elements/icon.sass";
@@ -33,7 +33,7 @@ html {
 }
 
 body {
-  max-width: $body-width;
+
   margin: auto;
   background: #FFFFFF;
 }
@@ -229,71 +229,90 @@ img.cover {
 
 .container {
   //width: 81%;
-  margin: 0 $container-margin;
+  //margin: 0 $container-margin;
   //margin: 0 auto;
   position: relative;
+  padding: 0 1rem;
 
   &.is-full {
+    max-width: none;
     width: 100%;
     margin: 0;
   }
 
-  &.is-large {
-    margin: 0 $container-large-margin;
-  }
+  // &.is-large {
+  //   margin: 0 $container-large-margin;
+  // }
 
   &.is-small {
-    margin: 0 $container-small-margin;
+    padding: 0 $container-small-margin;
   }
 }
 
 .section {
   padding: 0;
 
-  &.no-top-spacing {
-    padding-top: 0 !important;
-  }
-
   &.is-small {
-    padding: 4rem 0;
-
-    &.has-extra-spacing-top {
-      padding: 4rem + 15rem 0 4rem 0;
-    }
-  }
-
-  &.is-medium {
-    padding: 8rem 0;
-
-    &.has-extra-spacing-top {
-      padding: 8rem + 15rem 0 8rem 0;
-    }
-  }
-
-  &.is-large {
-    padding: 12rem 0;
-
-    &.has-extra-spacing-top {
-      padding: 12rem + 15rem 0 12rem 0;
-    }
+    padding: $small-spacing 0;
   }
 
   &.is-small-desktop {
     @include desktop {
-      padding: 4rem 0;
+      padding: $small-spacing 0;
     }
+  }
+
+  &.is-small-spaced:not(:first-child) {
+    padding-top: $small-spacing;
+  }
+
+  &.is-small-top {
+    padding-top: $small-spacing;
+  }
+  &.is-small-bottom {
+    padding-bottom: $small-spacing;
+  }
+
+  &.is-medium {
+    padding: $medium-spacing 0;
   }
 
   &.is-medium-desktop {
     @include desktop {
-      padding: 8rem 0;
+      padding: $medium-spacing 0;
     }
+  }
+
+  &.is-medium-spaced:not(:first-child) {
+    padding-top: $medium-spacing;
+  }
+
+  &.is-medium-top {
+    padding-top: $medium-spacing;
+  }
+  &.is-medium-bottom {
+    padding-bottom: $medium-spacing;
+  }
+
+  &.is-large {
+    padding: $large-spacing 0;
   }
 
   &.is-large-desktop {
     @include desktop {
-      padding: 12rem 0;
+      padding: $small-spacing 0;
     }
+  }
+
+  &.is-large-spaced:not(:first-child) {
+    padding-top: $large-spacing;
+  }
+
+  &.is-large-top {
+    padding-top: $large-spacing;
+  }
+  &.is-large-bottom {
+    padding-bottom: $large-spacing;
   }
 }
 
@@ -351,11 +370,11 @@ img.cover {
 .is-background-container {
   position: relative;
   z-index: 1;
-  background: $white;
+  // background: $white;
 
-  &.is-dark {
-    background: $black;
-  }
+  // &.is-dark {
+  //   background: $black;
+  // }
 }
 
 .background-image-container {
@@ -401,13 +420,18 @@ a.logo {
 nav.main-nav {
   padding: 1em 0;
   position: fixed;
-  margin: 0px auto;
   width: 100%;
-  max-width: $body-width;
+  //margin: 0px auto;
   z-index: 150;
 
   .column {
     padding-bottom: 0;
+  }
+
+  @include desktop {
+    a.logo {
+      transform: translateX(-150%);
+    }
   }
 
   button.nav-overlay-toggle {
@@ -421,6 +445,10 @@ nav.main-nav {
     pointer-events: all;
     background: 0 0;
     outline: none;
+
+    @include desktop {
+      transform: translateX(150%);
+    }
 
     &:before, &:after {
       content: "";
@@ -484,7 +512,6 @@ nav.main-nav {
   display: flex;
   overflow: auto;
   width: 100%;
-  max-width: $body-width;
   min-height: 100%;
   z-index: 149;
   padding: 4.5rem 0 3rem 0;
@@ -562,7 +589,6 @@ nav.main-nav {
   .contact {
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
 
     p {
       margin: 0;
@@ -585,8 +611,13 @@ nav.main-nav {
 .hero {
   text-align: left;
   justify-content: center;
+  background: none;
 
   &.is-dark {
+    background: none;
+  }
+
+  &.has-background.is-dark {
     background: $black;
   }
 
@@ -619,16 +650,40 @@ nav.main-nav {
   }
 }
 
+.section.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40rem;
+}
+
 .hero.case-study {
-  .background-image-container.secondary-image {
-    width: auto;
-    margin-right: $container-margin;
-    margin-left: $container-small-margin - 1%;
-    transform: translate3d(0, 16rem, 0);
+  padding-top: 15rem;
+
+  .hero-container {
+    // margin-left: 5%;
+
+    @include fullhd {
+      // margin-left: 15%;
+    }
+  }
+
+  .heading-container {
+    padding-left: 3rem;
+    transform: translate3d(0, -40%, 0);
+
+    @include fullhd {
+      padding-left: 6rem;
+    }
   }
 
   .content-container {
-    padding-left: 6rem;
+    padding: 4rem 3rem;
+
+    @include fullhd {
+      padding: 4rem 6rem;
+    }
   }
 
   .info-container {
@@ -636,6 +691,10 @@ nav.main-nav {
     margin-bottom: 0rem;
     font-weight: bold;
     font-size: 0.8em;
+
+    @include widescreen {
+      margin-top: 10rem;
+    }
 
     .date, .services {
       margin-right: 4rem;
