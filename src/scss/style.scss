@@ -1001,8 +1001,6 @@ section.services {
       margin-bottom: 0;
     }
   }
-
-  
 }
 
 footer {
@@ -1025,6 +1023,10 @@ footer {
 
   .columns.contact {
     flex-direction: row-reverse;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .copyright {

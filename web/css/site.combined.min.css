@@ -6222,6 +6222,8 @@ footer .columns.contact {
   -webkit-flex-direction: row-reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse; }
+  footer .columns.contact p {
+    margin-bottom: 0; }
 
 footer .copyright {
   margin: 2em 0 0 0; }

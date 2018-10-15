@@ -17,21 +17,17 @@
         </div>
         <div class="contact">
         <p>
-            <a href="tel:+18167464003">+1 (816) 746-4003</a>
+            <a href="tel:{{ contactInfo.phoneNumber | replace('/[^0-9+]/', '')}}">{{ contactInfo.phoneNumber }}</a>
         </p>
         <p>
-            <a href="mailto:hello@boyerwebstudios.com">hello@boyerwebstudios.com</a>
+            <a href="mailto:{{ contactInfo.contactEmail }}">{{ contactInfo.contactEmail }}</a>
         </p>
         <div class="social-media-links">
-            <a href="#" target="_blank">
-                <i class="icon-twitter"></i>
-            </a>
-            <a href="#" target="_blank">
-                <i class="icon-facebook"></i>
-            </a>
-            <a href="#" target="_blank">
-                <i class="icon-linkedin"></i>
-            </a>
+            {% for link in contactInfo.socialMediaLinks %}
+                <a href="{{ link.pageUrl }}" target="_blank">
+                    <i class="{{ link.icon }}"></i>
+                </a>
+            {% endfor %}
         </div>
         </div> 
     </div>
