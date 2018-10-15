@@ -12,18 +12,18 @@
 <!-- Offset Image Hero -->
 <section class="section is-large is-dark is-background-container has-background header-background">
     <div class="background-image-container">
-        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency_background.jpg">
+        <img src="{{ entry.heroBackgroundImage.one().getUrl() }}">
     </div>
 </section>
 <section class="section is-dark is-vertical-center is-background-container hero offset-image">
     <div class="container">
         <div class="hero-container is-background-container">
             <div class="background-image-container featured-image">
-                <img src="{{ baseUrl }}img/temp/services-header.jpg">
+                <img src="{{ entry.heroFeaturedImage.one().getUrl() }}">
             </div>
             <div class="heading-container">
-                <p class="is-subheading has-dash">OUR SERVICES</p>
-                <h1 class="is-large">What we are passionate about.</h1>
+                <p class="is-subheading has-dash">{{ entry.heroSubheading }}</p>
+                <h1 class="is-large">{{ entry.heroHeading }}</h1>
             </div>
         </div>
     </div>
@@ -32,15 +32,6 @@
 {% for block in entry.contentBuilder %}
     {% include('_blocks/_' ~ blockPrefix ~ 'block_' ~ block.type.handle) %}
 {% endfor %}
-
-<section class="section is-medium is-dark has-background has-text-centered">
-    <div class="container is-medium">
-        <a href="#">
-            <p class="is-subheading">NEXT</p>
-            <h1>Case Studies</h1>
-        </a>
-    </div>
-</section>
 
 {% endblock %}
 

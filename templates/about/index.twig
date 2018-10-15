@@ -25,67 +25,26 @@
 <!-- Offset Image Hero -->
 <section class="section is-large is-dark is-background-container has-background header-background">
     <div class="background-image-container">
-        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency_background.jpg">
+        <img src="{{ entry.heroBackgroundImage.one().getUrl() }}">
     </div>
 </section>
 <section class="section is-dark is-vertical-center is-background-container hero offset-image">
     <div class="container">
         <div class="hero-container is-background-container">
             <div class="background-image-container featured-image">
-                <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency.jpg">
+                <img src="{{ entry.heroFeaturedImage.one().getUrl() }}">
             </div>
             <div class="heading-container">
-                <p class="is-subheading has-dash">ABOUT US</p>
-                <h1 class="is-large">Small, personal, and friendly.</h1>
+                <p class="is-subheading has-dash">{{ entry.heroSubheading }}</p>
+                <h1 class="is-large">{{ entry.heroHeading }}</h1>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Two Column Content -->
-
-<section class="section is-medium is-large-desktop">
-    <div class="container is-small">
-        <h1>Bringing KC online since 2011.</h1>
-        <p class="is-multi-column">
-            Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur. Phasellus sagittis quam quis porttitor consequat. Morbi eu condimentum ipsum, eget vehicula quam. Proin velit lectus, iaculis quis nunc fermentum, ultrices maecenas vulputate lorem vel ante porta varius. Proin malesuada dapibus tellus a sagittis. Suspendisse sit amet lorem sed mi tristique finibus. Donec ultrices vitae dui nec malesuada. Proin pellentesque tempus nibh at varius. Morbi venenatis lacus a iaculis ornare. Mauris eget nisi ac felis varius porta vel a neque. Duis eu nulla sem. Proin tempor orci non arcu congue.
-        </p>
-    </div>
-</section>
-
-<!-- Image, Text Column Right -->
-<section class="section is-medium image-text-section no-top-spacing">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-half image">
-                <img class="cover" src="{{ baseUrl }}img/temp/about-red_jacket.jpg" />
-            </div>
-            <div class="column text">
-                <h1>We strive for excellence in all things.</h1>
-                <p>
-                    Sed in lacinia diam, ac volutpat est. Nullam pharetra semper nisl vitae malesuada. Morbi vulputate augue vel ornare luctus. Suspendisse non justo purus.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Image, Text Column Left -->
-<section class="section is-medium image-text-section no-top-spacing">
-    <div class="container">
-        <div class="columns is-reversed-desktop">
-            <div class="column is-half image">
-                <img class="cover" src="{{ baseUrl }}img/temp/about-stock_handshake.jpg"/>
-            </div>
-            <div class="column text">
-                <h1>Work with people, not employees.</h1>
-                <p>
-                    Sed in lacinia diam, ac volutpat est. Nullam pharetra semper nisl vitae malesuada. Morbi vulputate augue vel ornare luctus. Suspendisse non justo purus.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+{% for block in entry.contentBuilder %}
+    {% include('_blocks/_' ~ blockPrefix ~ 'block_' ~ block.type.handle) %}
+{% endfor %}
 
 <!-- Team Slider -->
 <section class="section is-medium is-dark has-background">

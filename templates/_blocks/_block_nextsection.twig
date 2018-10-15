@@ -1,0 +1,14 @@
+<!-- Next Section -->
+<section class="section is-medium is-dark has-background has-text-centered is-background-container next-project-section">
+    {% if block.image|length %}
+      <div class="background-image-container">
+          <img src="{{ block.image.one().getUrl() }}">
+      </div>
+    {% endif %}
+    <div class="container">
+        <a href="{{ block.sectionLink }}">
+            <p class="is-subheading">{{ block.subheading }}</p>
+            <h1>{{ block.heading }}</h1>
+        </a>
+    </div>
+</section>
