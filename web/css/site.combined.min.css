@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Thu, Oct 11, 2018 10:11 AM ET
- * @release        f12b5e63eea4e44fa47505b720ea6c895cb1e592 [master]
+ * @build          Mon, Oct 15, 2018 10:00 AM ET
+ * @release        e09a99ea74b70e15d02b97b243240da425d50a78 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5682,7 +5682,7 @@ img.cover {
     padding: 12rem 0; }
   @media screen and (min-width: 900px) {
     .section.is-large-desktop {
-      padding: 4rem 0; } }
+      padding: 12rem 0; } }
   .section.is-large-spaced:not(:first-child) {
     padding-top: 12rem; }
   .section.is-large-top {
@@ -5985,13 +5985,16 @@ nav.main-nav {
   .hero.home .container {
     margin-top: -5rem; }
 
-@media screen and (min-width: 900px) {
-  .hero.offset-image .background-image-container {
-    width: auto;
-    margin-right: 7.5%;
-    margin-left: 15.5%;
-    -webkit-transform: translate3d(0, 3.5rem, 0);
-            transform: translate3d(0, 3.5rem, 0); } }
+.hero.offset-image {
+  padding-top: 8rem; }
+  .hero.offset-image .heading-container {
+    padding: 10rem 0 14rem 0; }
+    @media screen and (min-width: 1800px) {
+      .hero.offset-image .heading-container {
+        padding-left: 6rem; } }
+  .hero.offset-image .featured-image {
+    width: 85%;
+    margin-left: 15%; }
 
 .section.header-background {
   position: absolute;

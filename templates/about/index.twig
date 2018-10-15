@@ -9,14 +9,36 @@
 
 {% block content %}
 
-<!-- Home Hero -->
-<section class="section is-large is-dark is-vertical-center is-background-container hero offset-image">
-    <div class="background-image-container">
-        <img src="{{ baseUrl }}img/temp/about-header.jpg">
+{# <!-- Home Hero -->
+<section class="section is-dark is-vertical-center has-background hero offset-image">
+    <div class="container is-small is-background-container">
+        <div class="background-image-container">
+            <img src="{{ baseUrl }}img/temp/about-header.jpg">
+        </div>
+        <div class="content">
+            <p class="is-subheading has-dash">ABOUT US</p>
+            <h1 class="is-large">Small, personal, and friendly.</h1>
+        </div>
     </div>
-    <div class="container is-small ">
-        <p class="is-subheading has-dash">ABOUT US</p>
-        <h1 class="is-large">Small, personal, and friendly.</h1>
+</section> #}
+
+<!-- Offset Image Hero -->
+<section class="section is-large is-dark is-background-container has-background header-background">
+    <div class="background-image-container">
+        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency_background.jpg">
+    </div>
+</section>
+<section class="section is-dark is-vertical-center is-background-container hero offset-image">
+    <div class="container">
+        <div class="hero-container is-background-container">
+            <div class="background-image-container featured-image">
+                <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency.jpg">
+            </div>
+            <div class="heading-container">
+                <p class="is-subheading has-dash">ABOUT US</p>
+                <h1 class="is-large">Small, personal, and friendly.</h1>
+            </div>
+        </div>
     </div>
 </section>
 
