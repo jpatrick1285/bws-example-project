@@ -1,0 +1,13 @@
+<!-- Image, Text Right -->
+<section class="section {{ block.topSpacing }} {{ block.bottomSpacing }} image-text-section">
+    <div class="container {{ block.containerSize }}">
+        <div class="columns">
+            <div class="column is-half image">
+                <img class="cover" src="{{ block.image.one().getUrl() }}"/>
+            </div>
+            <div class="column text">
+              {{ block.blockContent | typogrify }}
+            </div>
+        </div>
+    </div>
+</section>

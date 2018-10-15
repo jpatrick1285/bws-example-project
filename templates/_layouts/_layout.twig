@@ -56,6 +56,9 @@
 {# Set the namespace we'll use for Barba.js views to match our namespace in the nav. If it's not defined, use 'common' #}
 {% set namespace = nav[bodyClass] is defined? nav[bodyClass].namespace : 'common' %}
 
+{# Set the block prefix that we'll use for the content builder fields #}
+{% set blockPrefix = '' %}
+
 {% block body %}
     <div id="barba-wrapper">
         <div class="barba-container" data-namespace="{{ namespace }}">
