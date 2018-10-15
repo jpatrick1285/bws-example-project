@@ -6082,7 +6082,7 @@ section.home-cases .tile.is-child {
       opacity: 0.6; }
 
 section.services header {
-  padding-bottom: 5rem; }
+  margin-bottom: 5rem; }
 
 section.services .service {
   min-height: 20rem;
