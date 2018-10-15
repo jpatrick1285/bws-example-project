@@ -7,6 +7,7 @@
     onEnterCompleted: function () {
       try {
         MainNavController.init();
+        window.scrollTo(0, 0);
       } catch(e) {
         console.log(e);
       }
