@@ -17,7 +17,9 @@ const INSTALL_PLUGINS = [
     'async-queue',
     'child-me', // https://github.com/mmikkel/ChildMe-Craft
     'cp-field-inspect', // https://github.com/mmikkel/CpFieldInspect-Craft
+    'craft-dynamic-fields', // https://github.com/lewisjenkins/craft-dynamic-fields
     'eager-beaver',
+    'field-manager', // https://github.com/verbb/field-manager
     'image-optimize',
     'logs', // https://github.com/ethercreative/logs
     'typedlinkfield', // https://github.com/sebastian-lenz/craft-linkfield

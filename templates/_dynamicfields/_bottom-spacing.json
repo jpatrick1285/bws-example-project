@@ -1,0 +1,4 @@
+{ "value": "is-small-bottom", "label": "Small", "default": false },
+{ "value": "is-medium-bottom", "label": "Medium", "default": true },
+{ "value": "is-large-bottom", "label": "Large", "default": false },
+{ "value": "no-bottom-spacing", "label": "None", "default": false}
