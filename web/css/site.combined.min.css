@@ -6039,6 +6039,9 @@ nav.main-nav {
           transform: scale(1.01);
   opacity: 0.6; }
 
+section.home-cases .tile-link-wrapper {
+  display: block; }
+
 section.home-cases .tile.is-child {
   height: 60vh;
   padding: 5rem 4rem;

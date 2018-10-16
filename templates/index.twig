@@ -18,68 +18,85 @@
 </section>
 
 <!-- Home Case Study Grid -->
+{# Get project entries - up to 3 #}
+{# eager load to avoid N+1 query issues #}
+{# To add transforms, use this snippet - 
+    .with ([
+        [
+            'heroFeaturedImage', {
+                withTransforms: ['medium']
+            }
+        ]
+    ])
+#}
+{% set projects = craft
+    .entries()
+    .section('projects')
+    .with ([
+        [
+            'heroFeaturedImage', {}
+        ]
+    ]) 
+    .limit(3)
+    .all() %}
+
 <section class="section is-offset-up home-cases">
     <div class="container">
         <div class="tile is-ancestor">
-            <div class="tile is-parent">
-                <a href="#">
-                    <article class="tile is-child is-dark is-background-container has-background">
-                        <div class="background-image-container">
-                            <img class="image js-mouse-tilt-hover" src="/img/temp/cases-antioch_insurance_agency.jpg">
-                        </div>
-                        <header>
-                            <p class="is-subheading">DIGITAL STRATEGY + WEBSITE DESIGN</p>
-                            <h1>ANTIOCH INSURANCE AGENCY</h1>
-                        </header>
-                        <div class="description">
-                            <p>
-                                Empowering personalised insurance in Kansas City.
-                            </p>
-                            <a class="is-button is-text" href="#">See Project</a>
-                        </div>
-                    </article>
-                </a>
-            </div>
+            {% for project in projects | slice(0, 1) %}
+                <div class="tile is-parent">
+                    <a class="tile-link-wrapper" href="{{ project.uri }}">
+                        <article class="tile is-child is-dark is-background-container has-background">
+                            <div class="background-image-container">
+                                <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                            </div>
+                            <header>
+                                <p class="is-subheading">
+                                    {% for tag in project.serviceTags.all %}
+                                        {{ tag|upper }}
+                                        {% if not loop.last %} + {% endif %}
+                                    {% endfor %}
+                                </p>
+                                <h1>{{ project.heroSubheading }}</h1>
+                            </header>
+                            <div class="description">
+                                <p>
+                                    {{ project.shortDescription }}
+                                </p>
+                                <a class="is-button is-text" href="{{ project.uri }}">See Project</a>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
         <div class="tile is-ancestor is-block-tablet is-flex-widescreen">
-            <div class="tile is-parent">
-                <a href="#">
-                    <article class="tile is-child is-dark is-background-container has-background">
-                        <div class="background-image-container">
-                            <img class="image js-mouse-tilt-hover" src="/img/temp/cases-kansas_dairy_ingredients.jpg">
-                        </div>
-                        <header>
-                            <p class="is-subheading">DIGITAL STRATEGY + WEBSITE DESIGN</p>
-                            <h1>KANSAS DAIRY INGREDIENTS</h1>
-                        </header>
-                        <div class="description">
-                            <p>
-                                Empowering personalised insurance in Kansas City.
-                            </p>
-                            <a class="is-button is-text" href="#">See Project</a>
-                        </div>
-                    </article>
-                </a>
-            </div>
-            <div class="tile is-parent">
-                <a href="#">
-                    <article class="tile is-child is-dark is-background-container has-background">
-                        <div class="background-image-container">
-                            <img class="image js-mouse-tilt-hover" src="/img/temp/cases-auto_transport_depot.jpg">
-                        </div>
-                        <header>
-                            <p class="is-subheading">DIGITAL STRATEGY + WEBSITE DESIGN</p>
-                            <h1>AUTO TRANSPORT DEPOT</h1>
-                        </header>
-                        <div class="description">
-                            <p>
-                                Empowering personalised insurance in Kansas City.
-                            </p>
-                            <a class="is-button is-text" href="#">See Project</a>
-                        </div>
-                    </article>
-                </a>
-            </div>
+            {% for project in projects | slice(1, 2) %}
+                <div class="tile is-parent">
+                    <a class="tile-link-wrapper" href="{{ project.uri }}">
+                        <article class="tile is-child is-dark is-background-container has-background">
+                            <div class="background-image-container">
+                                <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                            </div>
+                            <header>
+                                <p class="is-subheading">
+                                    {% for tag in project.serviceTags.all %}
+                                        {{ tag|upper }}
+                                        {% if not loop.last %} + {% endif %}
+                                    {% endfor %}
+                                </p>
+                                <h1>{{ project.heroSubheading }}</h1>
+                            </header>
+                            <div class="description">
+                                <p>
+                                    {{ project.shortDescription }}
+                                </p>
+                                <a class="is-button is-text" href="{{ project.uri }}">See Project</a>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>

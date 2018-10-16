@@ -7,6 +7,8 @@
     </style>
 {% endblock %}
 
+{% set title = entry.title %}
+
 {% block content %}
 
 <!-- Case Study Hero -->
@@ -55,6 +57,7 @@
 {% for block in entry.contentBuilder %}
     {% include('_blocks/_' ~ blockPrefix ~ 'block_' ~ block.type.handle) %}
 {% endfor %}
+
 {% endblock %}
 
 {% block _inline_js %}{% endblock %}

@@ -48,9 +48,11 @@
 {# Set the `title` variable to the nav item that matches the first segment #}
 {% if nav[bodyClass] is defined %}
     {% set title %}
-    {% if title is defined %}{{ title }}
-        -
-    {% endif %}{{ nav[bodyClass].title }}{% endset %}
+        {% if title is defined %}{{ title }}
+        {% else %}
+            {{ nav[bodyClass].title }}
+        {% endif %}
+    {% endset %}
 {% endif %}
 
 {# Set the namespace we'll use for Barba.js views to match our namespace in the nav. If it's not defined, use 'common' #}

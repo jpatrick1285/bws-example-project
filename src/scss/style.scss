@@ -775,6 +775,10 @@ nav.main-nav {
 }
 
 section.home-cases {
+  .tile-link-wrapper {
+    display: block;
+  }
+  
   .tile.is-child {
     height: 60vh;
     padding: 5rem 4rem;
