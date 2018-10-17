@@ -141,12 +141,25 @@
                 loadjs(['{{ baseUrl }}js/jquery.min.js'], 'jquery');
             </script>
 
-            {# -- VueJS, Barba, and Axios -- #}
+            {# -- VueJS, Barba, and Vue Resource -- #}
             <script>
                 // define a dependency bundle
                 loadjs(['{{ baseUrl }}js/barba.min.js'], 'barba');
                 loadjs(['{{ baseUrl }}js/vue.min.js'], 'vue');
-                loadjs(['{{ baseUrl }}js/axios.min.js'], 'axios');
+                loadjs(['{{ baseUrl }}js/vue-resource.min.js'], 'vue-resource');
+                loadjs(['{{ baseUrl }}js/vee-validate.min.js'], 'vee-validate');
+
+                loadjs.ready(['vue', 'vue-resource', 'vee-validate'], function() {
+                   Vue.use(VeeValidate, {
+                        classes: true,
+                        classNames: {
+                            valid: '',
+                            invalid: 'is-danger'
+                        }
+                    });
+
+                    Vue.use(VueResource);
+                });
             </script>
 
             {# BrowserSync hook if devmode is enabled #}

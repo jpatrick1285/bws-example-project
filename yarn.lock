@@ -428,7 +428,7 @@ aws4@^1.6.0, aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
 
-axios@0.17.1, axios@^0.17.1:
+axios@0.17.1:
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
   integrity sha1-LY4+XQvb1zJ/kbyBT1xXZg+Bgk0=
@@ -3548,7 +3548,7 @@ got@^5.0.0:
     unzip-response "^1.0.2"
     url-parse-lax "^1.0.0"
 
-got@^8.3.1, got@^8.3.2:
+got@^8.0.3, got@^8.3.1, got@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/got/-/got-8.3.2.tgz#1d23f64390e97f776cac52e5b936e5f514d2e937"
   integrity sha512-qjUJ5U/hawxosMryILofZCkm3C84PLJS/0grRIpjAwu+Lkxxj5cxeCU25BG0/3mDSpXKTyZr8oh8wIgLaH0QCw==
@@ -8900,6 +8900,11 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
+vee-validate@^2.1.0-beta.11:
+  version "2.1.0-beta.11"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.1.0-beta.11.tgz#d1e7c9996a9aeff173a36b3308c2201faee23e30"
+  integrity sha512-dnH2oQQ40+0g9L7H9oMrVxnP9unWEXLNAbFaeEumklnjOrjPv20lpykZqyGSyuK/pi3dhsKb2x1VixWsCITRvw==
+
 vendors@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.2.tgz#7fcb5eef9f5623b156bcea89ec37d63676f21801"
@@ -9021,6 +9026,13 @@ vinyl@^2.0.0, vinyl@^2.2.0:
     cloneable-readable "^1.0.0"
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
+
+vue-resource@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/vue-resource/-/vue-resource-1.5.1.tgz#0f3d685e3254d21800bebd966edcf56c34b3b6e4"
+  integrity sha512-o6V4wNgeqP+9v9b2bPXrr20CGNQPEXjpbUWdZWq9GJhqVeAGcYoeTtn/D4q059ZiyN0DIrDv/ADrQUmlUQcsmg==
+  dependencies:
+    got "^8.0.3"
 
 vue@^2.5.9:
   version "2.5.17"

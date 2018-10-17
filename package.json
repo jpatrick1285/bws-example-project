@@ -103,14 +103,15 @@
         ],
         "distJs": [
             "./build/js/*.js",
-            "./node_modules/axios/dist/axios.min.js",
             "./node_modules/barba.js/dist/barba.min.js",
             "./node_modules/jquery/dist/jquery.min.js",
             "./node_modules/lazysizes/lazysizes.min.js",
             "./node_modules/lazysizes/plugins/bgset/ls.bgset.min.js",
             "./node_modules/scrollmonitor/scrollMonitor.js",
             "./node_modules/picturefill/dist/picturefill.min.js",
-            "./node_modules/vue/dist/vue.min.js"
+            "./node_modules/vue/dist/vue.min.js",
+            "./node_modules/vue-resource/dist/vue-resource.min.js",
+            "./node_modules/vee-validate/dist/vee-validate.min.js"
         ],
         "babelJs": [
             "./src/js/*.js"
@@ -129,7 +130,6 @@
     },
     "dependencies": {
         "awesome-sass-easing": "^1.1.2",
-        "axios": "^0.17.1",
         "barba.js": "^1.0.0",
         "bulma": "^0.7.1",
         "fg-loadcss": "^1.2.0",
@@ -142,7 +142,9 @@
         "picturefill": "^3.0.2",
         "scrollmonitor": "^1.2.4",
         "tiny-cookie": "^1.0.1",
-        "vue": "^2.5.9"
+        "vee-validate": "^2.1.0-beta.11",
+        "vue": "^2.5.9",
+        "vue-resource": "^1.5.1"
     },
     "devDependencies": {
         "babel-plugin-transform-runtime": "^6.15.0",
