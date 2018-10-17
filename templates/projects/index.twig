@@ -9,185 +9,76 @@
 
 {% block content %}
 
-<!-- Case Study Hero -->
+<!-- Offset Image Hero -->
 <section class="section is-large is-dark is-background-container has-background header-background">
     <div class="background-image-container">
-        <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency_background.jpg">
+        <img src="{{ entry.heroBackgroundImage.one().getUrl() }}">
     </div>
 </section>
-<section class="section is-dark is-vertical-center is-background-container hero case-study">
+<section class="section is-dark is-vertical-center is-background-container hero offset-image">
     <div class="container">
         <div class="hero-container is-background-container">
-            <div class="background-image-container secondary-image">
-                <img src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency.jpg">
+            <div class="background-image-container featured-image">
+                <img src="{{ entry.heroFeaturedImage.one().getUrl() }}">
             </div>
             <div class="heading-container">
-                <p class="is-subheading has-dash">ANTIOCH INSURANCE AGENCY</p>
-                <h1 class="is-large">Personalizing insurance in KC</h1>
+                <p class="is-subheading has-dash">{{ entry.heroSubheading }}</p>
+                <h1 class="is-large">{{ entry.heroHeading }}</h1>
             </div>
-            <div class="content-container">
-                <div class="columns is-gapless info-container">
-                    <div class="column is-narrow">
-                        <div class="services">
-                            <ul>
-                                <li>Web/Mobile Site</li>
-                                <li>Copywriting</li>
-                                <li>Quality Assurance</li>
-                            </ul>
-                        </div>
+        </div>
+    </div>
+</section>
+
+{% paginate craft.entries().section('projects').with([['heroFeaturedImage', {}]]).limit(6) as pageInfo, projects %}
+
+<section class="section is-medium case-list">
+    <div class="container">
+        {% for batchedProjects in projects | batch(2) %}
+            <div class="tile is-ancestor is-block-tablet is-flex-widescreen">
+                {% for project in batchedProjects %}
+                    <div class="tile is-parent">
+                        <a class="tile-link-wrapper" href="{{ project.uri }}">
+                            <article class="tile is-child is-dark is-background-container has-background">
+                                <div class="background-image-container">
+                                    <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                </div>
+                                <header>
+                                    <p class="is-subheading">
+                                        {% for tag in project.serviceTags.all %}
+                                            {{ tag|upper }}
+                                            {% if not loop.last %} + {% endif %}
+                                        {% endfor %}
+                                    </p>
+                                    <h1>{{ project.heroSubheading }}</h1>
+                                </header>
+                                <div class="description">
+                                    <p>
+                                        {{ project.shortDescription }}
+                                    </p>
+                                    <a class="is-button is-text" href="{{ project.uri }}">See Project</a>
+                                </div>
+                            </article>
+                        </a>
                     </div>
-                    <div class="column is-narrow">
-                        <div class="date">
-                            November<br>2018
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="button text-button">View Project</a>        
+                {% endfor %}
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="section is-medium">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-half is-offset-3">
-                <div class="columns">
-                    <div class="column">
-                        <p>
-                            Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur. 
-                        </p>
-                        <p>
-                            Phasellus sagittis quam quis porttitor consequat. Morbi eu condimentum ipsum, eget vehicula quam. Proin velit lectus, iaculis quis nunc fermentum, ultrices ultrices erat.
-                        </p>
-                        <br>
-                        <h6>The brief</h6>
-                        <p>
-                            Create a more modern and mobile-friendly website, redesigned from the ground up to simplify the quote process and help people easily find the insurance coverage they need.
-                        </p>
-                        <h6>The results</h6>
-                        <p>
-                            Sales increased by 50% overnight. Sed in lacinia diam, ac volutpat est. Nullam pharetra semper nisl vitae malesuada. Morbi vulputate augue vel ornare luctus. Suspendisse non justo purus.
-                        </p>
-                    </div>
+        {% endfor %}
+        {% if pageInfo.totalPages and pageInfo.totalPages > 1 %}
+        <div class="pagination">
+            <div class="columns">
+                <div class="column">
+                    {% if pageInfo.prevUrl %}
+                        <a href="{{ pageInfo.prevUrl }}">Previous Page</a>
+                    {% endif %}
+                </div>
+                <div class="column has-text-right">
+                    {% if pageInfo.nextUrl %}
+                        <a href="{{ pageInfo.nextUrl }}">Next Page</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Solo Image -->
-<section class="section is-small-top">
-    <div class="container">
-        <img class="cover" src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-home_preview.jpg">
-    </div>
-</section>
-
-<!-- Image, Text Column Left -->
-<section class="section is-medium-top image-text-section">
-    <div class="container">
-        <div class="columns is-reversed-desktop">
-            <div class="column is-half image">
-                <img class="cover" src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-home_preview.jpg"/>
-            </div>
-            <div class="column text">
-                <h1>Mobile Friendly</h1>
-                <p>
-                    Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Two Column Images -->
-
-<section class="section is-medium-top is-medium-bottom">
-    <div class="container">
-        <div class="columns">
-            <div class="column"><img class="cover" src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-home_preview.jpg"></div>
-            <div class="column"><img class="cover" src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-home_preview.jpg"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Text Column Left -->
-<section class="section is-medium-top is-dark has-background">
-    <div class="container is-small">
-        <div class="columns">
-            <div class="column is-two-thirds text">
-                <h1>Fluid Page Animations</h1>
-                <p>
-                    Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur. 
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Solo Image -->
-<section class="section is-medium-top is-medium-bottom is-dark has-background">
-    <div class="container">
-        <img class="cover" src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-subpage_preview.jpg">
-    </div>
-</section>
-
-<!-- Image, Text Column Right -->
-<section class="section is-medium-top image-text-section">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-half image">
-                <img class="cover" src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency-home_preview.jpg"/>
-            </div>
-            <div class="column text">
-                <h1>Mobile Friendly</h1>
-                <p>
-                    Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Text Column Left -->
-<section class="section is-medium-top is-medium-bottom">
-    <div class="container is-small">
-        <div class="columns">
-            <div class="column is-two-thirds text">
-                <h1>Amazing Results</h1>
-                <p>
-                    Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Pullquote -->
-<section class="section is-large is-dark has-background pullquote">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-two-thirds is-offset-2 quote">
-                <div class="quotation-mark">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 195.34 158.73"><path d="M36.91,37.38Q22.77,55.07,22.76,73.21a42,42,0,0,0,1.85,13.23A36.65,36.65,0,0,1,48,78.13q16.9,0,28.61,10.92t11.69,29.38A39.29,39.29,0,0,1,82.75,139,40.28,40.28,0,0,1,48,158.73q-24.3,0-37.22-20Q0,122.12,0,97.21,0,65.53,16.15,40.45T64.91,0l5.84,11.38A85.5,85.5,0,0,0,36.91,37.38Zm107.05,0q-14.15,17.68-14.15,35.83a42,42,0,0,0,1.85,13.23A37.48,37.48,0,0,1,155,78.13q17.22,0,28.76,10.92t11.54,29.38q0,17.23-11.69,28.76A39.19,39.19,0,0,1,155,158.73q-24.3,0-37.22-20-10.77-16.62-10.77-41.53,0-31.68,16.15-56.76T172,0l5.84,11.38A85.57,85.57,0,0,0,144,37.38Z"/></svg>
-                </div>
-                <h1>Big testimonial section about the results or something.</h1>
-                <p class="is-subheading has-text-right author">- Melissa Cole, CEO of Antioch Insurance Agency.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Next Project -->
-<section class="section is-medium is-dark has-background has-text-centered is-background-container next-project-section">
-    <div class="background-image-container">
-        <img src="{{ baseUrl }}img/temp/cases-kansas_dairy_ingredients.jpg">
-    </div>
-    <div class="container">
-        <a href="#">
-            <p class="is-subheading">NEXT PROJECT</p>
-            <h1>Antioch Insurance Agency</h1>
-        </a>
+        {% endif %}
     </div>
 </section>
 

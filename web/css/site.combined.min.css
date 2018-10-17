@@ -1,11 +1,19 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Wed, Oct 17, 2018 11:44 AM ET
- * @release        92e0b99f53650651597e213bc566c56a9c734101 [master]
+ * @build          Wed, Oct 17, 2018 3:36 PM ET
+ * @release        963bed7ec6b96c1667b30bd370e72c25b82342ac [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
+
+.icon-github:before { content: '\f300'; } /* '' */
+.icon-twitter:before { content: '\f309'; } /* '' */
+.icon-facebook:before { content: '\f30c'; } /* '' */
+.icon-linkedin:before { content: '\f318'; } /* '' */
+.icon-dribbble:before { content: '\f31b'; } /* '' */
+.icon-instagram:before { content: '\f32d'; } /* '' */
+.icon-behance:before { content: '\f34e'; } /* '' */
 /* Color variables */
 /* Container Margins */
 /* Layout variables */
@@ -6035,50 +6043,52 @@ nav.main-nav {
           transform: scale(1.01);
   opacity: 0.6; }
 
-section.home-cases .tile-link-wrapper {
+section.case-list .tile-link-wrapper {
   display: block; }
 
-section.home-cases .tile.is-child {
-  height: 60vh;
+section.case-list .tile.is-child {
   padding: 5rem 4rem;
   transition: all 0.5s; }
-  @media screen and (min-width: 700px), print {
-    section.home-cases .tile.is-child {
-      height: 80vh; } }
   @media screen and (min-width: 1200px) {
-    section.home-cases .tile.is-child {
+    section.case-list .tile.is-child {
       padding: 6rem 5rem; } }
-  section.home-cases .tile.is-child h1, section.home-cases .tile.is-child h2, section.home-cases .tile.is-child h3, section.home-cases .tile.is-child p.is-subheading {
+  section.case-list .tile.is-child h1, section.case-list .tile.is-child h2, section.case-list .tile.is-child h3, section.case-list .tile.is-child p.is-subheading {
     max-width: 45rem; }
   @media screen and (min-width: 1200px) and (max-width: 1799px) {
-    section.home-cases .tile.is-child h1 {
+    section.case-list .tile.is-child h1 {
       font-size: 2.5rem; } }
-  section.home-cases .tile.is-child p {
+  section.case-list .tile.is-child p {
     max-width: 20rem;
     margin-bottom: 1em;
     font-weight: normal; }
-  section.home-cases .tile.is-child img {
+  section.case-list .tile.is-child img {
     opacity: 0.8;
     transition: all 0.5s; }
-  section.home-cases .tile.is-child .description {
+  section.case-list .tile.is-child .description {
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s; }
-  section.home-cases .tile.is-child:hover {
+  section.case-list .tile.is-child:hover {
     -webkit-transform: scale(0.99);
         -ms-transform: scale(0.99);
             transform: scale(0.99); }
-    section.home-cases .tile.is-child:hover .description {
+    section.case-list .tile.is-child:hover .description {
       visibility: visible;
       opacity: 1;
       -webkit-transform: translateX(0);
           -ms-transform: translateX(0);
               transform: translateX(0); }
-    section.home-cases .tile.is-child:hover img {
+    section.case-list .tile.is-child:hover img {
       -webkit-transform: scale(1.02);
           -ms-transform: scale(1.02);
               transform: scale(1.02);
       opacity: 0.6; }
+
+section.case-list.home .tile.is-child {
+  height: 60vh; }
+  @media screen and (min-width: 700px), print {
+    section.case-list.home .tile.is-child {
+      height: 80vh; } }
 
 section.services header {
   margin-bottom: 5rem; }

@@ -782,19 +782,14 @@ nav.main-nav {
   }
 }
 
-section.home-cases {
+section.case-list {
   .tile-link-wrapper {
     display: block;
   }
   
   .tile.is-child {
-    height: 60vh;
     padding: 5rem 4rem;
     transition: all 0.5s;
-
-    @include tablet {
-      height: 80vh;
-    }
 
     @include widescreen {
       padding: 6rem 5rem;
@@ -842,6 +837,14 @@ section.home-cases {
         opacity: 0.6;
       }
     }
+  }
+}
+
+section.case-list.home .tile.is-child {
+  height: 60vh;
+
+  @include tablet {
+    height: 80vh;
   }
 }
 
