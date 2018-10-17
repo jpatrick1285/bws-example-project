@@ -16,6 +16,7 @@ use mikehaertl\shellcommand\Command as ShellCommand;
 const INSTALL_PLUGINS = [
     'async-queue',
     'child-me', // https://github.com/mmikkel/ChildMe-Craft
+    'contact-form', // https://github.com/craftcms/contact-form
     'cp-field-inspect', // https://github.com/mmikkel/CpFieldInspect-Craft
     'craft-dynamic-fields', // https://github.com/lewisjenkins/craft-dynamic-fields
     'eager-beaver',
@@ -23,6 +24,7 @@ const INSTALL_PLUGINS = [
     'image-optimize',
     'logs', // https://github.com/ethercreative/logs
     'typedlinkfield', // https://github.com/sebastian-lenz/craft-linkfield
+    'mailgun', // https://github.com/craftcms/mailgun
     'minify',
     'redactor', // https://github.com/craftcms/redactor
     'routemap',

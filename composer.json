@@ -20,6 +20,8 @@
   "minimum-stability": "RC",
   "require": {
     "craftcms/cms": "^3.0.0-RC7",
+    "craftcms/contact-form": "^2.2",
+    "craftcms/mailgun": "^1.2",
     "craftcms/redactor": "^2.1",
     "ether/logs": "^3.0",
     "lewisjenkins/craft-dynamic-fields": "^3.0",

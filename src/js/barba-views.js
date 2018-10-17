@@ -46,7 +46,21 @@
 
   /* -- Contact View -- */
   let ContactView = CommonView.extend({
-    namespace: 'contact'
+    namespace: 'contact',
+    onEnterCompleted: function () {
+      CommonView.onEnterCompleted.apply(this);
+      loadjs(assetsBaseUrl + 'js/vue-quote-form.min.js', function() {
+        if (QuoteFormController) {
+          QuoteFormController.init();
+        }
+      });
+    },
+    onLeave: function () {
+      CommonView.onLeave.apply(this);
+      if (QuoteFormController) {
+        QuoteFormController.destroy();
+      }
+    }
   });
 
   /* -- Case Study View -- */
