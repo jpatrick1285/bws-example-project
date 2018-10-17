@@ -2,19 +2,16 @@ let QuoteFormController = {
     _vm: null,
     init: function() {
         this._vm = new Vue({
-            el: ".section.quote-section",
+            el: ".section.contact-section",
             delimiters: ['${', '}'],
             data: {
                 ajaxError: false,
                 submitting: false,
                 submitted: false,
-                contactType: 'Quote',
                 name: null,
-                company: null,
                 email: null,
                 phone: null,
-                timeframe: null,
-                budget: null,
+                budget: 'none',
                 message: null,
             },
             methods: {
@@ -45,8 +42,6 @@ let QuoteFormController = {
                         action: 'contact-form/send',
                         'fromName': this.name,
                         'fromEmail': this.email,
-                        'message[Company]': this.company,
-                        'message[Timeframe]': this.timeframe,
                         'message[Budget]': this.budget,
                         'message[body]': this.message
                     };

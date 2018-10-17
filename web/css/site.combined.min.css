@@ -5576,6 +5576,8 @@ a {
   height: auto;
   background: #0E1112;
   border: none; }
+  .button[disabled] {
+    color: #0E1112; }
   .button.text-button {
     padding: 0;
     text-decoration: underline;
@@ -5587,6 +5589,8 @@ a {
 .is-dark .button {
   background: #FFFFFF;
   color: #0E1112; }
+  .is-dark .button[disabled] {
+    color: #888888; }
   .is-dark .button.text-button {
     color: #FFFFFF;
     background: none; }
@@ -6174,6 +6178,8 @@ section.services .service {
     color: #8e9091; }
   .contact-section form.contact-form .input::placeholder, .contact-section form.contact-form .textarea::placeholder {
     color: #8e9091; }
+  .contact-section form.contact-form .input.is-danger, .contact-section form.contact-form .textarea.is-danger {
+    background: #FFEFEF; }
 
 .contact-section form.contact-form .textarea {
   border: 1px solid #CCCCCC; }

@@ -150,6 +150,10 @@ a {
   background: $black;
   border: none;
 
+  &[disabled] {
+    color: $black;
+  }
+
   &.text-button {
     padding: 0;
     text-decoration: underline;
@@ -163,6 +167,10 @@ a {
 .is-dark .button {
   background: $white;
   color: $black;
+
+  &[disabled] {
+    color: #888888;;
+  }
 
   &.text-button {
     color: $white;
@@ -964,6 +972,10 @@ section.services {
 
       &::placeholder {
         color: $body-copy-color + #444444;
+      }
+
+      &.is-danger {
+        background: #FFEFEF;
       }
     }
 

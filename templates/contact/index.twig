@@ -17,40 +17,34 @@
             <div class="column is-half is-offset-half">
                 <h1 class="is-large">Let's work together.</h1>
 
-                <form class="contact-form">
+                <form class="contact-form" method="post" action="/" v-on:submit.prevent="onSubmit">
+                    {{ csrfInput() }}
+                    <input type="hidden" name="action" value="contact-form/send">
                     <div class="field">
                         <div class="control">
-                            <input type="text" name="name" id="name" class="input" placeholder="Name">
+                            <input type="text" name="fromName" class="input" placeholder="Name*" v-model="name" v-validate="'required'">
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                            <input type="text" name="company" id="company" class="input" placeholder="Company">
+                            <input type="email" name="fromEmail" class="input" placeholder="Email*" v-model="email" v-validate="'email|required'">
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                            <input type="email" name="email" id="email" class="input" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label for="timeframe" class="label">When do you want to start?</label>
-                        <div class="control">
-                            <div class="select">
-                                <select name="timeframe" id="timeframe">
-                                    <option>Select</option>
-                                    <option>With options</option>
-                                </select>
-                            </div>
+                            <input class="input" type="phone" name="message[Phone]" placeholder="Phone number" v-model="phone" v-validate="'numeric'">
                         </div>
                     </div>
                     <div class="field">
                         <label for="budget" class="label">What is your budget?</label>
                         <div class="control">
                             <div class="select">
-                                <select name="budget" id="budget">
-                                    <option>Select</option>
-                                    <option>With options</option>
+                                <select name="message[Budget]" v-model="budget">
+                                    <option value="none">None</option>
+                                    <option value="<5k">&lt;$5k</option>
+                                    <option value="5k-8k">$5k-8k</option>
+                                    <option value="8k-15k">$9k-15k</option>
+                                    <option value="15k+">$15k+</option>
                                 </select>
                             </div>
                         </div>
@@ -58,12 +52,18 @@
                     <div class="field">
                         <label for="message" class="label">Describe your needs - the more we know, the better.</label>
                         <div class="control">
-                            <textarea class="textarea" name="message" id="message" placeholder="Message"></textarea>
+                            <textarea class="textarea" name="message[Body]" placeholder="I'm looking for ...*" v-model="message" v-validate="'required'"></textarea>
                         </div>
                     </div>
+                    <p class="help is-danger" v-if="ajaxError" v-cloak>
+                        Sorry, something went wrong, and we couldn't send your message. Please email <a href="mailto:hello@boyerwebstudios.com">hello@boyerwebstudios.com</a> directly.
+                    </p>
+                    <p class="help" v-if="submitted">
+                        Thanks for getting in touch! We'll get back to you shortly. 
+                    </p>
                     <div class="field">
                         <div class="buttons is-right">
-                            <input class="button" type="submit" value="Get in touch">
+                            <input class="button" type="submit" value="Get in touch" :disabled="submitting">
                         </div>
                     </div>
                 </form>
