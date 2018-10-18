@@ -70,7 +70,7 @@
   
   // import common view requirements and initialize views
   // other pages can load these later.
-  loadjs(assetsBaseUrl + 'js/main-nav-controller.min.js', 'main-nav', function() {
+  loadjs([assetsBaseUrl + 'js/main-nav-controller.min.js', assetsBaseUrl + 'js/page-transitions.min.js'], 'main-nav', function() {
     CommonView.init();
     HomeView.init();
     AboutView.init();
@@ -80,5 +80,8 @@
 
     // initialize barba
     Barba.Pjax.init();
+    Barba.Pjax.getTransition = function () {
+      return RevealerTransition;
+    };
   });
 })();

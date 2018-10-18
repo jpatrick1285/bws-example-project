@@ -31,3 +31,6 @@ $fullhd: 1800px;
 
 // Layout adjustments 
 $column-gap: 2rem; // default: 0.75rem
+
+// CSS Easing functions - https://github.com/KingScooty/sass-easing
+@import "~awesome-sass-easing/_sass-easing.scss";

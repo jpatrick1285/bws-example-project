@@ -62,6 +62,9 @@
 {% set blockPrefix = '' %}
 
 {% block body %}
+
+    {% include "_partials/_page_revealer.twig" %}
+
     <div id="barba-wrapper">
         <div class="barba-container" data-namespace="{{ namespace }}">
             {# -- Info header, including _navbar.twig -- #}
