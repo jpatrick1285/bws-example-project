@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Wed, Oct 17, 2018 3:36 PM ET
- * @release        963bed7ec6b96c1667b30bd370e72c25b82342ac [master]
+ * @build          Thu, Oct 18, 2018 12:50 PM ET
+ * @release        74d69aa3f9b1640285fdf1befd68bcdd97a55816 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -5497,7 +5497,7 @@ body, html {
   -moz-osx-font-smoothing: grayscale; }
   @media (max-width: 1000px) {
     body, html {
-      font-size: calc(14px + .4vw); } }
+      font-size: calc(15px + .4vw); } }
 
 h1, h2, h3, h4, h5, h6, p.is-subheading {
   line-height: 1.2em;
