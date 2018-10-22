@@ -96,6 +96,14 @@ h4, h5, h6 {
   color: $heading-copy-color;
 }
 
+.header-title-wrap {
+  overflow: hidden;
+  
+  .header-title {
+    display: block;
+  }
+}
+
 p {
   line-height: 1.6em;
   margin-bottom: 1em;

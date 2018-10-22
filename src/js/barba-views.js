@@ -27,10 +27,11 @@
             }
           });
 
-          // If any of the elements are overlapping, add the is-light class
-          // don't remove it, since elements farther down the page will incorrectly remove it
+          // If any of the elements are visible, add the active class (after an initial delay, to facilitate page transition animation)
           if (scrollWatcher.isInViewport) {
-            $(scrollWatcher.watchItem).toggleClass('is-active', true);
+            setTimeout(() => {
+              $(scrollWatcher.watchItem).toggleClass('is-active', true);
+            }, 50);
           }
         });
       } catch(e) {

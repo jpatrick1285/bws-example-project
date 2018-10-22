@@ -152,11 +152,11 @@
     .hero.home.animatable {
         .transition-helper {
             transform: scale(1.1);
+            opacity: 0;
         }
 
-        h1 {
-            opacity: 0;
-            transform: translateY(1rem);
+        h1 .header-title {
+            transform: translateY(100%);
         }
 
         p {
@@ -170,12 +170,12 @@
         .transition-helper {
             transition: all $slow-transition-speed $easeOutCubic;
             transform: scale(1);
+            opacity: 1;
         }
 
-        h1 {
+        h1 .header-title {
             transition: all $normal-transition-speed $easeOutQuart;
             transition-delay: $fast-transition-speed - 100ms;
-            opacity: 1;
             transform: translateY(0);
         }
 
