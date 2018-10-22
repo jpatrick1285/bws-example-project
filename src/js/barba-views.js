@@ -23,11 +23,11 @@
 
 
                     enterScrollWatcher.enterViewport(function() {
-                        $(this.watchItem).toggleClass('is-active', true);
+                        $(this.watchItem).addClass('is-active');
                     });
 
                     exitScrollWatcher.exitViewport(function() {
-                        $(this.watchItem).toggleClass('is-active', false);
+                        $(this.watchItem).removeClass('is-active');
                     });
 
                     // If any of the elements are visible, add the active class (after an initial delay, to facilitate page transition animation)

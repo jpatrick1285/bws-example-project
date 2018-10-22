@@ -103,9 +103,8 @@ h4, h5, h6 {
     display: block;
   }
 }
-
 p {
-  line-height: 1.6em;
+  line-height: 1.65em;
   margin-bottom: 1em;
 }
 
@@ -144,6 +143,7 @@ a {
   letter-spacing: 0.03em;
   color: $heading-copy-color;
   font-size: 0.9em;
+  line-height: 1.65em;
 }
 
 .button {
@@ -869,14 +869,31 @@ section.services {
     min-height: 20rem;
     padding: 3rem;
 
+    .background-image-container img {
+      transition: all $fast-transition-speed $easeOutCubic;
+    }
+
     h3 {
       max-width: 17rem;
+      transition: transform $fast-transition-speed $easeOutCubic;
     }
 
     img {
       opacity: 0.8;
     }
   }
+
+  a:hover .service {
+    .background-image-container img {
+      transform: scale(1.05);
+      opacity: 0.5;
+    }
+
+    h3 {
+      transform: translateX(0.2em);
+    }
+  }
+
 }
 
 .section.image-text-section {

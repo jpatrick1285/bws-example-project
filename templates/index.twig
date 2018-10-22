@@ -115,16 +115,16 @@
 </section>
 
 <!-- Home Secondary Headline -->
-<section class="section is-medium animatable">
+<section class="section is-medium text-heading-left animatable">
     <div class="container is-small">
         <div class="columns">
             <div class="column is-two-fifths">
-                <h2>
-                    Secondary and also punchy headline, extra long.
+                <h2 class="heading-title-wrap animatable">
+                    <span class="heading-title">Secondary and also punchy headline, extra long.</span>
                 </h2>
             </div>
             <div class="column">
-                <p>
+                <p class="animatable">
                     Suspendisse sagittis elementum leo, sagittis ornare erat rutrum non. Cras iaculis sem volutpat molestie ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed molestie cursus justo eget efficitur. Phasellus sagittis quam quis porttitor consequat. Morbi eu condimentum ipsum, eget vehicula quam. Proin velit lectus, iaculis quis nunc fermentum, ultrices ultrices erat.
                 </p>
             </div>
@@ -134,9 +134,9 @@
 
 <!-- Home Services -->
 <section class="section is-medium is-dark has-background services animatable">
-    <header class="container is-small">
-        <p class="is-subheading">WHAT WE DO</p>
-        <h1>Our Services</h1>
+    <header class="container is-small animatable">
+        <p class="is-subheading heading-title-wrap"><span class="heading-title">WHAT WE DO</span></p>
+        <h1 class="heading-title-wrap"><span class="heading-title">Our Services</span></h1>
     </header>
     <div class="container">
         <div class="columns is-desktop is-gapless is-multiline">
@@ -145,9 +145,11 @@
                     <a href="{{ service.serviceLink }}">
                         <article class="service is-dark is-background-container animatable">
                             <div class="background-image-container">
-                                <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl() }}">
+                                <div class="transition-helper">
+                                    <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl() }}">
+                                </div>
                             </div>
-                            <h3>{{ service.serviceTitle }}</h3>
+                            <h3 class="heading-title-wrap"><span class="heading-title">{{ service.serviceTitle }}</span></h3>
                         </article>
                     </a>
                 {% endfor %}
@@ -157,9 +159,11 @@
                     <a href="{{ service.serviceLink }}">
                         <article class="service is-dark is-background-container animatable">
                             <div class="background-image-container">
-                                <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl() }}">
+                                <div class="transition-helper">
+                                    <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl() }}">
+                                </div>
                             </div>
-                            <h3>{{ service.serviceTitle }}</h3>
+                            <h3 class="heading-title-wrap"><span class="heading-title">{{ service.serviceTitle }}</span></h3>
                         </article>
                     </a>
                 {% endfor %}
