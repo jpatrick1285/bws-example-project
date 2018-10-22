@@ -793,6 +793,8 @@ nav.main-nav {
 }
 
 section.case-list {
+  z-index: 5;
+
   .tile-link-wrapper {
     display: block;
   }

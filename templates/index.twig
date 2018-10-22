@@ -45,15 +45,17 @@
     .limit(3)
     .all() %}
 
-<section class="section is-offset-up case-list home">
+<section class="section is-offset-up case-list home animatable">
     <div class="container">
         <div class="tile is-ancestor">
             {% for project in projects | slice(0, 1) %}
-                <div class="tile is-parent">
+                <div class="tile is-parent animatable">
                     <a class="tile-link-wrapper" href="{{ project.uri }}">
-                        <article class="tile is-child is-dark is-background-container has-background animatable">
+                        <article class="tile is-child is-dark is-background-container has-background">
                             <div class="background-image-container">
-                                <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                <div class="transition-helper">
+                                    <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                </div>
                             </div>
                             <header class="animatable">
                                 <p class="is-subheading heading-title-wrap">
@@ -79,11 +81,13 @@
         </div>
         <div class="tile is-ancestor is-block-tablet is-flex-widescreen">
             {% for project in projects | slice(1, 2) %}
-                <div class="tile is-parent">
+                <div class="tile is-parent animatable">
                     <a class="tile-link-wrapper" href="{{ project.uri }}">
-                        <article class="tile is-child is-dark is-background-container has-background animatable">
+                        <article class="tile is-child is-dark is-background-container has-background">
                             <div class="background-image-container">
-                                <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                <div class="transition-helper">
+                                    <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                </div>
                             </div>
                             <header class="animatable">
                                 <p class="is-subheading heading-title-wrap">

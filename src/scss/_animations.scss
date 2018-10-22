@@ -191,8 +191,15 @@
 /* Case Study List */
 .animations-enabled {
     // Initial State
-    .case-list article.will-animate {
-        transform: translateY(1em);
+    .case-list.will-animate {
+        transform: translateY(5rem);
+    }
+
+    .case-list .tile.will-animate article {
+        .background-image-container .transition-helper {
+            transform: scale(1.1);
+            opacity: 0;
+        }
 
         header.will-animate {
             p.is-subheading .heading-title {
@@ -206,10 +213,17 @@
     }
 
     // Visible State
-    .case-list article.will-animate.is-active {
+    .case-list.will-animate.is-active {
+        transition: all $normal-transition-speed $easeOutQuart;
         transform: translateY(0);
+    }
 
-        transition: all $slow-transition-speed $easeOutQuart;
+    .case-list .tile.will-animate.is-active article {
+        .background-image-container .transition-helper {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transform: scale(1);
+            opacity: 1;
+        }
 
         header.will-animate.is-active {
             p.is-subheading .heading-title {
@@ -219,7 +233,7 @@
 
             h1 .heading-title {
                 transition: all $normal-transition-speed $easeOutQuart;
-                transition-delay: $fast-transition-speed;
+                transition-delay: $fast-transition-speed - 100ms;
                 transform: translateY(0);
             }
         }

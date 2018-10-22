@@ -214,35 +214,52 @@
           transform: translateY(0); }
 
 /* Case Study List */
-.animations-enabled .case-list article.will-animate {
-  -webkit-transform: translateY(1em);
-      -ms-transform: translateY(1em);
-          transform: translateY(1em); }
-  .animations-enabled .case-list article.will-animate header.will-animate p.is-subheading .heading-title {
-    -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-            transform: translateY(100%); }
-  .animations-enabled .case-list article.will-animate header.will-animate h1 .heading-title {
-    -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-            transform: translateY(100%); }
+.animations-enabled .case-list.will-animate {
+  -webkit-transform: translateY(5rem);
+      -ms-transform: translateY(5rem);
+          transform: translateY(5rem); }
 
-.animations-enabled .case-list article.will-animate.is-active {
+.animations-enabled .case-list .tile.will-animate article .background-image-container .transition-helper {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 0; }
+
+.animations-enabled .case-list .tile.will-animate article header.will-animate p.is-subheading .heading-title {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%); }
+
+.animations-enabled .case-list .tile.will-animate article header.will-animate h1 .heading-title {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%); }
+
+.animations-enabled .case-list.will-animate.is-active {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
-          transform: translateY(0);
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1); }
-  .animations-enabled .case-list article.will-animate.is-active header.will-animate.is-active p.is-subheading .heading-title {
-    transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0); }
-  .animations-enabled .case-list article.will-animate.is-active header.will-animate.is-active h1 .heading-title {
-    transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition-delay: 400ms;
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0); }
+          transform: translateY(0); }
+
+.animations-enabled .case-list .tile.will-animate.is-active article .background-image-container .transition-helper {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1; }
+
+.animations-enabled .case-list .tile.will-animate.is-active article header.will-animate.is-active p.is-subheading .heading-title {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0); }
+
+.animations-enabled .case-list .tile.will-animate.is-active article header.will-animate.is-active h1 .heading-title {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 300ms;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0); }
 
 @-webkit-keyframes spinAround {
   from {
@@ -6278,46 +6295,47 @@ nav.main-nav {
           transform: scale(1.01);
   opacity: 0.6; }
 
-section.case-list .tile-link-wrapper {
-  display: block; }
-
-section.case-list .tile.is-child {
-  padding: 5rem 4rem;
-  transition: all 0.5s; }
-  @media screen and (min-width: 1200px) {
-    section.case-list .tile.is-child {
-      padding: 6rem 5rem; } }
-  section.case-list .tile.is-child h1, section.case-list .tile.is-child h2, section.case-list .tile.is-child h3, section.case-list .tile.is-child p.is-subheading {
-    max-width: 45rem; }
-  @media screen and (min-width: 1200px) and (max-width: 1799px) {
-    section.case-list .tile.is-child h1 {
-      font-size: 2.5rem; } }
-  section.case-list .tile.is-child p {
-    max-width: 20rem;
-    margin-bottom: 1em;
-    font-weight: normal; }
-  section.case-list .tile.is-child img {
-    opacity: 0.8;
+section.case-list {
+  z-index: 5; }
+  section.case-list .tile-link-wrapper {
+    display: block; }
+  section.case-list .tile.is-child {
+    padding: 5rem 4rem;
     transition: all 0.5s; }
-  section.case-list .tile.is-child .description {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s; }
-  section.case-list .tile.is-child:hover {
-    -webkit-transform: scale(0.99);
-        -ms-transform: scale(0.99);
-            transform: scale(0.99); }
-    section.case-list .tile.is-child:hover .description {
-      visibility: visible;
-      opacity: 1;
-      -webkit-transform: translateX(0);
-          -ms-transform: translateX(0);
-              transform: translateX(0); }
-    section.case-list .tile.is-child:hover img {
-      -webkit-transform: scale(1.02);
-          -ms-transform: scale(1.02);
-              transform: scale(1.02);
-      opacity: 0.6; }
+    @media screen and (min-width: 1200px) {
+      section.case-list .tile.is-child {
+        padding: 6rem 5rem; } }
+    section.case-list .tile.is-child h1, section.case-list .tile.is-child h2, section.case-list .tile.is-child h3, section.case-list .tile.is-child p.is-subheading {
+      max-width: 45rem; }
+    @media screen and (min-width: 1200px) and (max-width: 1799px) {
+      section.case-list .tile.is-child h1 {
+        font-size: 2.5rem; } }
+    section.case-list .tile.is-child p {
+      max-width: 20rem;
+      margin-bottom: 1em;
+      font-weight: normal; }
+    section.case-list .tile.is-child img {
+      opacity: 0.8;
+      transition: all 0.5s; }
+    section.case-list .tile.is-child .description {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s; }
+    section.case-list .tile.is-child:hover {
+      -webkit-transform: scale(0.99);
+          -ms-transform: scale(0.99);
+              transform: scale(0.99); }
+      section.case-list .tile.is-child:hover .description {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0); }
+      section.case-list .tile.is-child:hover img {
+        -webkit-transform: scale(1.02);
+            -ms-transform: scale(1.02);
+                transform: scale(1.02);
+        opacity: 0.6; }
 
 section.case-list.home .tile.is-child {
   height: 60vh; }
