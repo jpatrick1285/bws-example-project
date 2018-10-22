@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="container is-small hero-content">
-        <h1 class="is-large header-title-wrap"><span class="header-title">{{ entry.heroHeading }}</span></h1>
+        <h1 class="is-large heading-title-wrap"><span class="heading-title">{{ entry.heroHeading }}</span></h1>
         <p>{{ entry.heroDescription }}</p>
     </div>
 </section>
@@ -55,14 +55,16 @@
                             <div class="background-image-container">
                                 <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
                             </div>
-                            <header>
-                                <p class="is-subheading">
-                                    {% for tag in project.serviceTags.all %}
-                                        {{ tag|upper }}
-                                        {% if not loop.last %} + {% endif %}
-                                    {% endfor %}
+                            <header class="animatable">
+                                <p class="is-subheading heading-title-wrap">
+                                    <span class="heading-title">
+                                        {% for tag in project.serviceTags.all %}
+                                            {{ tag|upper }}
+                                            {% if not loop.last %} + {% endif %}
+                                        {% endfor %}
+                                    </span>
                                 </p>
-                                <h1>{{ project.heroSubheading }}</h1>
+                                <h1 class="heading-title-wrap animatable"><span class="heading-title">{{ project.heroSubheading }}</span></h1>
                             </header>
                             <div class="description">
                                 <p>
@@ -83,14 +85,16 @@
                             <div class="background-image-container">
                                 <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
                             </div>
-                            <header>
-                                <p class="is-subheading">
-                                    {% for tag in project.serviceTags.all %}
-                                        {{ tag|upper }}
-                                        {% if not loop.last %} + {% endif %}
-                                    {% endfor %}
+                            <header class="animatable">
+                                <p class="is-subheading heading-title-wrap">
+                                    <span class="heading-title">
+                                        {% for tag in project.serviceTags.all %}
+                                            {{ tag|upper }}
+                                            {% if not loop.last %} + {% endif %}
+                                        {% endfor %}
+                                    </span>
                                 </p>
-                                <h1>{{ project.heroSubheading }}</h1>
+                                <h1 class="heading-title-wrap animatable"><span class="heading-title">{{ project.heroSubheading }}</span></h1>
                             </header>
                             <div class="description">
                                 <p>

@@ -174,44 +174,75 @@
             transform: translate3d(-100%, 0, 0); } }
 
 /* Home Header */
-.animations-enabled .hero.home.animatable .transition-helper {
+.animations-enabled .hero.home.will-animate .transition-helper {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
   opacity: 0; }
 
-.animations-enabled .hero.home.animatable h1 .header-title {
+.animations-enabled .hero.home.will-animate h1 .heading-title {
   -webkit-transform: translateY(100%);
       -ms-transform: translateY(100%);
           transform: translateY(100%); }
 
-.animations-enabled .hero.home.animatable p {
+.animations-enabled .hero.home.will-animate p {
   opacity: 0;
   -webkit-transform: translateY(1rem);
       -ms-transform: translateY(1rem);
           transform: translateY(1rem); }
 
-.animations-enabled .hero.home.animatable.is-active .transition-helper {
+.animations-enabled .hero.home.will-animate.is-active .transition-helper {
   transition: all 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
   opacity: 1; }
 
-.animations-enabled .hero.home.animatable.is-active h1 .header-title {
+.animations-enabled .hero.home.will-animate.is-active h1 .heading-title {
   transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 300ms;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0); }
 
-.animations-enabled .hero.home.animatable.is-active p {
+.animations-enabled .hero.home.will-animate.is-active p {
   transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 750ms;
   opacity: 1;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0); }
+
+/* Case Study List */
+.animations-enabled .case-list article.will-animate {
+  -webkit-transform: translateY(1em);
+      -ms-transform: translateY(1em);
+          transform: translateY(1em); }
+  .animations-enabled .case-list article.will-animate header.will-animate p.is-subheading .heading-title {
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%); }
+  .animations-enabled .case-list article.will-animate header.will-animate h1 .heading-title {
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%); }
+
+.animations-enabled .case-list article.will-animate.is-active {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1); }
+  .animations-enabled .case-list article.will-animate.is-active header.will-animate.is-active p.is-subheading .heading-title {
+    transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0); }
+  .animations-enabled .case-list article.will-animate.is-active header.will-animate.is-active h1 .heading-title {
+    transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-delay: 400ms;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0); }
 
 @-webkit-keyframes spinAround {
   from {
@@ -5733,9 +5764,9 @@ h4, h5, h6 {
   font-weight: bold;
   color: #0E1112; }
 
-.header-title-wrap {
+.heading-title-wrap {
   overflow: hidden; }
-  .header-title-wrap .header-title {
+  .heading-title-wrap .heading-title {
     display: block; }
 
 p {

@@ -14,23 +14,32 @@
 
         // run element animations when in viewport
         $('.animatable').each(function (index) {
-          let scrollWatcher = scrollMonitor.create($(this).get(0));
-          _instance.scrollWatchers.push(scrollWatcher);
+          // create two watchers - one with an offset for enter events, and one without an offset for exit events
+          // lets us add visibility classes with an offset, and remove them when the element is completely outside the visible viewport
+          let enterScrollWatcher = scrollMonitor.create($(this).get(0), -100);
+          let exitScrollWatcher = scrollMonitor.create($(this).get(0));
+          _instance.scrollWatchers.push(enterScrollWatcher);
+          _instance.scrollWatchers.push(exitScrollWatcher);
+
 
           $(this).addClass('will-animate');
 
-          scrollWatcher.stateChange(function() {
+          enterScrollWatcher.visibilityChange(function() {
             if (this.isInViewport) {
-              $(this.watchItem).toggleClass('is-active', true);
-            } else {
-              $(this.watchItem).toggleClass('is-active', false);
+                $(this.watchItem).toggleClass('is-active', true);
+            }
+          });
+
+          exitScrollWatcher.visibilityChange(function() {
+            if (this.isInViewport) {
+                $(this.watchItem).toggleClass('is-active', false);
             }
           });
 
           // If any of the elements are visible, add the active class (after an initial delay, to facilitate page transition animation)
-          if (scrollWatcher.isInViewport) {
+          if (enterScrollWatcher.isInViewport) {
             setTimeout(() => {
-              $(scrollWatcher.watchItem).toggleClass('is-active', true);
+              $(enterScrollWatcher.watchItem).addClass('is-active');
             }, 50);
           }
         });
