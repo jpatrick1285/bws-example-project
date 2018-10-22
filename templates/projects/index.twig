@@ -10,7 +10,7 @@
 {% block content %}
 
 <!-- Offset Image Hero -->
-<section class="section is-large is-dark is-background-container has-background header-background">
+<section class="section is-large is-dark is-background-container has-background header-background animatable">
     <div class="background-image-container">
         <img src="{{ entry.heroBackgroundImage.one().getUrl() }}">
     </div>
@@ -38,7 +38,7 @@
                 {% for project in batchedProjects %}
                     <div class="tile is-parent">
                         <a class="tile-link-wrapper" href="{{ project.uri }}">
-                            <article class="tile is-child is-dark is-background-container has-background">
+                            <article class="tile is-child is-dark is-background-container has-background animatable">
                                 <div class="background-image-container">
                                     <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
                                 </div>
@@ -64,7 +64,7 @@
             </div>
         {% endfor %}
         {% if pageInfo.totalPages and pageInfo.totalPages > 1 %}
-        <div class="pagination">
+        <div class="pagination animatable">
             <div class="columns">
                 <div class="column">
                     {% if pageInfo.prevUrl %}

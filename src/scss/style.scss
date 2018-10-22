@@ -391,6 +391,11 @@ img.cover {
   z-index: -1;
   overflow: hidden;
 
+  .transition-helper {
+    width: 100%;
+    height: 100%;
+  }
+
   img {
     max-width: none;
     object-fit: cover;

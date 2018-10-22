@@ -28,15 +28,21 @@
         display: block;
 
         .revealer-layer {
-            animation: revealer-slide-in-1 600ms $easeInSine forwards;
+            
+            animation: revealer-fade-in 400ms $easeInOutCubic forwards;
+            //animation: revealer-slide-in-1 600ms $easeInSine forwards;
 
-            &:nth-child(2) {
-                animation-name: revealer-slide-in-2;
+            &:nth-child(1), &:nth-child(2) {
+                display: none;
             }
 
-            &:nth-child(3) {
-                animation-name: revealer-slide-in-3;
-            }
+            // &:nth-child(2) {
+            //     animation-name: revealer-slide-in-2;
+            // }
+
+            // &:nth-child(3) {
+            //     animation-name: revealer-slide-in-3;
+            // }
         }
     }
 
@@ -44,16 +50,41 @@
         display: block;
 
         .revealer-layer {
-            animation: revealer-slide-out-1 600ms $easeInSine forwards;
+            animation: revealer-fade-out 400ms $easeInOutCubic forwards;
+            // animation: revealer-slide-out-1 600ms $easeInSine forwards;
 
-            &:nth-child(2) {
-                animation-name: revealer-slide-out-2;
+            &:nth-child(1), &:nth-child(2) {
+                display: none;
             }
 
-            &:nth-child(3) {
-                animation-name: revealer-slide-out-3;
-            }
+            // &:nth-child(2) {
+            //     animation-name: revealer-slide-out-2;
+            // }
+
+            // &:nth-child(3) {
+            //     animation-name: revealer-slide-out-3;
+            // }
         }
+    }
+}
+
+@keyframes revealer-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes revealer-fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -112,5 +143,47 @@
 
     60%, 100% {
         transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Home Header */
+.animations-enabled {
+    // Initial State
+    .hero.home.animatable {
+        .transition-helper {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            opacity: 0;
+            transform: translateY(1rem);
+        }
+
+        p {
+            opacity: 0;
+            transform: translateY(1rem);
+        }
+    }
+
+    // Visible State
+    .hero.home.animatable.is-active {
+        .transition-helper {
+            transition: all $slow-transition-speed $easeOutCubic;
+            transform: scale(1);
+        }
+
+        h1 {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transition-delay: $fast-transition-speed - 100ms;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        p {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transition-delay: $normal-transition-speed;
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }

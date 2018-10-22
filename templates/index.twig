@@ -10,7 +10,12 @@
 {% block content %}
 
 <!-- Home Hero -->
-<section class="section is-large is-dark is-vertical-center has-background hero home">
+<section class="section is-large is-dark is-vertical-center has-background is-background-container hero home animatable">
+    <div class="background-image-container">
+        <div class="transition-helper">
+            <img class="image js-mouse-tilt-hover" src="{{ baseUrl }}img/temp/home-header.jpg">
+        </div>
+    </div>
     <div class="container is-small ">
         <h1 class="is-large">{{ entry.heroHeading }}</h1>
         <p>{{ entry.heroDescription }}</p>
@@ -46,7 +51,7 @@
             {% for project in projects | slice(0, 1) %}
                 <div class="tile is-parent">
                     <a class="tile-link-wrapper" href="{{ project.uri }}">
-                        <article class="tile is-child is-dark is-background-container has-background">
+                        <article class="tile is-child is-dark is-background-container has-background animatable">
                             <div class="background-image-container">
                                 <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
                             </div>
@@ -74,7 +79,7 @@
             {% for project in projects | slice(1, 2) %}
                 <div class="tile is-parent">
                     <a class="tile-link-wrapper" href="{{ project.uri }}">
-                        <article class="tile is-child is-dark is-background-container has-background">
+                        <article class="tile is-child is-dark is-background-container has-background animatable">
                             <div class="background-image-container">
                                 <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
                             </div>
@@ -102,7 +107,7 @@
 </section>
 
 <!-- Home Secondary Headline -->
-<section class="section is-medium">
+<section class="section is-medium animatable">
     <div class="container is-small">
         <div class="columns">
             <div class="column is-two-fifths">
@@ -120,7 +125,7 @@
 </section>
 
 <!-- Home Services -->
-<section class="section is-medium is-dark has-background services">
+<section class="section is-medium is-dark has-background services animatable">
     <header class="container is-small">
         <p class="is-subheading">WHAT WE DO</p>
         <h1>Our Services</h1>
@@ -130,7 +135,7 @@
             <div class="column">
                 {% for service in entry.servicesGrid.limit(2).all() %}
                     <a href="{{ service.serviceLink }}">
-                        <article class="service is-dark is-background-container">
+                        <article class="service is-dark is-background-container animatable">
                             <div class="background-image-container">
                                 <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl() }}">
                             </div>
@@ -142,7 +147,7 @@
             <div class="column">
                 {% for service in entry.servicesGrid.offset(2).limit(2).all() %}
                     <a href="{{ service.serviceLink }}">
-                        <article class="service is-dark is-background-container">
+                        <article class="service is-dark is-background-container animatable">
                             <div class="background-image-container">
                                 <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl() }}">
                             </div>

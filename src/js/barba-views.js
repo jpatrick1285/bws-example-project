@@ -3,11 +3,36 @@
   // Methodology from https://github.com/luruke/barba.js/issues/146
   let CommonView = Barba.BaseView.extend({
     namespace: 'common',
+    scrollWatchers: [],
 
     onEnterCompleted: function () {
       try {
+        $('body').addClass('animations-enabled');
         MainNavController.init();
         window.scrollTo(0, 0);
+        var _instance = this;
+
+        // run element animations when in viewport
+        $('.animatable').each(function (index) {
+          let scrollWatcher = scrollMonitor.create($(this).get(0));
+          _instance.scrollWatchers.push(scrollWatcher);
+
+          $(this).addClass('will-animate');
+
+          scrollWatcher.stateChange(function() {
+            if (this.isInViewport) {
+              $(this.watchItem).toggleClass('is-active', true);
+            } else {
+              $(this.watchItem).toggleClass('is-active', false);
+            }
+          });
+
+          // If any of the elements are overlapping, add the is-light class
+          // don't remove it, since elements farther down the page will incorrectly remove it
+          if (scrollWatcher.isInViewport) {
+            $(scrollWatcher.watchItem).toggleClass('is-active', true);
+          }
+        });
       } catch(e) {
         console.log(e);
       }
@@ -17,6 +42,13 @@
     onLeave: function() {
       try {
         MainNavController.destroy();
+
+        // destroy element animation scroll watchers 
+        for (let i = 0; i < this.scrollWatchers.length; i++) {
+          this.scrollWatchers[i].destroy();
+        }
+
+        this.scrollWatchers = [];
       } catch(e) {
         console.log(e);
       }
