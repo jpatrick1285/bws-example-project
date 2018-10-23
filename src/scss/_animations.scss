@@ -197,17 +197,19 @@
 
     .case-list .tile.will-animate article {
         .background-image-container .transition-helper {
-            transform: scale(1.1);
+            transform: scale(1.05);
             opacity: 0;
         }
 
         header.will-animate {
-            p.is-subheading .heading-title {
-                transform: translateY(100%);
+            p.is-subheading {
+                transform: translateX(-1rem);
+                opacity: 0;
             }
 
-            h1 .heading-title {
-                transform: translateY(100%);
+            h1 {
+                transform: translateX(-1rem);
+                opacity: 0;
             }
         }
     }
@@ -226,15 +228,16 @@
         }
 
         header.will-animate.is-active {
-            p.is-subheading .heading-title {
+            p.is-subheading {
                 transition: all $normal-transition-speed $easeOutQuart;
-                transform: translateY(0);
+                transform: translateX(0);
+                opacity: 1;
             }
 
-            h1 .heading-title {
+            h1 {
                 transition: all $normal-transition-speed $easeOutQuart;
-                transition-delay: $fast-transition-speed - 100ms;
-                transform: translateY(0);
+                transform: translateX(0);
+                opacity: 1;
             }
         }
     }
@@ -245,23 +248,25 @@
     // Initial State
     .services.will-animate {
         header.will-animate {
-            p.is-subheading .heading-title {
-                transform: translateY(100%);
+            p.is-subheading {
+                transform: translateX(-1rem);
+                opacity: 0;
             }
 
-            h1 .heading-title {
-                transform: translateY(100%);
+            h1 {
+                transform: translateX(-1rem);
+                opacity: 0;
             }
         }
 
         .service.will-animate {
             .background-image-container .transition-helper {
-                transform: scale(1.1);
+                transform: scale(1.05);
                 opacity: 0;
             }
 
             h3 .heading-title {
-                transform: translateY(100%);
+                opacity: 0;
             }
         }
     }
@@ -269,15 +274,16 @@
     // Visible State
     .services.will-animate.is-active {
         header.will-animate.is-active {
-            p.is-subheading .heading-title {
+            p.is-subheading {
                 transition: all $normal-transition-speed $easeOutQuart;
-                transform: translateY(0);
+                transform: translateX(0);
+                opacity: 1;
             }
 
-            h1 .heading-title {
+            h1 {
                 transition: all $normal-transition-speed $easeOutQuart;
-                transition-delay: $fast-transition-speed;
-                transform: translateY(0);
+                transform: translateX(0);
+                opacity: 1;
             }
         }
 
@@ -289,8 +295,8 @@
             }
 
             h3 .heading-title {
-                transform: translateY(0);
                 transition: all $normal-transition-speed $easeOutQuart;
+                opacity: 1;
             }
         }
     }
@@ -304,13 +310,13 @@
             transform: translateY(100%);
         }
 
-        h2 .heading-title {
-            transform: translateY(100%);
+        h2 {
+            transform: translateX(-1rem);
+            opacity: 0;
         }
 
         p {
             opacity: 0;
-            transform: translateY(2em);
         }
     }
 
@@ -321,16 +327,16 @@
             transform: translateY(0);
         }
 
-        h2.will-animate.is-active .heading-title {
+        h2.will-animate.is-active {
             transition: all $normal-transition-speed $easeOutQuart;
-            transform: translateY(0);
+            transform: translateX(0);
+            opacity: 1;
         }
 
         p.will-animate.is-active {
             transition: all $normal-transition-speed $easeOutQuart;
-            transition-delay: $fast-transition-speed;
+            transition-delay: $fast-transition-speed - 100ms;
             opacity: 1;
-            transform: translateY(0);
         }
     }
 }
@@ -340,13 +346,13 @@
     // Initial State
     footer .will-animate {
         opacity: 0;
-        transform: translateY(2rem);
+        //transform: translateY(2rem);
     }
 
     // Visible State
     footer .will-animate.is-active {
         transition: all $normal-transition-speed $easeOutQuart;
         opacity: 1;
-        transform: translateY(0);
+        //transform: translateY(0);
     }
 }
