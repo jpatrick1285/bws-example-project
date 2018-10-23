@@ -389,7 +389,9 @@ gulp.task("set-prod-node-env", function() {
 // Default task
 gulp.task("default", ["set-dev-node-env", "css", "js"], () => {
     $.fancyLog("-> BrowserSync listening for changes");
-    $.browserSync.init();
+    $.browserSync.init({
+        injectChanges: false
+    });
     gulp.watch([pkg.paths.src.scss + "**/*.scss"], ["css"]);
     gulp.watch([pkg.paths.src.css + "**/*.css"], ["css"]);
     gulp.watch([pkg.paths.src.js + "**/*.js"], ["js"]);
