@@ -424,21 +424,25 @@
   0% {
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
+    opacity: 0;
     -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
             animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); }
   50%, 100% {
     -webkit-transform: scaleY(1);
-            transform: scaleY(1); } }
+            transform: scaleY(1);
+    opacity: 1; } }
 
 @keyframes block-image-container-in {
   0% {
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
+    opacity: 0;
     -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
             animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); }
   50%, 100% {
     -webkit-transform: scaleY(1);
-            transform: scaleY(1); } }
+            transform: scaleY(1);
+    opacity: 1; } }
 
 .animations-enabled .block-textimageleft .container.will-animate .image .transition-helper, .animations-enabled .block-textimageright .container.will-animate .image .transition-helper {
   position: relative;
@@ -447,7 +451,8 @@
           transform-origin: top center;
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
-          transform: scaleX(0); }
+          transform: scaleX(0);
+  overflow: hidden; }
   .animations-enabled .block-textimageleft .container.will-animate .image .transition-helper::before, .animations-enabled .block-textimageright .container.will-animate .image .transition-helper::before {
     position: absolute;
     display: -webkit-flex;
@@ -455,13 +460,13 @@
     display: flex;
     content: '';
     left: 0;
-    top: 0;
+    top: -1%;
     width: 100%;
-    height: 100%;
+    height: 102%;
     -webkit-transform-origin: bottom center;
         -ms-transform-origin: bottom center;
             transform-origin: bottom center;
-    background: #0E1112; }
+    background: #F5F5F5; }
 
 .animations-enabled .block-textimageleft .container.will-animate h1, .animations-enabled .block-textimageleft .container.will-animate p, .animations-enabled .block-textimageleft .container.will-animate ul, .animations-enabled .block-textimageright .container.will-animate h1, .animations-enabled .block-textimageright .container.will-animate p, .animations-enabled .block-textimageright .container.will-animate ul {
   -webkit-transform: translateY(2rem);
