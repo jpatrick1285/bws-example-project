@@ -417,6 +417,7 @@
 @keyframes block-image-container-in {
     0% {
         transform: scaleY(0);
+        opacity: 0;
         animation-timing-function: $easeInQuart;
     }
 

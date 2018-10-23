@@ -424,6 +424,7 @@
   0% {
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
+    opacity: 0;
     -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
             animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); }
   50%, 100% {
@@ -434,6 +435,7 @@
   0% {
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
+    opacity: 0;
     -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
             animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); }
   50%, 100% {
