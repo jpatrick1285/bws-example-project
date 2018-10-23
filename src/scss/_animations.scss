@@ -463,6 +463,39 @@
     }
 }
 
+/* Contact - Contact Info Section */
+.animations-enabled {
+    // Initial State
+    .about-contact-section.will-animate {
+        h1, .address, .contact, .map {
+            transform: translateY(2rem);
+            opacity: 0;
+        }
+    }
+    
+    // Visible State
+    .about-contact-section.will-animate.is-active {
+        h1, .address, .contact, .map {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .address {
+            transition-delay: $fast-transition-speed - 100ms;
+        }
+
+        .contact {
+            transition-delay: $fast-transition-speed + 100ms;
+        }
+
+        .map {
+            transition-delay: $fast-transition-speed + 300ms;
+        }
+        
+    }
+}
+
 /* Block - Text */
 .animations-enabled {
     // Initial State

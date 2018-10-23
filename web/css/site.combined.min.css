@@ -459,6 +459,29 @@
   transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 1; }
 
+/* Contact - Contact Info Section */
+.animations-enabled .about-contact-section.will-animate h1, .animations-enabled .about-contact-section.will-animate .address, .animations-enabled .about-contact-section.will-animate .contact, .animations-enabled .about-contact-section.will-animate .map {
+  -webkit-transform: translateY(2rem);
+      -ms-transform: translateY(2rem);
+          transform: translateY(2rem);
+  opacity: 0; }
+
+.animations-enabled .about-contact-section.will-animate.is-active h1, .animations-enabled .about-contact-section.will-animate.is-active .address, .animations-enabled .about-contact-section.will-animate.is-active .contact, .animations-enabled .about-contact-section.will-animate.is-active .map {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1; }
+
+.animations-enabled .about-contact-section.will-animate.is-active .address {
+  transition-delay: 300ms; }
+
+.animations-enabled .about-contact-section.will-animate.is-active .contact {
+  transition-delay: 500ms; }
+
+.animations-enabled .about-contact-section.will-animate.is-active .map {
+  transition-delay: 700ms; }
+
 /* Block - Text */
 .animations-enabled .block-text .container.will-animate h1, .animations-enabled .block-text .container.will-animate p, .animations-enabled .block-text .container.will-animate ul {
   -webkit-transform: translateY(2rem);
@@ -6506,6 +6529,7 @@ img.cover {
   z-index: -1;
   overflow: hidden; }
   .background-image-container img {
+    position: relative;
     max-width: none;
     object-fit: cover;
     object-position: center;
@@ -6938,7 +6962,7 @@ section.services a:hover .service h3 {
       width: 50%; } }
 
 @media screen and (min-width: 700px), print {
-  .contact-section h1 {
+  .contact-section .offset-heading {
     position: relative;
     -webkit-transform: translateX(-40%);
         -ms-transform: translateX(-40%);

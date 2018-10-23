@@ -400,6 +400,7 @@ img.cover {
   overflow: hidden;
 
   img {
+    position: relative;
     max-width: none;
     object-fit: cover;
     object-position: center;
@@ -975,7 +976,7 @@ section.services {
     }
   }
 
-  h1 {
+  .offset-heading {
     @include tablet {
       position: relative;
       transform: translateX(-40%);
