@@ -1,9 +1,11 @@
 {# Image, Text Right Content Block #}
-<section class="section {{ block.topSpacing }} {{ block.bottomSpacing }} image-text-section animatable">
-    <div class="container {{ block.containerSize }}">
+<section class="section {{ block.topSpacing }} {{ block.bottomSpacing }} image-text-section block-{{ block.type.handle }} animatable">
+    <div class="container {{ block.containerSize }} animatable">
         <div class="columns">
             <div class="column is-half image">
-                <img class="cover" src="{{ block.image.one().getUrl() }}"/>
+                <div class="transition-helper">
+                    <img class="cover" src="{{ block.image.one().getUrl() }}"/>
+                </div>
             </div>
             <div class="column text">
               {{ block.blockContent }}

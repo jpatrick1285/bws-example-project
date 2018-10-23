@@ -1,9 +1,13 @@
 {# Image / Two Columns Content Block #}
-<section class="section {{ block.topSpacing }} {{ block.bottomSpacing }} animatable">
-    <div class="container {{ block.containerSize }}">
+<section class="section {{ block.topSpacing }} {{ block.bottomSpacing }} block-{{ block.type.handle }}">
+    <div class="container {{ block.containerSize }} animatable">
         <div class="columns is-multiline">
             {% for image in block.images.all() %}
-                <div class="column is-half animatable"><img class="cover" src="{{ image.getUrl() }}"></div>
+                <div class="column is-half animatable">
+                    <div class="transition-helper">
+                        <img class="cover" src="{{ image.getUrl() }}">
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>

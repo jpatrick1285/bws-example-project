@@ -378,7 +378,125 @@
     }
 }
 
-/* Text Heading Left Block */
+/* Block - Text */
+.animations-enabled {
+    // Initial State
+    .block-text .container.will-animate {
+        h1, p, ul {
+            transform: translateY(2rem);
+            opacity: 0;
+        }
+    }
+    
+    // Visible State
+    .block-text .container.will-animate.is-active {
+        h1, p, ul {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        p, ul {
+            transition-delay: $fast-transition-speed - 200ms;
+        }
+    }
+}
+
+/* Block - Text Image Left + Text Image Right */
+@keyframes block-image-overlay-out {
+    0%, 50% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        animation-timing-function: $easeOutCubic;
+        transform: scaleY(0);
+    }
+}
+
+@keyframes block-image-container-in {
+    0% {
+        transform: scaleY(0);
+        animation-timing-function: $easeInQuart;
+    }
+
+    50%, 100% {
+        transform: scaleY(1);
+
+    }
+}
+.animations-enabled {
+    // Initial State
+    .block-textimageleft .container.will-animate, .block-textimageright .container.will-animate {
+        .image .transition-helper {
+            position: relative;
+            transform-origin: top center;
+            transform: scaleX(0);
+
+            &::before {
+                position: absolute;
+                display: flex;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform-origin: bottom center;
+                
+
+                background: $black;
+            }
+        }
+
+        h1, p, ul {
+            transform: translateY(2rem);
+            opacity: 0;
+        }
+    }
+    
+    // Visible State
+    .block-textimageleft .container.will-animate.is-active, .block-textimageright .container.will-animate.is-active {
+        .image .transition-helper {
+            animation: block-image-container-in $slow-transition-speed $easeOutQuart forwards;
+
+            &::before {
+                animation: block-image-overlay-out $slow-transition-speed $easeOutQuart forwards;
+            }
+        }
+
+        h1, p, ul {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        p, ul {
+            transition-delay: $fast-transition-speed - 200ms;
+        }
+    }
+}
+
+/* Block - Image + Image Two Column */
+.animations-enabled {
+    // Initial State
+    .block-image .container.will-animate, .block-imagetwocolumn .container.will-animate {
+        .transition-helper {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+    }
+    
+    // Visible State
+    .block-image .container.will-animate.is-active, .block-imagetwocolumn .container.will-animate.is-active {
+        .transition-helper {
+            transition: all $slow-transition-speed $easeInOutQuart;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Block - Text Heading Left */
 .animations-enabled {
     // Initial State
     .text-heading-left.will-animate {
@@ -413,6 +531,56 @@
             transition: all $normal-transition-speed $easeOutQuart;
             transition-delay: $fast-transition-speed - 100ms;
             opacity: 1;
+        }
+    }
+}
+
+/* Block - Text Narrow */
+.animations-enabled {
+    // Initial State
+    .block-textnarrow .container.will-animate {
+        h1, h2, h3, h4, h5, h6, p {
+            transform: translateY(2rem);
+            opacity: 0;
+        }
+    }
+
+    // Visible State
+    .block-textnarrow .container.will-animate.is-active {
+        h1, h2, h3, h4, h5, h6, p {
+            transition: opacity $normal-transition-speed $easeOutQuart, transform $normal-transition-speed $easeOutQuart;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @for $i from 0 to 15 {
+            :nth-child(#{$i + 1}) {
+                transition-delay: 50ms * $i + 1;
+            }
+        }
+    }
+}
+
+/* Block - Text Left */
+.animations-enabled {
+    // Initial State
+    .block-textleft .container.will-animate {
+        h1, p, ul {
+            transform: translateY(2rem);
+            opacity: 0;
+        }
+    }
+    
+    // Visible State
+    .block-textleft .container.will-animate.is-active {
+        h1, p, ul {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        p, ul {
+            transition-delay: $fast-transition-speed - 200ms;
         }
     }
 }

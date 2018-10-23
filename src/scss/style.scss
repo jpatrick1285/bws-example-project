@@ -51,7 +51,7 @@ body, html {
 
 h1, h2, h3, h4, h5, h6, p.is-subheading {
   line-height: 1.2em;
-  margin-bottom: 0.8em;
+  margin-bottom: 1em;
 }
 
 h1.is-large {
@@ -399,11 +399,6 @@ img.cover {
   z-index: -1;
   overflow: hidden;
 
-  .transition-helper {
-    width: 100%;
-    height: 100%;
-  }
-
   img {
     max-width: none;
     object-fit: cover;
@@ -413,6 +408,12 @@ img.cover {
     width: 110%;
     height: 110%;
   }
+}
+
+.transition-helper {
+  width: 100%;
+  height: 100%;
+  background: $black;
 }
 
 /* General Styles */
