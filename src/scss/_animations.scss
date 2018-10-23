@@ -222,7 +222,7 @@
 
     .case-list .tile.will-animate.is-active article {
         .background-image-container .transition-helper {
-            transition: all $normal-transition-speed $easeOutQuart;
+            transition: all $slow-transition-speed $easeOutQuart;
             transform: scale(1);
             opacity: 1;
         }

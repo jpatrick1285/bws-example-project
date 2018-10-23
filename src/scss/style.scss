@@ -783,7 +783,7 @@ nav.main-nav {
 .next-project-section {
   img {
     opacity: 0.4;
-    transition: all 400ms $easeOutCubic;
+    transition: all $normal-transition-speed $easeOutQuart;
   }
 
   &:hover img {
@@ -801,7 +801,6 @@ section.case-list {
   
   .tile.is-child {
     padding: 5rem 4rem;
-    transition: all 0.5s;
 
     @include widescreen {
       padding: 6rem 5rem;
@@ -825,27 +824,33 @@ section.case-list {
 
     img {
       opacity: 0.8;
-      transition: all 0.5s;
+      transition: all $slow-transition-speed $easeOutCubic;
+    }
+
+    header {
+      transition: all $normal-transition-speed $easeOutQuart;
     }
 
     .description {
       visibility: hidden;
       opacity: 0;
 
-      transition: all 0.5s;
+      transition: all $normal-transition-speed $easeOutQuart;
     }
 
     &:hover {
-      transform: scale(0.99);
+      header {
+        transform: translateX(0.3rem);
+      }
 
       .description {
         visibility: visible;
         opacity: 1;
-        transform: translateX(0)
+        transform: translateX(0.3rem);
       }
 
       img {
-        transform: scale(1.02);
+        transform: scale(1.05);
         opacity: 0.6;
       }
     }

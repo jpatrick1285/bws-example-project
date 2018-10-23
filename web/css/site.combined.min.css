@@ -244,7 +244,7 @@
           transform: translateY(0); }
 
 .animations-enabled .case-list .tile.will-animate.is-active article .background-image-container .transition-helper {
-  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
@@ -6379,7 +6379,7 @@ nav.main-nav {
 
 .next-project-section img {
   opacity: 0.4;
-  transition: all 400ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1); }
 
 .next-project-section:hover img {
   -webkit-transform: scale(1.01);
@@ -6392,8 +6392,7 @@ section.case-list {
   section.case-list .tile-link-wrapper {
     display: block; }
   section.case-list .tile.is-child {
-    padding: 5rem 4rem;
-    transition: all 0.5s; }
+    padding: 5rem 4rem; }
     @media screen and (min-width: 1200px) {
       section.case-list .tile.is-child {
         padding: 6rem 5rem; } }
@@ -6408,26 +6407,28 @@ section.case-list {
       font-weight: normal; }
     section.case-list .tile.is-child img {
       opacity: 0.8;
-      transition: all 0.5s; }
+      transition: all 1200ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+    section.case-list .tile.is-child header {
+      transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1); }
     section.case-list .tile.is-child .description {
       visibility: hidden;
       opacity: 0;
-      transition: all 0.5s; }
-    section.case-list .tile.is-child:hover {
-      -webkit-transform: scale(0.99);
-          -ms-transform: scale(0.99);
-              transform: scale(0.99); }
-      section.case-list .tile.is-child:hover .description {
-        visibility: visible;
-        opacity: 1;
-        -webkit-transform: translateX(0);
-            -ms-transform: translateX(0);
-                transform: translateX(0); }
-      section.case-list .tile.is-child:hover img {
-        -webkit-transform: scale(1.02);
-            -ms-transform: scale(1.02);
-                transform: scale(1.02);
-        opacity: 0.6; }
+      transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1); }
+    section.case-list .tile.is-child:hover header {
+      -webkit-transform: translateX(0.3rem);
+          -ms-transform: translateX(0.3rem);
+              transform: translateX(0.3rem); }
+    section.case-list .tile.is-child:hover .description {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: translateX(0.3rem);
+          -ms-transform: translateX(0.3rem);
+              transform: translateX(0.3rem); }
+    section.case-list .tile.is-child:hover img {
+      -webkit-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+              transform: scale(1.05);
+      opacity: 0.6; }
 
 section.case-list.home .tile.is-child {
   height: 60vh; }
