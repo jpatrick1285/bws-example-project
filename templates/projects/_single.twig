@@ -21,7 +21,9 @@
     <div class="container">
         <div class="hero-container is-background-container">
             <div class="background-image-container secondary-image">
-                <img src="{{ entry.heroFeaturedImage.one().getUrl() }}">
+                <div class="transition-helper">
+                    <img src="{{ entry.heroFeaturedImage.one().getUrl() }}">
+                </div>
             </div>
             <div class="heading-container">
                 <p class="is-subheading has-dash">{{ entry.heroSubheading }}</p>
