@@ -302,6 +302,82 @@
     }
 }
 
+/* Offset-Image Hero */
+.animations-enabled {
+    // Initial State
+    .header-background.will-animate img {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    .hero.offset-image.will-animate {
+        .heading-container {
+            p.is-subheading {
+                opacity: 0;
+                transform: translateX(-2rem);
+            }
+
+            h1 {
+                opacity: 0;
+                transform: translateX(-2rem);
+            }
+        }
+
+        .featured-image {
+            transform: translateY(5rem);
+
+            .transition-helper {
+                transform: translateX(200%);
+                overflow: hidden;
+
+                img {
+                    transform: translateX(-180%);
+                }
+            }
+        }
+    }
+
+    // Visible State
+    .header-background.will-animate.is-active img {
+        transition: all $slow-transition-speed $easeOutQuart;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .hero.offset-image.will-animate.is-active {
+        .heading-container {
+            p.is-subheading {
+                transition: all $slow-transition-speed $easeOutQuart;
+                transition-delay: $normal-transition-speed - 100ms;
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            h1 {
+                transition: all $slow-transition-speed $easeOutQuart;
+                transition-delay: $normal-transition-speed + 100ms;
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .featured-image {
+            transition: all $slow-transition-speed $easeOutQuart;
+            transform: translateY(0);
+
+            .transition-helper {
+                transition: all $slow-transition-speed $easeOutQuart;
+                transform: translateX(0);
+
+                img {
+                    transition: all $slow-transition-speed $easeOutQuart;
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}
+
 /* Text Heading Left Block */
 .animations-enabled {
     // Initial State

@@ -22,25 +22,7 @@
     </div>
 </section> #}
 
-<!-- Offset Image Hero -->
-<section class="section is-large is-dark is-background-container has-background header-background animatable">
-    <div class="background-image-container">
-        <img src="{{ entry.heroBackgroundImage.one().getUrl() }}">
-    </div>
-</section>
-<section class="section is-dark is-vertical-center is-background-container hero offset-image animatable">
-    <div class="container">
-        <div class="hero-container is-background-container">
-            <div class="background-image-container featured-image">
-                <img src="{{ entry.heroFeaturedImage.one().getUrl() }}">
-            </div>
-            <div class="heading-container">
-                <p class="is-subheading has-dash">{{ entry.heroSubheading }}</p>
-                <h1 class="is-large">{{ entry.heroHeading }}</h1>
-            </div>
-        </div>
-    </div>
-</section>
+{% include("_partials/_hero_offset_image.twig") %}
 
 {% for block in entry.contentBuilder %}
     {% include('_blocks/_' ~ blockPrefix ~ 'block_' ~ block.type.handle) %}

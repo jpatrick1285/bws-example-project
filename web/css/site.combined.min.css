@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Tue, Oct 23, 2018 11:01 AM ET
- * @release        7add937ae066445bc9cd063debb6aae7f361f565 [master]
+ * @build          Tue, Oct 23, 2018 12:40 PM ET
+ * @release        f6346a1963e66659f7c3bb6132afe48db24c639a [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -310,6 +310,78 @@
 .animations-enabled .services.will-animate.is-active .service.will-animate.is-active h3 .heading-title {
   transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 1; }
+
+/* Offset-Image Hero */
+.animations-enabled .header-background.will-animate img {
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); }
+
+.animations-enabled .hero.offset-image.will-animate .heading-container p.is-subheading {
+  opacity: 0;
+  -webkit-transform: translateX(-2rem);
+      -ms-transform: translateX(-2rem);
+          transform: translateX(-2rem); }
+
+.animations-enabled .hero.offset-image.will-animate .heading-container h1 {
+  opacity: 0;
+  -webkit-transform: translateX(-2rem);
+      -ms-transform: translateX(-2rem);
+          transform: translateX(-2rem); }
+
+.animations-enabled .hero.offset-image.will-animate .featured-image {
+  -webkit-transform: translateY(5rem);
+      -ms-transform: translateY(5rem);
+          transform: translateY(5rem); }
+  .animations-enabled .hero.offset-image.will-animate .featured-image .transition-helper {
+    -webkit-transform: translateX(200%);
+        -ms-transform: translateX(200%);
+            transform: translateX(200%);
+    overflow: hidden; }
+    .animations-enabled .hero.offset-image.will-animate .featured-image .transition-helper img {
+      -webkit-transform: translateX(-180%);
+          -ms-transform: translateX(-180%);
+              transform: translateX(-180%); }
+
+.animations-enabled .header-background.will-animate.is-active img {
+  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+.animations-enabled .hero.offset-image.will-animate.is-active .heading-container p.is-subheading {
+  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 650ms;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.animations-enabled .hero.offset-image.will-animate.is-active .heading-container h1 {
+  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 850ms;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+
+.animations-enabled .hero.offset-image.will-animate.is-active .featured-image {
+  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0); }
+  .animations-enabled .hero.offset-image.will-animate.is-active .featured-image .transition-helper {
+    transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
+    .animations-enabled .hero.offset-image.will-animate.is-active .featured-image .transition-helper img {
+      transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0); }
 
 /* Text Heading Left Block */
 .animations-enabled .text-heading-left.will-animate p.is-subheading .heading-title {
