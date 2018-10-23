@@ -2,13 +2,15 @@
 <section class="section is-medium is-dark has-background has-text-centered is-background-container next-project-section block-{{ block.type.handle }} animatable">
     {% if block.image|length %}
       <div class="background-image-container">
-          <img src="{{ block.image.one().getUrl() }}">
+          <div class="transition-helper">
+              <img src="{{ block.image.one().getUrl() }}">
+          </div>
       </div>
     {% endif %}
     <div class="container">
         <a href="{{ block.sectionLink }}">
-            <p class="is-subheading">{{ block.subheading }}</p>
-            <h1>{{ block.heading }}</h1>
+            <p class="is-subheading heading-title-wrap"><span class="heading-title">{{ block.subheading }}</span></p>
+            <h1 class="heading-title-wrap"><span class="heading-title">{{ block.heading }}</span></h1>
         </a>
     </div>
 </section>

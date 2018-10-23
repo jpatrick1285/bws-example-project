@@ -711,6 +711,45 @@
     }
 }
 
+/* Block - Next Section */
+.animations-enabled {
+    // Initial State
+    .block-nextsection.will-animate {
+        .transition-helper {
+            opacity: 0;
+            transform: scale(1.1);
+        }
+
+        p.is-subheading .heading-title {
+            transform: translateY(100%);
+        }
+
+        h1 .heading-title {
+            transform: translateY(100%);
+        }
+    }
+    
+    // Visible State
+    .block-nextsection.will-animate.is-active {
+        .transition-helper {
+            transition: all $slow-transition-speed $easeOutQuart;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        p.is-subheading .heading-title {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transform: translateY(0);
+        }
+
+        h1 .heading-title {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transition-delay: $fast-transition-speed - 200ms;
+            transform: translateY(0);
+        }
+    }
+}
+
 /* Footer */
 .animations-enabled {
     // Initial State
