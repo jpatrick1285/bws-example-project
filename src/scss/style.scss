@@ -806,10 +806,10 @@ section.case-list {
   }
   
   .tile.is-child {
-    padding: 5rem 4rem;
+    padding: 8rem 4rem;
 
     @include widescreen {
-      padding: 6rem 5rem;
+      padding: 10rem 5rem;
     }
 
     h1, h2, h3, p.is-subheading {

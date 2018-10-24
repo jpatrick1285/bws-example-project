@@ -7143,10 +7143,10 @@ section.case-list {
   section.case-list .tile-link-wrapper {
     display: block; }
   section.case-list .tile.is-child {
-    padding: 5rem 4rem; }
+    padding: 8rem 4rem; }
     @media screen and (min-width: 1200px) {
       section.case-list .tile.is-child {
-        padding: 6rem 5rem; } }
+        padding: 10rem 5rem; } }
     section.case-list .tile.is-child h1, section.case-list .tile.is-child h2, section.case-list .tile.is-child h3, section.case-list .tile.is-child p.is-subheading {
       max-width: 45rem; }
     @media screen and (min-width: 1200px) and (max-width: 1799px) {

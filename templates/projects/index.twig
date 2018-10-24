@@ -16,34 +16,32 @@
 <section class="section is-medium case-list">
     <div class="container">
         {% for batchedProjects in projects | batch(2) %}
-            <div class="tile is-ancestor is-block-tablet is-flex-widescreen">
-                {% for project in batchedProjects %}
-                    <div class="tile is-parent">
-                        <a class="tile-link-wrapper" href="{{ project.uri }}">
-                            <article class="tile is-child is-dark is-background-container has-background animatable">
-                                <div class="background-image-container">
-                                    <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
-                                </div>
-                                <header>
-                                    <p class="is-subheading">
-                                        {% for tag in project.serviceTags.all %}
-                                            {{ tag|upper }}
-                                            {% if not loop.last %} + {% endif %}
-                                        {% endfor %}
-                                    </p>
-                                    <h1>{{ project.heroSubheading }}</h1>
-                                </header>
-                                <div class="description">
-                                    <p>
-                                        {{ project.shortDescription }}
-                                    </p>
-                                    <a class="is-button is-text" href="{{ project.uri }}">See Project</a>
-                                </div>
-                            </article>
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
+            {% for project in batchedProjects %}
+                <div class="tile is-parent is-block-tablet is-flex-widescreen">
+                    <a class="tile-link-wrapper" href="{{ project.uri }}">
+                        <article class="tile is-child is-dark is-background-container has-background animatable">
+                            <div class="background-image-container">
+                                <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                            </div>
+                            <header>
+                                <p class="is-subheading">
+                                    {% for tag in project.serviceTags.all %}
+                                        {{ tag|upper }}
+                                        {% if not loop.last %} + {% endif %}
+                                    {% endfor %}
+                                </p>
+                                <h1>{{ project.heroSubheading }}</h1>
+                            </header>
+                            <div class="description">
+                                <p>
+                                    {{ project.shortDescription }}
+                                </p>
+                                <a class="is-button is-text" href="{{ project.uri }}">See Project</a>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            {% endfor %}
         {% endfor %}
         {% if pageInfo.totalPages and pageInfo.totalPages > 1 %}
         <div class="pagination animatable">
