@@ -85,6 +85,10 @@
         },
         onLeave: function() {
             CommonView.onLeave.apply(this);
+            if (this.teamSlider) {
+                this.teamSlider.destroy();
+                this.teamSlider = null;
+            }
         }
     });
 

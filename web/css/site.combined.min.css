@@ -173,6 +173,76 @@
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0); } }
 
+/* Hero */
+.animations-enabled .hero.will-animate .transition-helper {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 0; }
+
+.animations-enabled .hero.will-animate p.is-subheading {
+  opacity: 0;
+  -webkit-transform: translateY(3rem);
+      -ms-transform: translateY(3rem);
+          transform: translateY(3rem); }
+  .animations-enabled .hero.will-animate p.is-subheading.has-dash::before {
+    -webkit-transform-origin: left center;
+        -ms-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0); }
+
+.animations-enabled .hero.will-animate h1 .heading-title {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%); }
+
+.animations-enabled .hero.will-animate p {
+  opacity: 0;
+  -webkit-transform: translateY(1rem);
+      -ms-transform: translateY(1rem);
+          transform: translateY(1rem); }
+
+.animations-enabled .hero.will-animate.is-active .transition-helper {
+  transition: all 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1; }
+
+.animations-enabled .hero.will-animate.is-active p.is-subheading {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 300ms;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
+  .animations-enabled .hero.will-animate.is-active p.is-subheading.has-dash::before {
+    transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-delay: 600ms;
+    -webkit-transform-origin: left center;
+        -ms-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1); }
+
+.animations-enabled .hero.will-animate.is-active h1 .heading-title {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 400ms;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0); }
+
+.animations-enabled .hero.will-animate.is-active p {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 750ms;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0); }
+
 /* Home Hero */
 .animations-enabled .hero.home.will-animate .transition-helper {
   -webkit-transform: scale(1.1);
