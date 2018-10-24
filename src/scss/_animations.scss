@@ -602,25 +602,30 @@
 .animations-enabled {
     // Initial State
     .block-textimageleft .container.will-animate, .block-textimageright .container.will-animate {
-        .image .transition-helper {
-            position: relative;
-            transform-origin: top center;
-            transform: scaleX(0);
-            overflow: hidden;
+        // .image .transition-helper {
+        //     position: relative;
+        //     transform-origin: top center;
+        //     transform: scaleX(0);
+        //     overflow: hidden;
 
-            &::before {
-                position: absolute;
-                display: flex;
-                content: '';
-                left: 0;
-                top: -1%;
-                width: 100%;
-                height: 102%;
-                transform-origin: bottom center;
+        //     &::before {
+        //         position: absolute;
+        //         display: flex;
+        //         content: '';
+        //         left: 0;
+        //         top: -1%;
+        //         width: 100%;
+        //         height: 102%;
+        //         transform-origin: bottom center;
                 
 
-                background: #F5F5F5;
-            }
+        //         background: #F5F5F5;
+        //     }
+        // }
+
+        .transition-helper {
+            opacity: 0;
+            transform: translateY(2rem);
         }
 
         h1, p, ul {
@@ -631,12 +636,18 @@
     
     // Visible State
     .block-textimageleft .container.will-animate.is-active, .block-textimageright .container.will-animate.is-active {
-        .image .transition-helper {
-            animation: block-image-container-in $slow-transition-speed $easeOutQuart forwards;
+        // .image .transition-helper {
+        //     animation: block-image-container-in $slow-transition-speed $easeOutQuart forwards;
 
-            &::before {
-                animation: block-image-overlay-out $slow-transition-speed $easeOutQuart forwards;
-            }
+        //     &::before {
+        //         animation: block-image-overlay-out $slow-transition-speed $easeOutQuart forwards;
+        //     }
+        // }
+
+        .transition-helper {
+            transition: all $slow-transition-speed $easeInOutQuart;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h1, p, ul {
