@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Tue, Oct 23, 2018 3:46 PM ET
- * @release        3702d145b97a2c68dd48d7b6003cffcd3a80fd73 [master]
+ * @build          Wed, Oct 24, 2018 10:44 AM ET
+ * @release        6751c0e4e3ebfac37badd4e562d310c819ab95c4 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -458,6 +458,85 @@
 .animations-enabled .services.will-animate.is-active .service.will-animate.is-active h3 .heading-title {
   transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 1; }
+
+/* Contact - Contact Form Section */
+@-webkit-keyframes contact-section-slide-up {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+@keyframes contact-section-slide-up {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-webkit-keyframes contact-section-scale-fade-in {
+  0% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@keyframes contact-section-scale-fade-in {
+  0% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; } }
+
+@-webkit-keyframes contact-section-slide-fade-in {
+  0% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes contact-section-slide-fade-in {
+  0% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; } }
+
+.animations-enabled .contact-section.will-animate .background-image-container .transition-helper img {
+  -webkit-animation: contact-section-scale-fade-in 1700ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          animation: contact-section-scale-fade-in 1700ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards; }
+
+.animations-enabled .contact-section.will-animate h1 .heading-title {
+  -webkit-animation: contact-section-slide-up 750ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: contact-section-slide-up 750ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms; }
+
+.animations-enabled .contact-section.will-animate .contact-form {
+  -webkit-animation: contact-section-slide-fade-in 750ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: contact-section-slide-fade-in 750ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  -webkit-transform: translateY(3rem);
+      -ms-transform: translateY(3rem);
+          transform: translateY(3rem);
+  opacity: 0;
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms; }
 
 /* Contact - Contact Info Section */
 .animations-enabled .about-contact-section.will-animate h1, .animations-enabled .about-contact-section.will-animate .address, .animations-enabled .about-contact-section.will-animate .contact, .animations-enabled .about-contact-section.will-animate .map {
@@ -6966,7 +7045,9 @@ section.services a:hover .service h3 {
     position: relative;
     -webkit-transform: translateX(-40%);
         -ms-transform: translateX(-40%);
-            transform: translateX(-40%); } }
+            transform: translateX(-40%);
+    width: 150%;
+    max-width: 25rem; } }
 
 @media screen and (min-width: 900px) {
   .contact-section form.contact-form {

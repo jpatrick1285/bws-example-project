@@ -980,6 +980,8 @@ section.services {
     @include tablet {
       position: relative;
       transform: translateX(-40%);
+      width: 150%;
+      max-width: 25rem;
     }
   }
 

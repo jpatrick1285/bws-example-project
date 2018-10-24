@@ -463,6 +463,63 @@
     }
 }
 
+/* Contact - Contact Form Section */
+@keyframes contact-section-slide-up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes contact-section-scale-fade-in {
+    0% {
+        transform: scale(1.05);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes contact-section-slide-fade-in {
+    0% {
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animations-enabled {
+    // Initial State
+    .contact-section.will-animate {
+        .background-image-container .transition-helper img {
+            animation: contact-section-scale-fade-in $slow-transition-speed + 500ms $easeOutCubic forwards;
+        }
+
+        h1 .heading-title {
+            animation: contact-section-slide-up $normal-transition-speed $easeOutQuart forwards;
+            transform: translateY(100%);
+            animation-delay: $fast-transition-speed;
+        }
+
+        .contact-form {
+            animation: contact-section-slide-fade-in $normal-transition-speed $easeOutQuart forwards;
+            transform: translateY(3rem);
+            opacity: 0;
+            animation-delay: $normal-transition-speed;
+        }
+    }
+}
+
 /* Contact - Contact Info Section */
 .animations-enabled {
     // Initial State
