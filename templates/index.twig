@@ -42,80 +42,45 @@
             'heroFeaturedImage', {}
         ]
     ]) 
-    .limit(3)
+    .limit(2)
     .all() %}
 
-<section class="section is-offset-up case-list home animatable">
-    <div class="container">
-        <div class="tile is-ancestor">
-            {% for project in projects | slice(0, 1) %}
-                <div class="tile is-parent animatable">
-                    <a class="tile-link-wrapper" href="{{ project.uri }}">
-                        <article class="tile is-child is-dark is-background-container has-background">
-                            <div class="background-image-container">
+<section class="section is-medium case-list home">
+    <div class="container animatable">
+        <header class="container animatable">
+            <p class="is-subheading heading-title-wrap">
+                <span class="heading-title">SELECTED PROJECTS</span>
+            </p>
+            <h1 class="heading-title-wrap">
+                <span class="heading-title">Here's some of our favorite work.</span>
+            </h1>
+        </header>
+        {% for batchedProjects in projects | batch(2) %}
+            <div class="tile is-ancestor is-block-tablet is-block-desktop is-flex-widescreen">
+                {% for project in batchedProjects %}
+                    <div class="tile is-parent animatable">
+                        <a class="tile-link-wrapper" href="{{ project.uri }}">
+                            <article class="tile is-child">
                                 <div class="transition-helper">
-                                    <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                    <img class="cover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
                                 </div>
-                            </div>
-                            <header class="animatable">
-                                <p class="is-subheading heading-title-wrap">
-                                    <span class="heading-title">
-                                        {% for tag in project.serviceTags.all %}
-                                            {{ tag|upper }}
-                                            {% if not loop.last %} + {% endif %}
-                                        {% endfor %}
-                                    </span>
-                                </p>
-                                <h1 class="heading-title-wrap animatable"><span class="heading-title">{{ project.heroSubheading }}</span></h1>
-                            </header>
-                            <div class="description">
-                                <p>
-                                    {{ project.shortDescription }}
-                                </p>
-                                <a class="is-button is-text" href="{{ project.uri }}">See Project</a>
-                            </div>
-                        </article>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="tile is-ancestor is-block-tablet is-flex-widescreen">
-            {% for project in projects | slice(1, 2) %}
-                <div class="tile is-parent animatable">
-                    <a class="tile-link-wrapper" href="{{ project.uri }}">
-                        <article class="tile is-child is-dark is-background-container has-background">
-                            <div class="background-image-container">
-                                <div class="transition-helper">
-                                    <img class="image js-mouse-tilt-hover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                <div class="description">
+                                    <h3 class="heading-title-wrap animatable"><span class="heading-title">{{ project.heroSubheading | title }}</span></h3>
+                                    <p>
+                                        {{ project.shortDescription }}
+                                    </p>
                                 </div>
-                            </div>
-                            <header class="animatable">
-                                <p class="is-subheading heading-title-wrap">
-                                    <span class="heading-title">
-                                        {% for tag in project.serviceTags.all %}
-                                            {{ tag|upper }}
-                                            {% if not loop.last %} + {% endif %}
-                                        {% endfor %}
-                                    </span>
-                                </p>
-                                <h1 class="heading-title-wrap animatable"><span class="heading-title">{{ project.heroSubheading }}</span></h1>
-                            </header>
-                            <div class="description">
-                                <p>
-                                    {{ project.shortDescription }}
-                                </p>
-                                <a class="is-button is-text" href="{{ project.uri }}">See Project</a>
-                            </div>
-                        </article>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
+                            </article>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 </section>
 
 <!-- Home Secondary Headline -->
-<section class="section is-medium text-heading-left animatable">
+<section class="section is-medium is-off-white has-background text-heading-left animatable">
     <div class="container is-small">
         <div class="columns">
             <div class="column is-two-fifths">

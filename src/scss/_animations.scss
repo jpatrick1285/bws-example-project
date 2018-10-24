@@ -281,6 +281,7 @@
             .transition-helper {
                 transform: translateX(200%);
                 overflow: hidden;
+                opacity: 1;
 
                 img {
                     transform: translateX(-180%);
@@ -352,6 +353,7 @@
             .transition-helper {
                 transform: translateX(200%);
                 overflow: hidden;
+                opacity: 1;
 
                 img {
                     transform: translateX(-180%);
@@ -392,6 +394,7 @@
             .transition-helper {
                 transition: all $slow-transition-speed $easeOutQuart;
                 transform: translateX(0);
+                opacity: 1;
 
                 img {
                     transition: all $slow-transition-speed $easeOutQuart;
@@ -418,54 +421,37 @@
 /* Case Study List */
 .animations-enabled {
     // Initial State
-    .case-list.will-animate {
-        transform: translateY(5rem);
+    .case-list header.will-animate h1, .case-list header.will-animate p.is-subheading {
+        transform: translateX(-2rem);
+        opacity: 0;
     }
-
-    .case-list .tile.will-animate article {
-        .background-image-container .transition-helper {
-            transform: scale(1.05);
-            opacity: 0;
-        }
-
-        header.will-animate {
-            p.is-subheading {
-                transform: translateX(-1rem);
-                opacity: 0;
-            }
-
-            h1 {
-                transform: translateX(-1rem);
-                opacity: 0;
-            }
-        }
+    .case-list .tile.will-animate {
+        transform: translateY(3rem);
+        opacity: 0;
     }
 
     // Visible State
-    .case-list.will-animate.is-active {
-        transition: all $normal-transition-speed $easeOutQuart;
-        transform: translateY(0);
-    }
-
-    .case-list .tile.will-animate.is-active article {
-        .background-image-container .transition-helper {
-            transition: all $slow-transition-speed $easeOutQuart;
-            transform: scale(1);
+    .case-list header.will-animate.is-active {
+        h1, p.is-subheading {
+            transition: all $normal-transition-speed $easeOutQuart;
+            transform: translateX(0);
             opacity: 1;
         }
 
-        header.will-animate.is-active {
-            p.is-subheading {
-                transition: all $normal-transition-speed $easeOutQuart;
-                transform: translateX(0);
-                opacity: 1;
-            }
+        h1 {
+            transition-delay: $fast-transition-speed - 200ms;
+        }
+    }
 
-            h1 {
-                transition: all $normal-transition-speed $easeOutQuart;
-                transform: translateX(0);
-                opacity: 1;
-            }
+    .case-list .tile.will-animate.is-active {
+        transition: all $slow-transition-speed $easeOutQuart;
+        transition-delay: $fast-transition-speed;
+        transform: translateY(0);
+        opacity: 1;
+
+        &:nth-child(2) {
+            transition: all $slow-transition-speed + 300ms $easeOutQuart;
+            transition-delay: $fast-transition-speed;
         }
     }
 }

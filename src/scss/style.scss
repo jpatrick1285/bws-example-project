@@ -379,6 +379,10 @@ img.cover {
     background-color: $black;
   }
 
+  &.is-off-white {
+    background-color: #F9F9F9;
+  }
+
   &.is-grey {
     background-color: $grey;
   }
@@ -693,11 +697,6 @@ nav.main-nav {
 
 .hero.home {
   min-height: 100vh;
-
-  // offset container to make space for the overlapping content later on
-  .container {
-    margin-top: -5rem;
-  }
 }
 
 // .hero.offset-image {
@@ -801,73 +800,80 @@ nav.main-nav {
 section.case-list {
   z-index: 5;
 
+  header {
+    margin-bottom: 5rem;
+  }
+
+  .tile.is-ancestor:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
   .tile-link-wrapper {
     display: block;
   }
   
   .tile.is-child {
-    padding: 8rem 4rem;
-
-    @include widescreen {
-      padding: 10rem 5rem;
-    }
-
-    h1, h2, h3, p.is-subheading {
-      max-width: 45rem;
-    }
-
-    h1 {
-      @include widescreen-only {
-        font-size: 2.5rem;
-      }
-    }
-
     p {
-      max-width: 20rem;
-      margin-bottom: 1em;
       font-weight: normal;
     }
 
-    img {
-      opacity: 0.8;
-      transition: all $slow-transition-speed $easeOutCubic;
-    }
+    .transition-helper {
+      overflow: hidden;
+      background: none;
+      transition: all $normal-transition-speed $easeOutCubic;
 
-    header {
-      transition: all $normal-transition-speed $easeOutQuart;
+      img {
+        opacity: 1;
+        transition: all $normal-transition-speed $easeOutCubic;
+      }
     }
 
     .description {
-      visibility: hidden;
-      opacity: 0;
+      text-align: center;
+      padding-top: 2rem;
 
-      transition: all $normal-transition-speed $easeOutQuart;
+      h3 {
+        font-size: 1.1rem;
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.6em;
+        transition: all $normal-transition-speed $easeInOutCubic;
+      }
+
+      p {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        transition: all $normal-transition-speed $easeOutQuart;
+
+        @include desktop {
+          max-width: 65%;
+        }
+      }
     }
 
     &:hover {
-      header {
-        transform: translateX(0.3rem);
+      .transition-helper {
+        transform: scale(.95);
+
+        img {
+          transform: scale(1.1);
+        }
       }
 
       .description {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0.3rem);
-      }
+        h3 {
+          transform: translateY(-2rem);
+          transition-timing-function: $easeOutQuart;
+        }
 
-      img {
-        transform: scale(1.05);
-        opacity: 0.6;
+        p {
+          transform: translateY(-2rem);
+          transition-timing-function: $easeInOutCubic;
+        }
       }
     }
-  }
-}
-
-section.case-list.home .tile.is-child {
-  height: 60vh;
-
-  @include tablet {
-    height: 80vh;
   }
 }
 
