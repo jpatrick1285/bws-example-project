@@ -3,6 +3,10 @@
 @import "variables";
 @import "animations";
 
+// Flickity - https://github.com/metafizzy/flickity
+@import "~flickity/dist/flickity.min";
+
+
 @import "~bulma/sass/utilities/_all";
 @import "~bulma/sass/base/_all";
 //@import "~bulma/sass/components/_all";
@@ -916,7 +920,7 @@ section.services {
 .team-slider {
   touch-action: pan-y;
   padding-top: 5rem;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   
   .track {
     //overflow-x: visible;
@@ -924,12 +928,26 @@ section.services {
     //width: 1000%;
   }
 
+  .flickity-page-dots {
+    bottom: -50px;
+
+    .dot {
+      transition: opacity $fast-transition-speed $easeOutQuart;
+    }
+  }
+
   .slide {
     width: 26rem;
+    max-width: 100%;
     display: inline-block;
 
     &:not(last-child) {
-      margin-right: 5rem;
+      margin-right: 3rem;
+    }
+
+    .slide-contents {
+      transform: scale(.95);
+      transition: transform $normal-transition-speed $easeOutQuart;
     }
 
     .description {
@@ -958,10 +976,14 @@ section.services {
       -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
     }
 
-    &:hover img {
-      filter: none;
-      -webkit-filter: grayscale(0%);
-      transform: scale(1.03);
+    &.is-selected .slide-contents {
+      transform: scale(1);
+
+      img {
+        filter: none;
+        -webkit-filter: grayscale(0%);
+        //transform: scale(1.03);
+      }
     }
   }
 }

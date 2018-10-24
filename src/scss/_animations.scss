@@ -553,6 +553,39 @@
     }
 }
 
+/* About - Team Slider Animations */
+.animations-enabled {
+    // Initial State
+    .team-section .team-header.will-animate h1 {
+        transform: translateX(-2rem);
+        opacity: 0;
+    }
+
+    .team-section .team-container.will-animate .slide {
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+
+    // Visible State
+    .team-section .team-header.will-animate.is-active h1 {
+        transition: all $normal-transition-speed $easeOutQuart;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .team-section .team-container.will-animate.is-active .slide {
+        transition: all $slow-transition-speed $easeOutQuart;
+        transform: translateY(0);
+        opacity: 1;
+
+        @for $i from 0 to 15 {
+            &:nth-child(#{$i + 1}) {
+                transition-delay: (100ms * ($i + 1)) + 100ms;
+            }
+        }
+    }
+}
+
 /* Block - Text */
 .animations-enabled {
     // Initial State

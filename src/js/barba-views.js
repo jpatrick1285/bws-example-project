@@ -70,8 +70,18 @@
     /* -- About View -- */
     let AboutView = CommonView.extend({
         namespace: 'about',
+        teamSlider: null,
         onEnterCompleted: function () {
             CommonView.onEnterCompleted.apply(this);
+            loadjs(assetsBaseUrl + 'js/flickity.pkgd.min.js', () => {
+                this.teamSlider = new Flickity('.team-slider.slider .track', {
+                    freeScroll: true,
+                    prevNextButtons: false,
+                    contain: true,
+                    friction: 0.3,
+                    //pageDots: false
+                });
+            });
         },
         onLeave: function() {
             CommonView.onLeave.apply(this);
@@ -88,7 +98,7 @@
         namespace: 'contact',
         onEnterCompleted: function () {
             CommonView.onEnterCompleted.apply(this);
-            loadjs(assetsBaseUrl + 'js/vue-quote-form.min.js', function() {
+            loadjs(assetsBaseUrl + 'js/vue-quote-form.min.js', () => {
                 if (QuoteFormController) {
                     QuoteFormController.init();
                 }
@@ -109,7 +119,7 @@
     
     // import common view requirements and initialize views
     // other pages can load these later.
-    loadjs([assetsBaseUrl + 'js/main-nav-controller.min.js', assetsBaseUrl + 'js/page-transitions.min.js'], 'main-nav', function() {
+    loadjs([assetsBaseUrl + 'js/main-nav-controller.min.js', assetsBaseUrl + 'js/page-transitions.min.js'], 'main-nav', () => {
         CommonView.init();
         HomeView.init();
         AboutView.init();

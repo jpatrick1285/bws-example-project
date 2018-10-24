@@ -104,6 +104,7 @@
         "distJs": [
             "./build/js/*.js",
             "./node_modules/barba.js/dist/barba.min.js",
+            "./node_modules/flickity/dist/flickity.pkgd.js",
             "./node_modules/jquery/dist/jquery.min.js",
             "./node_modules/lazysizes/lazysizes.min.js",
             "./node_modules/lazysizes/plugins/bgset/ls.bgset.min.js",
@@ -133,6 +134,7 @@
         "barba.js": "^1.0.0",
         "bulma": "^0.7.1",
         "fg-loadcss": "^1.2.0",
+        "flickity": "^2.1.2",
         "fontfaceobserver": "^2.0.5",
         "jquery": "^3.3.1",
         "lazysizes": "^2.0.6",
