@@ -43,7 +43,7 @@ body {
 body, html {
   font-family: $body-copy-font;
   color: $body-copy-color;
-  font-size: 20px;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -60,10 +60,11 @@ h1, h2, h3, h4, h5, h6, p.is-subheading {
 
 h1.is-large {
   font-family: $heading-copy-font;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: $heading-copy-color;
   line-break: break-word;
   hyphens: auto;
+  margin-bottom: 0.8em;
 
   @include desktop {
     font-size: 4rem;
