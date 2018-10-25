@@ -62,6 +62,8 @@ h1.is-large {
   font-family: $heading-copy-font;
   font-size: 3rem;
   color: $heading-copy-color;
+  line-break: break-word;
+  hyphens: auto;
 
   @include desktop {
     font-size: 4rem;
@@ -72,6 +74,8 @@ h1 {
   font-family: $heading-copy-font;
   font-size: 2rem;
   color: $heading-copy-color;
+  line-break: break-word;
+  hyphens: auto;
 
   @include desktop {
     font-size: 2.2rem;

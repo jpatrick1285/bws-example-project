@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Wed, Oct 24, 2018 4:31 PM ET
- * @release        7b18fbe5d0a6a7ad7ddad11436f01a064dda9c9e [master]
+ * @build          Thu, Oct 25, 2018 9:45 AM ET
+ * @release        b253ead8709b37e16ed73f4b69a2255918bf613e [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -6575,7 +6575,11 @@ h1, h2, h3, h4, h5, h6, p.is-subheading {
 h1.is-large {
   font-family: "Agane Extra Bold", sans-serif;
   font-size: 3rem;
-  color: #0E1112; }
+  color: #0E1112;
+  line-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
   @media screen and (min-width: 900px) {
     h1.is-large {
       font-size: 4rem; } }
@@ -6583,7 +6587,11 @@ h1.is-large {
 h1 {
   font-family: "Agane Extra Bold", sans-serif;
   font-size: 2rem;
-  color: #0E1112; }
+  color: #0E1112;
+  line-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
   @media screen and (min-width: 900px) {
     h1 {
       font-size: 2.2rem; } }
