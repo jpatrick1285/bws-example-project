@@ -6928,9 +6928,6 @@ nav.main-nav {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
@@ -6985,9 +6982,10 @@ nav.main-nav {
       outline: none; }
       @media screen and (min-width: 700px), print {
         nav.main-nav .nav-overlay-trigger button.nav-overlay-toggle {
-          -webkit-align-self: flex-start;
-              -ms-flex-item-align: start;
-                  align-self: flex-start; } }
+          -webkit-align-self: center;
+              -ms-flex-item-align: center;
+                      -ms-grid-row-align: center;
+                  align-self: center; } }
       nav.main-nav .nav-overlay-trigger button.nav-overlay-toggle:before, nav.main-nav .nav-overlay-trigger button.nav-overlay-toggle:after {
         content: "";
         position: absolute;
@@ -7156,35 +7154,35 @@ nav.main-nav {
     opacity: 0;
     transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1); }
     .nav-overlay .links li:nth-child(1) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(2) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(3) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(4) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(5) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(6) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(7) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(8) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(9) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(10) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(11) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(12) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(13) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(14) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
     .nav-overlay .links li:nth-child(15) {
-      transition-delay: 300ms; }
+      transition-delay: 0; }
   .nav-overlay.is-active .links li {
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -7247,7 +7245,8 @@ nav.main-nav {
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
-    opacity: 1; }
+    opacity: 1;
+    transition-delay: 750ms; }
 
 .hero {
   text-align: left;

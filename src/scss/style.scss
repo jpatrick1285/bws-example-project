@@ -440,6 +440,7 @@ a.logo {
   position: relative;
   display: inline-block;
 
+
   .svg {
     height: 35px;
     width: auto;
@@ -526,7 +527,6 @@ nav.main-nav {
 
   .nav-logo {
     display: flex;
-    flex: 1;
     align-self: center;
     padding-left: 1.5rem;
 
@@ -568,7 +568,7 @@ nav.main-nav {
       outline: none;
 
       @include tablet {
-        align-self: flex-start;
+        align-self: center;
       }
 
       &:before, &:after {
@@ -737,7 +737,7 @@ nav.main-nav {
 
     @for $i from 0 to 15 {
       &:nth-child(#{$i + 1}) {
-        transition-delay: $fast-transition-speed - 100ms;
+        transition-delay: 0;
       }
     }
   }
@@ -783,6 +783,8 @@ nav.main-nav {
   &.is-active .contact {
     transform: translateY(0);
     opacity: 1;
+
+    transition-delay: $normal-transition-speed;
   }
 }
 
