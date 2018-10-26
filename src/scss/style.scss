@@ -43,7 +43,7 @@ body {
 body, html {
   font-family: $body-copy-font;
   color: $body-copy-color;
-  font-size: 20px;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -65,6 +65,7 @@ h1.is-large {
   word-break: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
+  margin-bottom: 0.8em;
 
   @include tablet {
     font-size: 3.25rem;

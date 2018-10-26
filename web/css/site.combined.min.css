@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Fri, Oct 26, 2018 10:42 AM ET
- * @release        4133fc46e03c2ee3ca12abadfc4285c37e1b25a2 [master]
+ * @build          Fri, Oct 26, 2018 12:19 PM ET
+ * @release        e78f03cd4f2e6505df53df9289a501203013e344 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -6561,7 +6561,7 @@ body {
 body, html {
   font-family: "Lato", sans-serif;
   color: #4a4c4d;
-  font-size: 20px;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   @media (max-width: 1000px) {
@@ -6580,7 +6580,8 @@ h1.is-large {
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
-          hyphens: auto; }
+          hyphens: auto;
+  margin-bottom: 0.8em; }
   @media screen and (min-width: 700px), print {
     h1.is-large {
       font-size: 3.25rem; } }
