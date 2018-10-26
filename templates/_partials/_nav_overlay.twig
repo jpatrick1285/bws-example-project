@@ -1,4 +1,4 @@
-<div class="section is-dark is-background-container has-background nav-overlay">
+<div class="section is-dark is-background-container nav-overlay">
     <div class="background-image-container">
         <img class="menu-background background-home" src="{{ baseUrl }}img/temp/cases-antioch_insurance_agency.jpg">
     </div>
@@ -7,28 +7,21 @@
     </div>
     <div class="container is-small">
         <div class="links">
-        <ul>
-            <li><a href="{{ baseUrl }}" data-target="background-home">Home</a></li>
-            <li><a href="{{ baseUrl }}projects" data-target="background-projects">Projects</a></li>
-            <li><a href="{{ baseUrl }}about" data-target="background-home">About</a></li>
-            <li><a href="{{ baseUrl }}services" data-target="background-projects">Services</a></li>
-            <li><a href="{{ baseUrl }}contact" data-target="background-home">Hire Us</a></li>
-        </ul>
+            <ul>
+                <li><a href="{{ baseUrl }}projects" data-target="background-projects">Featured Work</a></li>
+                <li><a href="{{ baseUrl }}about" data-target="background-home">About Us</a></li>
+                <li><a href="{{ baseUrl }}services" data-target="background-projects">Our Services</a></li>
+                <li><a href="{{ baseUrl }}contact" data-target="background-home">Hire Us</a></li>
+            </ul>
         </div>
         <div class="contact">
-        <p>
-            <a href="tel:{{ contactInfo.phoneNumber | replace('/[^0-9+]/', '')}}">{{ contactInfo.phoneNumber }}</a>
-        </p>
-        <p>
-            <a href="mailto:{{ contactInfo.contactEmail }}">{{ contactInfo.contactEmail }}</a>
-        </p>
-        <div class="social-media-links">
-            {% for link in contactInfo.socialMediaLinks %}
-                <a href="{{ link.pageUrl }}" target="_blank">
-                    <i class="{{ link.icon }}"></i>
-                </a>
-            {% endfor %}
-        </div>
+            <div class="social-media-links">
+                {% for link in contactInfo.socialMediaLinks %}
+                    <a href="{{ link.pageUrl }}" target="_blank">
+                        {{ link.siteName | upper }}
+                    </a>
+                {% endfor %}
+            </div>
         </div> 
     </div>
 </div>
