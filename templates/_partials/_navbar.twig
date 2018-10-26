@@ -1,11 +1,17 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 <nav class="main-nav is-light">
-    <div class="container is-large">
-        <div class="columns is-mobile">
-            <div class="column">
-                {% include "_partials/_logo.twig" %}
-            </div>
-            <div class="column has-text-right"><button class="nav-overlay-toggle"><span class="hidden-label">Close menu</span></button></div>
-        </div>
+    <div class="nav-logo">
+        {% include "_partials/_logo.twig" %}
+    </div>
+    <div class="nav-overlay-trigger">
+        <button class="nav-overlay-toggle">
+            <span class="hidden-label">Close menu</span></button>
+    </div>
+    <div class="social-media-links">
+        {% for link in contactInfo.socialMediaLinks %}
+            <a href="{{ link.pageUrl }}" target="_blank">
+                <i class="{{ link.icon }}"></i>
+            </a>
+        {% endfor %}
     </div>
 </nav>

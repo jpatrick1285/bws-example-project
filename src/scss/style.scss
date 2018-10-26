@@ -60,10 +60,15 @@ h1, h2, h3, h4, h5, h6, p.is-subheading {
 
 h1.is-large {
   font-family: $heading-copy-font;
-  font-size: 3rem;
+  font-size: 2.3rem;
   color: $heading-copy-color;
-  line-break: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
   hyphens: auto;
+
+  @include tablet {
+    font-size: 3.25rem;
+  }
 
   @include desktop {
     font-size: 4rem;
@@ -486,92 +491,114 @@ a.logo {
   }
 }
 
+.page-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+#page-content-container {
+  width: calc(100% - #{$fixed-nav-size});
+  margin-left: $fixed-nav-size;
+}
+
 nav.main-nav {
-  padding: 1em 0;
+  height: 100vh;
+  width: $fixed-nav-size;
   position: fixed;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $black - #040404;
   //margin: 0px auto;
   z-index: 150;
+  text-align: center;
 
-  .column {
-    padding-bottom: 0;
-  }
-
-  @include desktop {
-    a.logo {
-      transform: translateX(-150%);
-    }
-  }
-
-  button.nav-overlay-toggle {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    pointer-events: all;
-    background: 0 0;
-    outline: none;
-
-    @include desktop {
-      transform: translateX(150%);
-    }
-
-    &:before, &:after {
-      content: "";
-      position: absolute;
-      left: 6px;
-      width: 27px;
-      height: 3px;
-      background: #000000;
-      transition: transform 200ms $easeInOutCubic; 
-
-      transform-origin: 50% 50%;
-    }
-
-    &:before {
-      top: 0;
-      transform: translateY(13px);
-    }
-
-    &:after {
-      bottom: 0;
-      transform: translateY(-13px);
-    }
-
-    &.is-active {
-      &:before {
-        transform: translateY(18.5px) rotate(135deg);
-      }
-
-      &:after {
-        transform: translateY(-18.5px) rotate(45deg);
-      }
-    }
-
-    .hidden-label {
-      display: block;
-      overflow: hidden;
-      text-indent: 100%;
-      white-space: nowrap;
-    }
-  }
-
-  &.is-light {
-    color: $white;
-
-    button.nav-overlay-toggle:before, button.nav-overlay-toggle:after {
-      background: $white;
-    }
-
-    h1, h2, h3, a {
-      color: $white;
-    }
+  .nav-logo {
+    display: flex;
+    flex: 1;
+    align-self: center;
+    padding-top: 1.5rem;
 
     .logo svg {
       fill: $white;
+    }
+  }
+
+  .social-media-links {
+    display: flex;
+    align-self: center;
+    padding-bottom: 1.5rem;
+    flex-direction: column;
+
+    a {
+      margin-top: 0.5em;
+      color: $white;
+      transition: transform $normal-transition-speed $easeOutQuart;
+
+      &:hover {
+        transform: translateY(-0.2rem);
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .nav-overlay-trigger {
+    display: flex;
+    flex: 1;
+    align-self: center;
+
+    button.nav-overlay-toggle {
+      display: flex;
+      align-self: flex-start;
+
+      padding: 0;
+      margin: 0;
+      border: 0;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      pointer-events: all;
+      background: 0 0;
+      outline: none;
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        width: 27px;
+        height: 3px;
+        background: $white;
+        transition: transform 200ms $easeInOutCubic; 
+
+        transform-origin: 50% 50%;
+      }
+
+      &:before {
+        top: 0;
+        transform: translateY(13px);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: translateY(-13px);
+      }
+
+      &.is-active {
+        &:before {
+          transform: translateY(18.5px) rotate(135deg);
+        }
+
+        &:after {
+          transform: translateY(-18.5px) rotate(45deg);
+        }
+      }
+
+      .hidden-label {
+        display: block;
+        overflow: hidden;
+        text-indent: 100%;
+        white-space: nowrap;
+      }
     }
   }
 }
@@ -835,6 +862,7 @@ section.case-list {
     .description {
       text-align: center;
       padding-top: 2rem;
+      font-size: 1rem;
 
       h3 {
         font-size: 1.1rem;
@@ -852,7 +880,7 @@ section.case-list {
         transition: all $normal-transition-speed $easeOutQuart;
 
         @include desktop {
-          max-width: 65%;
+          max-width: 70%;
         }
       }
     }
@@ -868,12 +896,12 @@ section.case-list {
 
       .description {
         h3 {
-          transform: translateY(-2rem);
+          transform: translateY(-1rem);
           transition-timing-function: $easeOutQuart;
         }
 
         p {
-          transform: translateY(-2rem);
+          transform: translateY(-1rem);
           transition-timing-function: $easeInOutCubic;
         }
       }

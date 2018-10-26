@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 /* Color variables */
-$black: #0E1112;
-$grey: #141718;
+$black: #0c0d0e;
+$grey: $black - #040404;
 $white: #FFFFFF;
 $off-white: #FAFAFA;
 $accent: $black;
@@ -16,6 +16,8 @@ $body-width: 1600px;
 
 /* Container Margins */
 $container-small-margin: 7.5%; // width: 85%;
+
+$fixed-nav-size: 5rem;
 
 /* Layout variables */
 $small-spacing: 4rem;

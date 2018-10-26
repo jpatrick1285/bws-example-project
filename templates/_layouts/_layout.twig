@@ -67,19 +67,21 @@
 
     <div id="barba-wrapper">
         <div class="barba-container" data-namespace="{{ namespace }}">
-            {# -- Info header, including _navbar.twig -- #}
-            {% include "_partials/_info_header.twig" %}
+            <div class="page-wrapper">
+                {# -- Info header, including _navbar.twig -- #}
+                {% include "_partials/_info_header.twig" %}
 
-            <div id="page-content-container">
-                {# -- Primary content block -- #}
-                {% block content %}{% endblock %}
+                <div id="page-content-container">
+                    {# -- Primary content block -- #}
+                    {% block content %}{% endblock %}
+
+                    {# -- Content that appears below the primary content block -- #}
+                    {% block subcontent %}{% endblock %}
+
+                    {# -- Info footer -- #}
+                    {% include "_partials/_info_footer.twig" %}
+                </div>
             </div>
-
-            {# -- Content that appears below the primary content block -- #}
-            {% block subcontent %}{% endblock %}
-
-            {# -- Info footer -- #}
-            {% include "_partials/_info_footer.twig" %}
         </div>
 
         {# -- HTML Footer -- #}
