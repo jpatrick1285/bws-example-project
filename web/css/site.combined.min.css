@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Fri, Oct 26, 2018 2:21 PM ET
- * @release        6c6f635b5527bf6bd911d652ae1005e9f3f4d254 [master]
+ * @build          Mon, Oct 29, 2018 12:43 PM ET
+ * @release        c30d3dfa3b69c7c6efe5fab31de06bde77a71eb9 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -6834,7 +6834,7 @@ img.cover {
   height: 100%;
   z-index: -1;
   overflow: hidden; }
-  .background-image-container img {
+  .background-image-container img, .background-image-container video {
     position: relative;
     max-width: none;
     object-fit: cover;
