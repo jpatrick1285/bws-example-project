@@ -433,6 +433,10 @@ img.cover {
   width: 100%;
   height: 100%;
   background: $black;
+
+  &.is-transparent {
+    background: none;
+  }
 }
 
 /* General Styles */
@@ -878,8 +882,12 @@ nav.main-nav {
   .content-container {
     padding: 4rem 3rem;
 
+    @include desktop {
+      padding: 10rem 6rem 4rem 6rem;
+    }
+
     @include fullhd {
-      padding: 4rem 6rem;
+      padding: 16rem 6rem 4rem 6rem;
     }
   }
 

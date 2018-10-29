@@ -4,8 +4,8 @@
         <div class="columns is-multiline">
             {% for image in block.images.all() %}
                 <div class="column is-half animatable">
-                    <div class="transition-helper">
-                        <img class="cover" src="{{ image.getUrl() }}">
+                    <div class="transition-helper is-transparent">
+                        <img src="{{ image.getUrl() }}">
                     </div>
                 </div>
             {% endfor %}

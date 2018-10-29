@@ -178,7 +178,7 @@
     // Visible State
     .hero.will-animate.is-active {
         .transition-helper {
-            transition: all $slow-transition-speed $easeOutCubic;
+            transition: transform $slow-transition-speed $easeOutCubic, opacity $slow-transition-speed $easeOutCubic;
             transform: scale(1);
             opacity: 1;
         }
@@ -234,19 +234,19 @@
     // Visible State
     .hero.home.will-animate.is-active {
         .transition-helper {
-            transition: all $slow-transition-speed $easeOutCubic;
+            transition: transform $slow-transition-speed $easeOutCubic, opacity $slow-transition-speed $easeOutCubic;
             transform: scale(1);
             opacity: 1;
         }
 
         h1 .heading-title {
-            transition: all $normal-transition-speed $easeOutQuart;
+            transition: transform $normal-transition-speed $easeOutQuart;
             transition-delay: $fast-transition-speed - 100ms;
             transform: translateY(0);
         }
 
         p {
-            transition: all $normal-transition-speed $easeOutQuart;
+            transition: transform $normal-transition-speed $easeOutQuart, opacity $normal-transition-speed $easeOutQuart;
             transition-delay: $normal-transition-speed;
             opacity: 1;
             transform: translateY(0);
@@ -292,7 +292,7 @@
 
     // Visible State
     .header-background.will-animate.is-active img {
-        transition: all $slow-transition-speed $easeOutQuart;
+        transition: transform $slow-transition-speed $easeOutQuart, opacity $slow-transition-speed $easeOutQuart;
         opacity: 1;
         transform: scale(1);
     }
@@ -307,7 +307,7 @@
             }
 
             h1 {
-                transition: all $slow-transition-speed $easeOutQuart;
+                transition: transform $slow-transition-speed $easeOutQuart, opacity $slow-transition-speed $easeOutQuart;
                 transition-delay: $normal-transition-speed + 100ms;
                 opacity: 1;
                 transform: translateX(0);
@@ -315,15 +315,15 @@
         }
 
         .featured-image {
-            transition: all $slow-transition-speed $easeOutQuart;
+            transition: transform $slow-transition-speed $easeOutQuart;
             transform: translateY(0);
 
             .transition-helper {
-                transition: all $slow-transition-speed $easeOutQuart;
+                transition: transform $slow-transition-speed $easeOutQuart;
                 transform: translateX(0);
 
                 img {
-                    transition: all $slow-transition-speed $easeOutQuart;
+                    transition: transform $slow-transition-speed $easeOutQuart;
                     transform: translateX(0);
                 }
             }
@@ -373,14 +373,14 @@
     .hero.case-study.will-animate.is-active {
         .heading-container {
             p.is-subheading {
-                transition: all $slow-transition-speed $easeOutQuart;
+                transition: transform $slow-transition-speed $easeOutQuart, opacity $slow-transition-speed $easeOutQuart;
                 transition-delay: $normal-transition-speed - 100ms;
                 opacity: 1;
                 transform: translateY(0);
             }
 
             h1 {
-                transition: all $slow-transition-speed $easeOutQuart;
+                transition: transform $slow-transition-speed $easeOutQuart, opacity $slow-transition-speed $easeOutQuart;
                 transition-delay: $normal-transition-speed + 100ms;
                 opacity: 1;
                 transform: translateY(0);
@@ -388,16 +388,16 @@
         }
 
         .secondary-image {
-            transition: all $slow-transition-speed $easeOutQuart;
+            transition: transform $slow-transition-speed $easeOutQuart;
             transform: translateY(0);
 
             .transition-helper {
-                transition: all $slow-transition-speed $easeOutQuart;
+                transition: transform $slow-transition-speed $easeOutQuart, opacity $slow-transition-speed $easeOutQuart;
                 transform: translateX(0);
                 opacity: 1;
 
                 img {
-                    transition: all $slow-transition-speed $easeOutQuart;
+                    transition: transform $slow-transition-speed $easeOutQuart;
                     transform: translateX(0);
                 }
             }
@@ -405,7 +405,7 @@
 
         .content-container {
             .info-container, a.button {
-                transition: all $slow-transition-speed $easeOutQuart;
+                transition: transform $slow-transition-speed $easeOutQuart, opacity $slow-transition-speed $easeOutQuart;
                 transition-delay: $normal-transition-speed + 300ms;
                 transform: translateY(0);
                 opacity: 1;

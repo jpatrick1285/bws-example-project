@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Mon, Oct 29, 2018 12:43 PM ET
- * @release        c30d3dfa3b69c7c6efe5fab31de06bde77a71eb9 [master]
+ * @build          Mon, Oct 29, 2018 4:40 PM ET
+ * @release        8096abe7c626ec76590239d3f8799b58d1fd9b7b [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -205,7 +205,9 @@
           transform: translateY(1rem); }
 
 .animations-enabled .hero.will-animate.is-active .transition-helper {
-  transition: all 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), opacity 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), opacity 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
@@ -262,21 +264,27 @@
           transform: translateY(1rem); }
 
 .animations-enabled .hero.home.will-animate.is-active .transition-helper {
-  transition: all 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), opacity 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), opacity 1200ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
   opacity: 1; }
 
 .animations-enabled .hero.home.will-animate.is-active h1 .heading-title {
-  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: -webkit-transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 300ms;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0); }
 
 .animations-enabled .hero.home.will-animate.is-active p {
-  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 750ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 750ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 750ms;
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -318,7 +326,9 @@
               transform: translateX(-180%); }
 
 .animations-enabled .header-background.will-animate.is-active img {
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 1;
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
@@ -333,7 +343,9 @@
           transform: translateX(0); }
 
 .animations-enabled .hero.offset-image.will-animate.is-active .heading-container h1 {
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 850ms;
   opacity: 1;
   -webkit-transform: translateX(0);
@@ -341,17 +353,23 @@
           transform: translateX(0); }
 
 .animations-enabled .hero.offset-image.will-animate.is-active .featured-image {
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0); }
   .animations-enabled .hero.offset-image.will-animate.is-active .featured-image .transition-helper {
-    transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0); }
     .animations-enabled .hero.offset-image.will-animate.is-active .featured-image .transition-helper img {
-      transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
       -webkit-transform: translateX(0);
           -ms-transform: translateX(0);
               transform: translateX(0); }
@@ -391,7 +409,9 @@
   opacity: 0; }
 
 .animations-enabled .hero.case-study.will-animate.is-active .heading-container p.is-subheading {
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 650ms;
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -399,7 +419,9 @@
           transform: translateY(0); }
 
 .animations-enabled .hero.case-study.will-animate.is-active .heading-container h1 {
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 850ms;
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -407,24 +429,32 @@
           transform: translateY(0); }
 
 .animations-enabled .hero.case-study.will-animate.is-active .secondary-image {
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0); }
   .animations-enabled .hero.case-study.will-animate.is-active .secondary-image .transition-helper {
-    transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
     opacity: 1; }
     .animations-enabled .hero.case-study.will-animate.is-active .secondary-image .transition-helper img {
-      transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
       -webkit-transform: translateX(0);
           -ms-transform: translateX(0);
               transform: translateX(0); }
 
 .animations-enabled .hero.case-study.will-animate.is-active .content-container .info-container, .animations-enabled .hero.case-study.will-animate.is-active .content-container a.button {
-  transition: all 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1200ms cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1200ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-delay: 1050ms;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -6848,6 +6878,8 @@ img.cover {
   width: 100%;
   height: 100%;
   background: #0c0d0e; }
+  .transition-helper.is-transparent {
+    background: none; }
 
 /* General Styles */
 a.logo {
@@ -7295,9 +7327,12 @@ nav.main-nav {
         padding-left: 6rem; } }
   .hero.case-study .content-container {
     padding: 4rem 3rem; }
+    @media screen and (min-width: 900px) {
+      .hero.case-study .content-container {
+        padding: 10rem 6rem 4rem 6rem; } }
     @media screen and (min-width: 1800px) {
       .hero.case-study .content-container {
-        padding: 4rem 6rem; } }
+        padding: 16rem 6rem 4rem 6rem; } }
   .hero.case-study .info-container {
     margin-top: 5rem;
     margin-bottom: 0rem;
