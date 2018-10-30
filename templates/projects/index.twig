@@ -11,7 +11,13 @@
 
 {% include("_partials/_hero.twig") %}
 
-{% paginate craft.entries().section('projects').with([['heroFeaturedImage', {}]]).limit(6) as pageInfo, projects %}
+{% paginate craft.entries().section('projects').with ([
+    [
+        'heroFeaturedImage', {
+            withTransforms: ['portfolioThumb']
+        }
+    ]
+]) .limit(6)as pageInfo, projects %}
 
 <section class="section is-medium case-list">
     <div class="container animatable">
@@ -22,7 +28,7 @@
                         <a class="tile-link-wrapper" href="{{ project.uri }}">
                             <article class="tile is-child">
                                 <div class="transition-helper">
-                                    <img class="cover" src="{{ project.heroFeaturedImage[0].getUrl() }}">
+                                    <img class="cover" src="{{ project.heroFeaturedImage[0].getUrl('portfolioThumb') }}">
                                 </div>
                                 <div class="description">
                                     <h3 class="heading-title-wrap animatable">

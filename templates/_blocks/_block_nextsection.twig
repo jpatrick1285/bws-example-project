@@ -3,7 +3,7 @@
     {% if block.image|length %}
       <div class="background-image-container">
           <div class="transition-helper">
-              <img src="{{ block.image.one().getUrl() }}">
+              <img src="{{ block.image.one().getUrl('widescreenHuge') }}">
           </div>
       </div>
     {% endif %}
