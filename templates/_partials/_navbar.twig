@@ -8,7 +8,7 @@
             <span class="hidden-label">Close menu</span></button>
     </div>
     <div class="social-media-links">
-        {% for link in contactInfo.socialMediaLinks %}
+        {% for link in contactInfo.socialMediaLinks.all() %}
             <a href="{{ link.pageUrl }}" target="_blank">
                 <i class="{{ link.icon }}"></i>
             </a>

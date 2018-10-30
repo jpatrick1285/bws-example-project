@@ -122,7 +122,7 @@
                 var staticAssetsVersion = "{{ staticAssetsVersion }}";
                 var assetsBaseUrl = "{{ baseUrl }}";
                 var retina = window.devicePixelRatio > 1;
-                var csrfTokenName = "{{ craft.config.csrfTokenName | e('js') }}";
+                var csrfTokenName = "{{ craft.app.config.general.csrfTokenName | e('js') }}";
                 var csrfTokenValue = "{{ craft.app.request.csrfToken | e('js') }}";
             </script>
 

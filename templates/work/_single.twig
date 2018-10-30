@@ -56,7 +56,7 @@
     </div>
 </section>
 
-{% for block in entry.contentBuilder %}
+{% for block in entry.contentBuilder.all() %}
     {% include('_blocks/_' ~ blockPrefix ~ 'block_' ~ block.type.handle) %}
 {% endfor %}
 

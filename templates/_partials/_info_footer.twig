@@ -17,7 +17,7 @@
                             <a href="tel:{{ contactInfo.phoneNumber | replace('/[^0-9+]/', '')}}">{{ contactInfo.phoneNumber }}</a>
                         </p>
                         <div class="social-media-links">
-                            {% for link in contactInfo.socialMediaLinks %}
+                            {% for link in contactInfo.socialMediaLinks.all() %}
                                 <a href="{{ link.pageUrl }}" target="_blank">
                                     <i class="{{ link.icon }}"></i>
                                 </a>
