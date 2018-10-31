@@ -118,7 +118,7 @@
 
     /* -- Case Study View -- */
     let CaseStudyView = CommonView.extend({
-        namespace: 'projects'
+        namespace: 'work'
     });
     
     // import common view requirements and initialize views
