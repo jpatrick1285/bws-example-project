@@ -13,7 +13,7 @@
 <section class="section is-large is-dark is-vertical-center has-background is-background-container hero home animatable">
     <div class="background-image-container">
         <div class="transition-helper">
-            <video autoplay="autoplay" muted="muted" loop="loop" id="myVideo">
+            <video autoplay="autoplay" muted="muted" loop="loop" id="myVideo" data-object-fit>
                 <source src="{{ baseUrl }}img/temp/home-video.mp4" type="video/mp4">
             </video>
         </div>
@@ -66,7 +66,7 @@
                         <a class="tile-link-wrapper" href="{{ project.uri }}">
                             <article class="tile is-child">
                                 <div class="transition-helper">
-                                    <img class="cover" src="{{ project.heroFeaturedImage[0].getUrl('portfolioThumb') }}">
+                                    <img class="cover" src="{{ project.heroFeaturedImage[0].getUrl('portfolioThumb') }}" data-object-fit>
                                 </div>
                                 <div class="description">
                                     <h3 class="heading-title-wrap animatable"><span class="heading-title">{{ project.heroSubheading | title }}</span></h3>
@@ -115,7 +115,7 @@
                         <article class="service is-dark is-background-container animatable">
                             <div class="background-image-container">
                                 <div class="transition-helper">
-                                    <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl('small') }}">
+                                    <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl('small') }}" data-object-fit>
                                 </div>
                             </div>
                             <h3 class="heading-title-wrap"><span class="heading-title">{{ service.serviceTitle }}</span></h3>
@@ -129,7 +129,7 @@
                         <article class="service is-dark is-background-container animatable">
                             <div class="background-image-container">
                                 <div class="transition-helper">
-                                    <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl('small') }}">
+                                    <img class="image js-mouse-tilt-hover" src="{{ service.backgroundImage.one().getUrl('small') }}" data-object-fit>
                                 </div>
                             </div>
                             <h3 class="heading-title-wrap"><span class="heading-title">{{ service.serviceTitle }}</span></h3>

@@ -6239,6 +6239,11 @@ object@0.1.1:
   resolved "https://registry.yarnpkg.com/object/-/object-0.1.1.tgz#1e02cede8ae1f358aaa872ad754bf640d77a22c2"
   integrity sha1-HgLO3orh81iqqHKtdUv2QNd6IsI=
 
+objectFitPolyfill@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/objectFitPolyfill/-/objectFitPolyfill-2.1.1.tgz#0fd9a40e9bd51f75ba898a81c1cf1a0feb05f0ec"
+  integrity sha512-+GQQw+yzk4L7Xl6d4auU6Cbz3HEuN5SKoPEoqjTw+X9uuev1KkiNq9k8hCXQbycZ6ZmM79RXOcSs37XXbVN2Rw==
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
