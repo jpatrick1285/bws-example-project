@@ -12,6 +12,10 @@
                 window.scrollTo(0, 0);
                 var _instance = this;
 
+                if (typeof ga === 'function') {
+                    ga('send', 'pageview', location.pathname);
+                }
+
                 // run element animations when in viewport
                 $('.animatable').each(function (index) {
                     // create two watchers - one with an offset for enter events, and one without an offset for exit events
