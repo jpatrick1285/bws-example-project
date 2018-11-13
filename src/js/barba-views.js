@@ -140,5 +140,11 @@
         Barba.Pjax.getTransition = function () {
             return RevealerTransition;
         };
+
+        // hide preloader 
+        $('.revealer').removeClass('show').addClass('animate-out');
+        setTimeout(function () {
+            $('.revealer').removeClass('animate-out');
+        }, 600);
     });
 })();

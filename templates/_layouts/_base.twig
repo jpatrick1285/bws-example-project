@@ -61,6 +61,8 @@
             <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
             <link rel="preload" href="{{ baseUrl }}css/site.combined.min.css" as="style" onload="this.rel='stylesheet'">
             <noscript><link rel="stylesheet" href="{{ baseUrl }}css/site.combined.min.css"></noscript>
+            <noscript><style>.revealer.show { display: none; }</style></noscript> <!-- hide the preloader when scripts are disabled -->
+
             
             <script>
                 {{ source("_inlinejs/loadCSS.min.js") }}

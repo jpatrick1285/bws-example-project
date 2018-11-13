@@ -47,14 +47,18 @@
         }
     }
 
-    &.animate-in {
+    &.show, &.animate-in {
         display: block;
-
+        
         .logo-animation {
             opacity: 0;
             animation: revealer-fade-in 800ms $easeInOutCubic forwards;
-            animation-delay: 500ms;
+            animation-delay: 1500ms;
         }
+    }
+
+    &.animate-in {
+        display: block;
 
         .revealer-layer {
             
