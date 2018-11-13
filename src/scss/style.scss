@@ -1106,13 +1106,25 @@ section.services {
       -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
     }
 
-    &.is-selected .slide-contents {
+    &:hover .slide-contents {
       transform: scale(1);
 
       img {
         filter: none;
         -webkit-filter: grayscale(0%);
         //transform: scale(1.03);
+      }
+    }
+
+    @include until($desktop) {
+      &.is-selected .slide-contents {
+        transform: scale(1);
+
+        img {
+          filter: none;
+          -webkit-filter: grayscale(0%);
+          //transform: scale(1.03);
+        }
       }
     }
   }

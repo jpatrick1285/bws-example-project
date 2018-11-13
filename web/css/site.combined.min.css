@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Tue, Nov 13, 2018 11:51 AM ET
- * @release        a256328d3b8e3fa6a32dc3644af8f5b9bdb7815e [master]
+ * @build          Tue, Nov 13, 2018 12:49 PM ET
+ * @release        86d5f19c0940fc35d977553a8853b4badb102004 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -7532,13 +7532,21 @@ section.services a:hover .service h3 {
       /* IE6-9 */
       -webkit-filter: grayscale(100%);
       /* Chrome 19+ & Safari 6+ */ }
-    .team-slider .slide.is-selected .slide-contents {
+    .team-slider .slide:hover .slide-contents {
       -webkit-transform: scale(1);
           -ms-transform: scale(1);
               transform: scale(1); }
-      .team-slider .slide.is-selected .slide-contents img {
+      .team-slider .slide:hover .slide-contents img {
         filter: none;
         -webkit-filter: grayscale(0%); }
+    @media screen and (max-width: 899px) {
+      .team-slider .slide.is-selected .slide-contents {
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1); }
+        .team-slider .slide.is-selected .slide-contents img {
+          filter: none;
+          -webkit-filter: grayscale(0%); } }
 
 .contact-section .background-image-container {
   display: none; }
