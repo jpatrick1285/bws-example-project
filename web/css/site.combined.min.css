@@ -1,19 +1,11 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Thu, Nov 1, 2018 11:30 AM ET
- * @release        da43d319f7fd5000dd4c09b1ce75a6be2f73caec [master]
+ * @build          Tue, Nov 13, 2018 11:51 AM ET
+ * @release        a256328d3b8e3fa6a32dc3644af8f5b9bdb7815e [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
-
-.icon-github:before { content: '\f300'; } /* '' */
-.icon-twitter:before { content: '\f309'; } /* '' */
-.icon-facebook:before { content: '\f30c'; } /* '' */
-.icon-linkedin:before { content: '\f318'; } /* '' */
-.icon-dribbble:before { content: '\f31b'; } /* '' */
-.icon-instagram:before { content: '\f32d'; } /* '' */
-.icon-behance:before { content: '\f34e'; } /* '' */
 /* Color variables */
 /* Container Margins */
 /* Layout variables */
@@ -27,6 +19,32 @@
   z-index: 1000;
   pointer-events: none;
   display: none; }
+  .revealer .logo-animation {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001; }
+    .revealer .logo-animation svg {
+      fill: #FFFFFF;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 80px;
+      height: 80px; }
+      .revealer .logo-animation svg #dot {
+        -webkit-animation: logo-pulse 2000ms linear infinite;
+                animation: logo-pulse 2000ms linear infinite; }
   .revealer .revealer-layer {
     position: absolute;
     width: 100%;
@@ -40,6 +58,12 @@
       background: #0c0d0e; }
   .revealer.animate-in {
     display: block; }
+    .revealer.animate-in .logo-animation {
+      opacity: 0;
+      -webkit-animation: revealer-fade-in 800ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+              animation: revealer-fade-in 800ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      -webkit-animation-delay: 500ms;
+              animation-delay: 500ms; }
     .revealer.animate-in .revealer-layer {
       -webkit-animation: revealer-fade-in 400ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
               animation: revealer-fade-in 400ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards; }
@@ -47,11 +71,31 @@
         display: none; }
   .revealer.animate-out {
     display: block; }
+    .revealer.animate-out .logo-animation {
+      -webkit-animation: revealer-fade-out 400ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+              animation: revealer-fade-out 400ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      transition-delay: 0; }
     .revealer.animate-out .revealer-layer {
       -webkit-animation: revealer-fade-out 400ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
               animation: revealer-fade-out 400ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards; }
       .revealer.animate-out .revealer-layer:nth-child(1), .revealer.animate-out .revealer-layer:nth-child(2) {
         display: none; }
+
+@-webkit-keyframes logo-pulse {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes logo-pulse {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 @-webkit-keyframes revealer-fade-in {
   0% {

@@ -7,6 +7,29 @@
     pointer-events: none;
     display: none;
 
+    .logo-animation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1001;
+
+        svg {
+            fill: $white;
+            display: flex;
+            width: 80px;
+            height: 80px;
+
+            #dot {
+                animation: logo-pulse 2000ms linear infinite;
+            }
+        }
+    }
+
     .revealer-layer {
         position: absolute;
         width: 100%;
@@ -26,6 +49,12 @@
 
     &.animate-in {
         display: block;
+
+        .logo-animation {
+            opacity: 0;
+            animation: revealer-fade-in 800ms $easeInOutCubic forwards;
+            animation-delay: 500ms;
+        }
 
         .revealer-layer {
             
@@ -49,6 +78,11 @@
     &.animate-out {
         display: block;
 
+        .logo-animation {
+            animation: revealer-fade-out 400ms $easeInOutCubic forwards;
+            transition-delay: 0;
+        }
+
         .revealer-layer {
             animation: revealer-fade-out 400ms $easeInOutCubic forwards;
             // animation: revealer-slide-out-1 600ms $easeInSine forwards;
@@ -65,6 +99,20 @@
             //     animation-name: revealer-slide-out-3;
             // }
         }
+    }
+}
+
+@keyframes logo-pulse {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
