@@ -14,7 +14,8 @@
 <!-- Case Study Hero -->
 <section class="section is-large is-dark is-background-container has-background header-background animatable">
     <div class="background-image-container">
-        <img src="{{ entry.heroBackgroundImage.one().getUrl('widescreenHuge') }}" data-object-fit>
+        {% set backgroundImage = entry.heroBackgroundImage.one() %}
+        <img src="{{ backgroundImage.getUrl('widescreenHuge') }}" title="{{ backgroundImage.title }}" alt="{{ backgroundImage.title }}" data-object-fit>
     </div>
 </section>
 <section class="section is-dark is-vertical-center is-background-container hero case-study animatable">
@@ -22,7 +23,8 @@
         <div class="hero-container is-background-container">
             <div class="background-image-container secondary-image">
                 <div class="transition-helper">
-                    <img src="{{ entry.heroFeaturedImage.one().getUrl('fullHeightHuge') }}" data-object-fit>
+                    {% set image = entry.heroFeaturedImage.one() %}
+                    <img src="{{ image.getUrl('fullHeightHuge') }}" title="{{ image.title }}" alt="{{ image.title }}"  data-object-fit>
                 </div>
             </div>
             <div class="heading-container">

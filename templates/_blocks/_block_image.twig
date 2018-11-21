@@ -2,7 +2,8 @@
 <section class="section {{ block.topSpacing }} {{ block.bottomSpacing }} image-text-section block-{{ block.type.handle }}">
     <div class="container {{ block.containerSize }} animatable">
         <div class="transition-helper">
-            <img class="cover" src="{{ block.image.one().getUrl('fullHeightHuge') }}">
+            {% set image = block.image.one() %}
+            <img class="cover" src="{{ image.getUrl('fullHeightHuge') }}" title="{{ image.title }}" alt="{{ image.title }}">
         </div>
     </div>
 </section>

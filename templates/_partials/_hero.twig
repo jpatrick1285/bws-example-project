@@ -2,7 +2,8 @@
 <section class="section is-large is-dark is-background-container has-background hero animatable">
     <div class="background-image-container">
         <div class="transition-helper">
-            <img src="{{ entry.heroFeaturedImage.one().getUrl('widescreenHuge') }}" data-object-fit>
+            {% set image = entry.heroFeaturedImage.one() %}
+            <img src="{{ image.getUrl('widescreenHuge') }}" title="{{ image.title }}" alt="{{ image.title }}" data-object-fit>
         </div>
     </div>
     <div class="container is-small content-container">

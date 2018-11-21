@@ -24,6 +24,7 @@
     "craftcms/mailgun": "^1.2",
     "craftcms/redactor": "^2.1",
     "ether/logs": "^3.0",
+    "ether/seo": "^3.4",
     "lewisjenkins/craft-dynamic-fields": "^3.0",
     "mmikkel/child-me": "^1.0",
     "mmikkel/cp-field-inspect": "^1.0",

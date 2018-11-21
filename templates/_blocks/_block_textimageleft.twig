@@ -4,7 +4,8 @@
         <div class="columns">
             <div class="column is-half image">
                 <div class="transition-helper">
-                    <img class="cover" src="{{ block.image.one().getUrl('fullHeightHuge') }}"/>
+                    {% set image = block.image.one() %}
+                    <img class="cover" src="{{ image.getUrl('fullHeightHuge') }}" title="{{ image.title }}" alt="{{ image.title }}" />
                 </div>
             </div>
             <div class="column text">

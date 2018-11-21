@@ -28,7 +28,8 @@
                         <a class="tile-link-wrapper" href="{{ project.uri }}">
                             <article class="tile is-child">
                                 <div class="transition-helper">
-                                    <img class="cover" src="{{ project.heroFeaturedImage[0].getUrl('portfolioThumb') }}">
+                                    {% set image = project.heroFeaturedImage[0] %}
+                                    <img class="cover" src="{{ image.getUrl('portfolioThumb') }}" title="{{ image.title }}" alt="{{ image.title }}">
                                 </div>
                                 <div class="description">
                                     <h3 class="heading-title-wrap animatable">

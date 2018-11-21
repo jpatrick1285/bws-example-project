@@ -28,6 +28,7 @@ const INSTALL_PLUGINS = [
     'minify',
     'redactor', // https://github.com/craftcms/redactor
     'routemap',
+    'seo', // https://github.com/ethercreative/seo
     'super-table',
     'typogrify'
 ];

@@ -3,7 +3,8 @@
     {% if block.image|length %}
       <div class="background-image-container">
           <div class="transition-helper">
-              <img src="{{ block.image.one().getUrl('widescreenHuge') }}" data-object-fit>
+              {% set image = block.image.one() %}
+              <img src="{{ image.getUrl('widescreenHuge') }}" title="{{ image.title }}" alt="{{ image.title }}" data-object-fit>
           </div>
       </div>
     {% endif %}

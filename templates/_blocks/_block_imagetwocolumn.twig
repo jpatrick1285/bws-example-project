@@ -5,7 +5,7 @@
             {% for image in block.images.all() %}
                 <div class="column is-half animatable">
                     <div class="transition-helper is-transparent">
-                        <img src="{{ image.getUrl('fullHeightHuge') }}">
+                        <img src="{{ image.getUrl('fullHeightHuge') }}" title="{{ image.title }}" alt="{{ image.title }}">
                     </div>
                 </div>
             {% endfor %}
