@@ -838,7 +838,7 @@ nav.main-nav {
   padding-top: 8rem;
 
   .heading-container {
-    padding: 10rem 0 14rem 0;
+    padding: 12rem 0 16rem 0;
 
     @include fullhd {
       padding-left: 6rem;
@@ -1020,14 +1020,14 @@ section.services {
     }
 
     img {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
 
   a:hover .service {
     .background-image-container img {
       transform: scale(1.05);
-      opacity: 0.5;
+      opacity: 0.3;
     }
 
     h3 {
