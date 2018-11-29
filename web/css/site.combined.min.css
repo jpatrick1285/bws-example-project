@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Mon, Nov 26, 2018 4:30 PM ET
- * @release        f93c57a0494026ee8c520e31d6908151ae582739 [master]
+ * @build          Thu, Nov 29, 2018 11:07 AM ET
+ * @release        5f9c27b483b4e5cc4feaabe7922a4855e6ef05fc [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -6758,6 +6758,20 @@ a {
   border: none; }
   .button[disabled] {
     color: #0c0d0e; }
+  .button.is-outlined {
+    background: rgba(12, 13, 14, 0);
+    border: 2px solid rgba(12, 13, 14, 0.75);
+    color: #0c0d0e;
+    font-size: 0.85em;
+    transition: background-color 400ms cubic-bezier(0.215, 0.61, 0.355, 1), color 400ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1), background-color 400ms cubic-bezier(0.215, 0.61, 0.355, 1), color 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1), background-color 400ms cubic-bezier(0.215, 0.61, 0.355, 1), color 400ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .button.is-outlined:hover {
+      -webkit-transform: translateY(-0.4rem);
+          -ms-transform: translateY(-0.4rem);
+              transform: translateY(-0.4rem);
+      color: #FFFFFF;
+      background: #0c0d0e; }
   .button.text-button {
     padding: 0;
     text-decoration: underline;
@@ -6771,6 +6785,13 @@ a {
   color: #0c0d0e; }
   .is-dark .button[disabled] {
     color: #888888; }
+  .is-dark .button.is-outlined {
+    background: rgba(255, 255, 255, 0);
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.75); }
+    .is-dark .button.is-outlined:hover {
+      color: #0c0d0e;
+      background: white; }
   .is-dark .button.text-button {
     color: #FFFFFF;
     background: none; }

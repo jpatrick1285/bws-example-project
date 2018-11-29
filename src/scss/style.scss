@@ -173,6 +173,22 @@ a {
     color: $black;
   }
 
+  &.is-outlined {
+    background: rgba($black, 0);
+    border: 2px solid rgba($black, 0.75);
+    color: $black;
+    font-size: 0.85em;
+
+    transition: transform $fast-transition-speed $easeOutCubic, background-color $fast-transition-speed $easeInOutCubic, color $fast-transition-speed $easeInOutCubic;
+
+    &:hover {
+      transform: translateY(-0.4rem);
+
+      color: $white;
+      background: rgba($black, 1);
+    }
+  }
+
   &.text-button {
     padding: 0;
     text-decoration: underline;
@@ -189,6 +205,17 @@ a {
 
   &[disabled] {
     color: #888888;;
+  }
+
+  &.is-outlined {
+    background: rgba($white, 0);
+    color: $white;
+    border-color: rgba($white, 0.75);
+
+    &:hover {
+      color: $black;
+      background: rgba($white, 1);
+    }
   }
 
   &.text-button {
