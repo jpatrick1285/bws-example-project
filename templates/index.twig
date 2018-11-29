@@ -41,7 +41,7 @@
     .section('work')
     .with ([
         [
-            'heroFeaturedImage', {
+            'thumbnail', {
                 withTransforms: ['portfolioThumb']
             }
         ]
@@ -66,7 +66,7 @@
                         <a class="tile-link-wrapper" href="{{ project.uri }}">
                             <article class="tile is-child">
                                 <div class="transition-helper">
-                                    {% set image = project.heroFeaturedImage[0] %}
+                                    {% set image = project.thumbnail[0] %}
                                     <img class="cover" src="{{ image.getUrl('portfolioThumb') }}" title="{{ image.title }}" alt="{{ image.title }}" data-object-fit>
                                 </div>
                                 <div class="description">
