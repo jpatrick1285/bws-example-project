@@ -12,51 +12,51 @@
 {% block content %}
 
 <!-- Case Study Hero -->
-<section class="section is-large is-dark is-background-container has-background header-background animatable">
+<!-- Offset Image Hero -->
+<section class="section is-large is-dark is-background-container has-background hero case-study animatable">
     <div class="background-image-container">
-        {% set backgroundImage = entry.heroBackgroundImage.one() %}
-        <img src="{{ backgroundImage.getUrl('widescreenHuge') }}" title="{{ backgroundImage.title }}" alt="{{ backgroundImage.title }}" data-object-fit>
+        <div class="transition-helper">
+            {% set image = entry.heroFeaturedImage.one() %}
+            <img src="{{ image.getUrl('widescreenHuge') }}" title="{{ image.title }}" alt="{{ image.title }}" data-object-fit="data-object-fit">
+        </div>
+    </div>
+    <div class="container is-small content-container">
+<p class="is-subheading has-dash heading-title-wrap">
+    <span class="heading-title">{{ entry.completionDate|date('F') }} {{ entry.completionDate|date('Y') }}</span></p>
+        <h1 class="is-large heading-title-wrap"><span class="heading-title">{{ entry.heroHeading }}</span></h1>
     </div>
 </section>
-<section class="section is-dark is-vertical-center is-background-container hero case-study animatable">
-    <div class="container">
-        <div class="hero-container is-background-container">
-            <div class="background-image-container secondary-image">
-                <div class="transition-helper">
-                    {% set image = entry.heroFeaturedImage.one() %}
-                    <img src="{{ image.getUrl('fullHeightHuge') }}" title="{{ image.title }}" alt="{{ image.title }}"  data-object-fit>
-                </div>
+
+<div class="section is-large case-study-description">
+    <div class="container is-small animatable">
+        <div class="columns is-block-tablet is-flex-desktop">
+            <div class="column is-two-thirds description">
+                {{ entry.projectDescription }}
             </div>
-            <div class="heading-container">
-                <p class="is-subheading has-dash">{{ entry.heroSubheading }}</p>
-                <h1 class="is-large">{{ entry.heroHeading }}</h1>
-            </div>
-            <div class="content-container">
-                <div class="columns is-gapless info-container">
-                    <div class="column is-narrow">
-                    {% set serviceTags = entry.serviceTags.all %}
-                        {% if serviceTags|length %}
-                        <div class="services">
-                            <ul>
-                                {% for tag in serviceTags %}
-                                    <li>{{ tag }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        {% endif %}
-                    </div>
-                    <div class="column is-narrow">
-                        <div class="date">
-                            {{ entry.completionDate|date('F') }}<br/>
-                            {{ entry.completionDate|date('Y') }}
-                        </div>
-                    </div>
-                </div>
-                <a href="{{ entry.projectUrl }}" class="button text-button" target="_blank">View Project</a>        
+            <div class="column info">
+                <h4>Client</h4>
+                <p>{{ entry.heroSubheading|lower|ucwords }}</p>
+
+                <h4>Year</h4>
+                <p>{{ entry.completionDate|date('Y') }}</p>
+
+                {% set serviceTags = entry.serviceTags.all %}
+                {% if serviceTags | length %}
+                    <h4>Type</h4>
+                    <p>
+                        {% for tag in serviceTags %}
+                            {{ tag }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                {% endif %}
+                
+                {% if entry.projectUrl %}
+                    <a href="{{ entry.projectUrl }}" class="project-link" target="_blank">Visit site</a>
+                {% endif %}
             </div>
         </div>
     </div>
-</section>
+</div>
 
 {% for block in entry.contentBuilder.all() %}
     {% include('_blocks/_' ~ blockPrefix ~ 'block_' ~ block.type.handle) %}

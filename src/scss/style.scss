@@ -887,53 +887,44 @@ nav.main-nav {
 }
 
 .hero.case-study {
-  padding-top: 15rem;
-
-  .hero-container {
-    // margin-left: 5%;
-
-    @include fullhd {
-      // margin-left: 15%;
-    }
-  }
-
-  .heading-container {
-    padding-left: 3rem;
-    transform: translate3d(0, -40%, 0);
-
-    @include fullhd {
-      padding-left: 6rem;
-    }
-  }
-
-  .content-container {
-    padding: 4rem 3rem;
-
-    @include desktop {
-      padding: 10rem 6rem 4rem 6rem;
-    }
-
-    @include fullhd {
-      padding: 16rem 6rem 4rem 6rem;
-    }
-  }
-
-  .info-container {
-    margin-top: 5rem;
-    margin-bottom: 0rem;
-    font-weight: bold;
-    font-size: 0.8em;
-
-    @include widescreen {
-      margin-top: 10rem;
-    }
-
-    .date, .services {
-      margin-right: 4rem;
-      margin-bottom: 1rem;
-    }
+  min-height: 90vh;
+  h1 {
+    margin-bottom: 0;
   }
 }
+
+.case-study-description .container {
+    padding: 0 7.5%;
+
+    @include desktop {
+      padding: 0 10%;
+    }
+
+    @include fullhd {
+      padding: 0 18%;
+    }
+
+    .description {
+      @include desktop {
+        padding-right: 7%;
+      }
+    }
+
+    .info {
+      h4 {
+        margin-bottom: 0.3em;
+      }
+
+      p {
+        margin-bottom: 1.5em;
+      }
+
+      a {
+        font-size: 1em;
+        letter-spacing: 0;
+      }
+    }
+  }
 
 .next-project-section {
   img {

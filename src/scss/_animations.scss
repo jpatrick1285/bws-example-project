@@ -470,6 +470,21 @@
     }
 }
 
+.animations-enabled {
+    // Initial State
+    .case-study-description .container.will-animate {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+    
+    // Visible State
+    .case-study-description .container.will-animate.is-active {
+        transition: all $normal-transition-speed $easeOutQuart;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* Case Study List */
 .animations-enabled {
     // Initial State

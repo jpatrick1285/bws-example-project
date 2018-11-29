@@ -518,6 +518,19 @@
 .animations-enabled .hero.case-study.will-animate.is-active .content-container a.button {
   transition-delay: 1250ms; }
 
+.animations-enabled .case-study-description .container.will-animate {
+  -webkit-transform: translateY(2rem);
+      -ms-transform: translateY(2rem);
+          transform: translateY(2rem);
+  opacity: 0; }
+
+.animations-enabled .case-study-description .container.will-animate.is-active {
+  transition: all 750ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1; }
+
 /* Case Study List */
 .animations-enabled .case-list header.will-animate h1, .animations-enabled .case-list header.will-animate p.is-subheading {
   -webkit-transform: translateX(-2rem);
@@ -7392,33 +7405,28 @@ nav.main-nav {
   height: 40rem; }
 
 .hero.case-study {
-  padding-top: 15rem; }
-  .hero.case-study .heading-container {
-    padding-left: 3rem;
-    -webkit-transform: translate3d(0, -40%, 0);
-            transform: translate3d(0, -40%, 0); }
-    @media screen and (min-width: 1800px) {
-      .hero.case-study .heading-container {
-        padding-left: 6rem; } }
-  .hero.case-study .content-container {
-    padding: 4rem 3rem; }
-    @media screen and (min-width: 900px) {
-      .hero.case-study .content-container {
-        padding: 10rem 6rem 4rem 6rem; } }
-    @media screen and (min-width: 1800px) {
-      .hero.case-study .content-container {
-        padding: 16rem 6rem 4rem 6rem; } }
-  .hero.case-study .info-container {
-    margin-top: 5rem;
-    margin-bottom: 0rem;
-    font-weight: bold;
-    font-size: 0.8em; }
-    @media screen and (min-width: 1200px) {
-      .hero.case-study .info-container {
-        margin-top: 10rem; } }
-    .hero.case-study .info-container .date, .hero.case-study .info-container .services {
-      margin-right: 4rem;
-      margin-bottom: 1rem; }
+  min-height: 90vh; }
+  .hero.case-study h1 {
+    margin-bottom: 0; }
+
+.case-study-description .container {
+  padding: 0 7.5%; }
+  @media screen and (min-width: 900px) {
+    .case-study-description .container {
+      padding: 0 10%; } }
+  @media screen and (min-width: 1800px) {
+    .case-study-description .container {
+      padding: 0 18%; } }
+  @media screen and (min-width: 900px) {
+    .case-study-description .container .description {
+      padding-right: 7%; } }
+  .case-study-description .container .info h4 {
+    margin-bottom: 0.3em; }
+  .case-study-description .container .info p {
+    margin-bottom: 1.5em; }
+  .case-study-description .container .info a {
+    font-size: 1em;
+    letter-spacing: 0; }
 
 .next-project-section img {
   opacity: 0.4;
