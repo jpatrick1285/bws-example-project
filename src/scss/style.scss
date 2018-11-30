@@ -1086,7 +1086,6 @@ section.services {
 
   .slide {
     width: 26rem;
-    max-width: 100%;
     display: inline-block;
 
     &:not(last-child) {
@@ -1096,6 +1095,44 @@ section.services {
     .slide-contents {
       transform: scale(.95);
       transition: transform $normal-transition-speed $easeOutQuart;
+    }
+
+    .slide-image {
+      position: relative;
+      cursor: pointer;
+
+      .image-overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        z-index: 2;
+        background: rgba($black, 0.8);
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        padding: 4rem 3rem;
+
+        white-space: normal;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity $fast-transition-speed $easeInOutCubic, visibility $fast-transition-speed $easeInOutCubic;
+
+        &.visible {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        p {
+          display: flex;
+        }
+      }
     }
 
     .description {
