@@ -7526,6 +7526,11 @@ section.services a:hover .service h3 {
     .section.image-text-section .text {
       padding: 10% 8%; } }
 
+@media screen and (max-width: 699px) {
+  section.text-heading-left .column {
+    padding-top: 0;
+    padding-bottom: 0; } }
+
 .team-slider {
   -ms-touch-action: pan-y;
       touch-action: pan-y;
