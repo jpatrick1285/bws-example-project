@@ -86,16 +86,16 @@
                     //pageDots: false
                 });
 
-                this.teamSlider.$element.find('.slide-image').on('click', function(e) {
-                    $(this).find('.image-overlay').toggleClass('visible');
+                this.teamSlider.on('staticClick', function(event, pointer, cellElement, cellIndex) {
+                    $(cellElement).find('.image-overlay').toggleClass('visible');
                 });
             });
         },
         onLeave: function() {
             CommonView.onLeave.apply(this);
             if (this.teamSlider) {
-                this.teamSlider.$element.find('.slide-image').off('click');
-                
+                this.teamSlider.off('staticClick');
+
                 this.teamSlider.destroy();
                 this.teamSlider = null;
             }
