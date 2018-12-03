@@ -63,6 +63,23 @@
     </div>
 </section>
 
+{# Next Section Content Block #}
+<section class="section is-medium is-dark has-background has-text-centered is-background-container next-project-section block-next-section animatable">
+    <div class="background-image-container">
+        <div class="transition-helper">
+            <img src="{{ baseUrl }}img/temp/about-us-next.jpg" title="The Boyer Web Studios team" alt="The Boyer Web Studios team" data-object-fit="data-object-fit">
+        </div>
+    </div>
+    <div class="container">
+        <a href="{{ craft.entries.section('about').first().url }}">
+            <p class="is-subheading heading-title-wrap">
+                <span class="heading-title">NEXT</span></p>
+            <h1 class="heading-title-wrap">
+                <span class="heading-title">About Us</span></h1>
+        </a>
+    </div>
+</section>
+
 {% endblock %}
 
 {% block _inline_js %}{% endblock %}
