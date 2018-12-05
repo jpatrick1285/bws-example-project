@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{HTTPS} !on [OR]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^ https://www.boyerwebstudios.com%{REQUEST_URI} [R=302,L]
+
+RewriteCond %{REQUEST_URI} !^/web/
+
+# Rewrites all URLS [Replace "example" with the actual domain, without the TLD (.com, .net, .biz, etc)]
+RewriteCond %{HTTP_HOST} ^(www\.)?boyerwebstudios\.
+
+# Rewrite all those to insert /folder
+RewriteRule ^(.*)$ /web/$1 [L]
