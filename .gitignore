@@ -20,6 +20,11 @@
 # COMPOSER
 /vendor
 
+/alecbreed
+/antiochinc
+/repo
+/staging
+
 # CRAFT STORAGE
 /storage/*
 !/storage/.gitkeep
@@ -59,3 +64,4 @@
 !.vscode/extensions.json
 config.codekit3
 prepros-6.config
+.ftpquota
