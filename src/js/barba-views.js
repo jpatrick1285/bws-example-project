@@ -80,10 +80,11 @@
             loadjs(assetsBaseUrl + 'js/flickity.pkgd.min.js', () => {
                 this.teamSlider = new Flickity('.team-slider.slider .track', {
                     freeScroll: true,
-                    prevNextButtons: false,
+                    groupCells: true,
                     contain: true,
                     friction: 0.3,
-                    //pageDots: false
+                    //pageDots: false,
+                    //prevNextButtons: false,
                 });
 
                 this.teamSlider.on('staticClick', function(event, pointer, cellElement, cellIndex) {

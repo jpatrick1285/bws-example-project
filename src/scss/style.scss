@@ -1091,6 +1091,20 @@ section.text-heading-left .column {
     }
   }
 
+  .flickity-prev-next-button {
+    background: transparent;
+    width: 5em;
+    height: 5em;
+
+    &:disabled {
+      display: none; 
+    }
+
+    .flickity-button-icon {
+      fill: white;
+    }
+  }
+
   .slide {
     width: 26rem;
     display: inline-block;

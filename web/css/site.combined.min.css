@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Fri, Nov 30, 2018 12:16 PM ET
- * @release        ddb6c5a9a30fa9c57d53418ddea1406ac3dc1ba7 [master]
+ * @build          Wed, Dec 5, 2018 10:59 AM ET
+ * @release        c3c98de2479221b8e6833a361c69cbce52c2dc66 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -7541,6 +7541,14 @@ section.services a:hover .service h3 {
     bottom: -50px; }
     .team-slider .flickity-page-dots .dot {
       transition: opacity 400ms cubic-bezier(0.165, 0.84, 0.44, 1); }
+  .team-slider .flickity-prev-next-button {
+    background: transparent;
+    width: 5em;
+    height: 5em; }
+    .team-slider .flickity-prev-next-button:disabled {
+      display: none; }
+    .team-slider .flickity-prev-next-button .flickity-button-icon {
+      fill: white; }
   .team-slider .slide {
     width: 26rem;
     display: inline-block; }
