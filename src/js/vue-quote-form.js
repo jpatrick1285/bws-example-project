@@ -28,6 +28,10 @@ let QuoteFormController = {
                             .then((res) => {
                                 this.submitting = false;
                                 this.submitted = true;
+
+                                if (ga) {
+                                    ga('send', 'event', 'Forms', 'Quote Submission', 'Quote form submitted');
+                                }
                             }, (err) => {
                                 this.submitting = false;
                                 console.log(err);
