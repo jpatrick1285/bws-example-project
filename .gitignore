@@ -45,6 +45,7 @@
 /build/*
 /yarn-error.log
 /npm-debug.log
+/web/.htaccess
 
 # MISC FILES
 .cache
@@ -65,3 +66,4 @@
 config.codekit3
 prepros-6.config
 .ftpquota
+.htaccess
