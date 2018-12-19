@@ -1,8 +1,8 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Wed, Dec 5, 2018 12:14 PM ET
- * @release        f05b2b2e56c16209c14f7fdfc0f0b6a9443ac112 [master]
+ * @build          Wed, Dec 19, 2018 11:41 AM ET
+ * @release        b165612df72cea3c39cac53a9fafccae89852ab9 [master]
  * @copyright      Copyright (c) 2018, boyerwebstudios.com
  *
  */
@@ -7714,6 +7714,18 @@ footer .call-to-action {
   footer .call-to-action p {
     max-width: 25rem; }
 
+footer .mailchimp-signup-form .field.has-addons .control {
+  -webkit-flex: 0.5;
+      -ms-flex: 0.5;
+          flex: 0.5; }
+
+footer .mailchimp-signup-form .field.has-addons input.button {
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  padding-top: calc(0.375em - 1px);
+  height: 2.25em; }
+
 footer .columns.contact {
   -webkit-flex-direction: row-reverse;
       -ms-flex-direction: row-reverse;
@@ -7723,6 +7735,13 @@ footer .columns.contact {
 
 footer .copyright {
   margin: 2em 0 0 0; }
+  footer .copyright .column:nth-child(1) {
+    padding-left: 0; }
+  footer .copyright .column:nth-child(2) {
+    padding-right: 0; }
+  @media screen and (max-width: 699px) {
+    footer .copyright .column {
+      padding: 0; } }
 
 
 

@@ -1318,6 +1318,21 @@ footer {
     }
   }
 
+  .mailchimp-signup-form {
+    .field.has-addons .control {
+      flex: 0.5;
+    }
+
+    .field.has-addons input.button {
+      padding-bottom: calc(0.375em - 1px);
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+      padding-top: calc(0.375em - 1px);
+
+      height: 2.25em;
+    }
+  }
+
   .columns.contact {
     flex-direction: row-reverse;
 
@@ -1328,5 +1343,19 @@ footer {
 
   .copyright {
     margin: 2em 0 0 0;
+
+    .column {
+      &:nth-child(1) {
+        padding-left: 0;
+      }
+
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+      
+      @include mobile {
+        padding: 0;
+      }
+    }
   }
 }
