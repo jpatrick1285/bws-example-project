@@ -47,6 +47,12 @@
       "css": "dribbble",
       "code": 62235,
       "src": "entypo"
+    },
+    {
+      "uid": "c759418c008e9562944080fee617fc76",
+      "css": "cancel-circled",
+      "code": 59392,
+      "src": "entypo"
     }
   ]
 }

@@ -1,12 +1,13 @@
 /**
  * @project        boyerwebstudios
  * @author         John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>
- * @build          Wed, Dec 19, 2018 11:41 AM ET
- * @release        b165612df72cea3c39cac53a9fafccae89852ab9 [master]
- * @copyright      Copyright (c) 2018, boyerwebstudios.com
+ * @build          Mon, Jan 14, 2019 12:46 PM ET
+ * @release        63523cbb3392276624c4228485b9efb66de655c4 [master]
+ * @copyright      Copyright (c) 2019, boyerwebstudios.com
  *
  */
 
+.icon-cancel-circled:before { content: '\e800'; } /* '' */
 .icon-github:before { content: '\f300'; } /* '' */
 .icon-twitter:before { content: '\f309'; } /* '' */
 .icon-facebook:before { content: '\f30c'; } /* '' */
