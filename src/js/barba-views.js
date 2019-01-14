@@ -20,11 +20,11 @@
                 if ($('.notification-banner').length) {
                     
                     // if the bws-notification-banner-hidden cookie is present, don't show the banner
-                    if (!Cookie.get('bws-notification-banner-hidden')) {
+                    if (!Cookies.get('bws-notification-banner-hidden')) {
                         $('.notification-banner').removeClass('hidden');
                         $('.notification-banner').on('click', 'a.close-button', function(e) {
                             e.preventDefault();
-                            Cookie.set('bws-notificaiton-banner-hidden', 'true', { expires: '1h' });
+                            Cookies.set('bws-notification-banner-hidden', 'true', { expires: 0.5 });
                             $(this).parents('.notification-banner').addClass('hidden');
                         });
                     }
