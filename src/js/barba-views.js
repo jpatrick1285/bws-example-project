@@ -16,6 +16,20 @@
                     ga('send', 'pageview', location.pathname);
                 }
 
+                // if the notification banner is present, add event listeners to hide it.
+                if ($('.notification-banner').length) {
+                    
+                    // if the bws-notification-banner-hidden cookie is present, don't show the banner
+                    if (!Cookie.get('bws-notification-banner-hidden')) {
+                        $('.notification-banner').removeClass('hidden');
+                        $('.notification-banner').on('click', 'a.close-button', function(e) {
+                            e.preventDefault();
+                            Cookie.set('bws-notificaiton-banner-hidden', 'true', { expires: '1h' });
+                            $(this).parents('.notification-banner').addClass('hidden');
+                        });
+                    }
+                }
+
                 // run element animations when in viewport
                 $('.animatable').each(function (index) {
                     // create two watchers - one with an offset for enter events, and one without an offset for exit events

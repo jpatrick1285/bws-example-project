@@ -487,6 +487,82 @@ a.logo {
   }
 }
 
+.notification-banner {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: $black + #111111;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s;
+  top: $fixed-nav-size;
+
+  @include tablet {
+    top: 0;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: .8rem 0;
+
+    @include widescreen {
+      flex-direction: row;
+    }
+
+    .message {
+      margin: 0 1rem;
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .actions {
+      margin: 0.8rem 1rem 0 0;
+
+      @include widescreen {
+        margin: 0 1rem;
+      }
+
+      a {
+        padding: 0.4rem 0.5rem;
+        margin: 0 0.4rem 0 0.4rem;
+        color: $white - #333333;
+
+        &.primary {
+          color: $white;
+          transition: color 0.25s, background-color 0.25s;
+          border: 1px solid;
+
+          &:hover {
+            color: $black;
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+    .close-container {
+      a {
+        color: #999999;
+        padding: 0.5rem;
+        font-size: 1.1em;
+
+        &:hover {
+          color: #FFFFFF;
+        }
+      }
+    }
+
+  }
+}
+
 .pullquote .quote {
   position: relative;
 
