@@ -1,3 +1,0 @@
-{ "value": "is-small", "label": "Small", "default": false },
-{ "value": "is-regular", "label": "Regular", "default": true },
-{ "value": "is-full", "label": "Full", "default": false }

@@ -40,7 +40,7 @@
 
             {# -- ServiceWorker, loadjs, and tiny-cookie -- #}
             <script>
-                {% if craft.app.config.general.isSystemOn %}
+                {% if craft.app.isSystemOn %}
                     {{ source("_inlinejs/register-service-worker.min.js") }}
                 {% endif %}
                 {{ source("_inlinejs/loadjs.min.js") }}
@@ -89,7 +89,7 @@
                         a.src = g;
                         m.parentNode.insertBefore(a, m)
                     })(window, document, 'script', '{{ baseUrl }}js/analytics.js', 'ga');
-                    ga('create', 'UA-83819133-1', 'auto');
+                    ga('create', 'UA-XXXXXXXX-X', 'auto');
                     ga('require', 'displayfeatures');
                     //ga('send', 'pageview');
                 </script>

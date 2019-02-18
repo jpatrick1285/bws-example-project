@@ -1,18 +1,6 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
-<nav class="main-nav is-light">
+<nav class="container main-nav">
     <div class="nav-logo">
         {% include "_partials/_logo.twig" %}
-    </div>
-    <div class="nav-overlay-trigger">
-        <button class="nav-overlay-toggle">
-            <span class="hidden-label">Close menu</span>
-        </button>
-    </div>
-    <div class="social-media-links">
-        {% for link in contactInfo.socialMediaLinks.all() %}
-            <a href="{{ link.pageUrl }}" target="_blank">
-                <i class="{{ link.icon }}"></i>
-            </a>
-        {% endfor %}
     </div>
 </nav>

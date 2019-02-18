@@ -1,5 +1,5 @@
 ## Boyer Web Studios
-This project contains the full site for [Boyer Web Studios](https://www.boyerwebstudios.com), built on Craft 3. 
+This project contains the full starter theme for [Boyer Web Studios](https://www.boyerwebstudios.com), built on Craft 3. 
 
 ## About 
 In addition to setting up a new Craft 3 CMS project, this project sets up:

@@ -19,13 +19,12 @@
   },
   "minimum-stability": "RC",
   "require": {
-    "craftcms/cms": "^3.0.0-RC7",
+    "craftcms/cms": "^3.0.0",
     "craftcms/contact-form": "^2.2",
     "craftcms/mailgun": "^1.2",
     "craftcms/redactor": "^2.1",
     "ether/logs": "^3.0",
     "ether/seo": "^3.4",
-    "lewisjenkins/craft-dynamic-fields": "^3.0",
     "mmikkel/child-me": "^1.0",
     "mmikkel/cp-field-inspect": "^1.0",
     "nystudio107/craft-eagerbeaver": "^1.0.0",
@@ -35,7 +34,6 @@
     "nystudio107/craft-scripts": "^1.2.4",
     "nystudio107/craft-typogrify": "^1.1.1",
     "nystudio107/craft3-multi-environment": "^1.0.5",
-    "ostark/craft-async-queue": "dev-master",
     "sebastianlenz/linkfield": "^1.0",
     "verbb/field-manager": "^2.0",
     "verbb/super-table": "^2.0",
@@ -49,10 +47,7 @@
   },
   "config": {
     "optimize-autoloader": true,
-    "sort-packages": true,
-    "platform": {
-      "php": "7.0"
-    }
+    "sort-packages": true
   },
   "scripts": {
     "post-root-package-install": [

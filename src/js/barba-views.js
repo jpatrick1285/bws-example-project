@@ -16,20 +16,6 @@
                     ga('send', 'pageview', location.pathname);
                 }
 
-                // if the notification banner is present, add event listeners to hide it.
-                if ($('.notification-banner').length) {
-                    
-                    // if the bws-notification-banner-hidden cookie is present, don't show the banner
-                    if (!Cookies.get('bws-notification-banner-hidden')) {
-                        $('.notification-banner').removeClass('hidden');
-                        $('.notification-banner').on('click', 'a.close-button', function(e) {
-                            e.preventDefault();
-                            Cookies.set('bws-notification-banner-hidden', 'true', { expires: 0.5 });
-                            $(this).parents('.notification-banner').addClass('hidden');
-                        });
-                    }
-                }
-
                 // run element animations when in viewport
                 $('.animatable').each(function (index) {
                     // create two watchers - one with an offset for enter events, and one without an offset for exit events
@@ -84,77 +70,12 @@
     let HomeView = CommonView.extend({
         namespace: 'home'
     });
-
-    /* -- About View -- */
-    let AboutView = CommonView.extend({
-        namespace: 'about',
-        teamSlider: null,
-        onEnterCompleted: function () {
-            CommonView.onEnterCompleted.apply(this);
-            loadjs(assetsBaseUrl + 'js/flickity.pkgd.min.js', () => {
-                this.teamSlider = new Flickity('.team-slider.slider .track', {
-                    freeScroll: true,
-                    groupCells: true,
-                    contain: true,
-                    friction: 0.3,
-                    //pageDots: false,
-                    //prevNextButtons: false,
-                });
-
-                this.teamSlider.on('staticClick', function(event, pointer, cellElement, cellIndex) {
-                    $(cellElement).find('.image-overlay').toggleClass('visible');
-                });
-            });
-        },
-        onLeave: function() {
-            CommonView.onLeave.apply(this);
-            if (this.teamSlider) {
-                this.teamSlider.off('staticClick');
-
-                this.teamSlider.destroy();
-                this.teamSlider = null;
-            }
-        }
-    });
-
-    /* -- Services View -- */
-    let ServicesView = CommonView.extend({
-        namespace: 'services'
-    });
-
-    /* -- Contact View -- */
-    let ContactView = CommonView.extend({
-        namespace: 'contact',
-        onEnterCompleted: function () {
-            CommonView.onEnterCompleted.apply(this);
-            loadjs(assetsBaseUrl + 'js/vue-quote-form.min.js', () => {
-                if (QuoteFormController) {
-                    QuoteFormController.init();
-                }
-            });
-        },
-        onLeave: function () {
-            CommonView.onLeave.apply(this);
-            if (QuoteFormController) {
-                QuoteFormController.destroy();
-            }
-        }
-    });
-
-    /* -- Case Study View -- */
-    let CaseStudyView = CommonView.extend({
-        namespace: 'work'
-    });
     
     // import common view requirements and initialize views
     // other pages can load these later.
     loadjs([assetsBaseUrl + 'js/main-nav-controller.min.js', assetsBaseUrl + 'js/page-transitions.min.js'], 'main-nav', () => {
         CommonView.init();
         HomeView.init();
-        AboutView.init();
-        ServicesView.init();
-        ContactView.init();
-        CaseStudyView.init();
 
         // initialize barba
         Barba.Pjax.init();
