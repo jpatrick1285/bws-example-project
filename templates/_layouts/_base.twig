@@ -51,7 +51,8 @@
             {%- endminify -%}
             {# -- CRITICAL CSS -- #}
             <!--# if expr="$HTTP_COOKIE=/critical\-css\={{ staticAssetsVersion }}/" -->
-            <link rel="stylesheet" href="{{ baseUrl }}css/site.combined.min.css">
+            <link rel="stylesheet" href="{{ baseUrl }}dist/css/main.css"></link>
+            <script src="{{ baseUrl }}dist/main.bundle.js" type="text/javascript"></script>
         <!--# else -->
             <script>
                 Cookie.set("critical-css", {{ staticAssetsVersion }}, {
@@ -170,19 +171,19 @@
             </script>
 
             {# BrowserSync hook if devmode is enabled #}
-            {% if getenv('ENVIRONMENT') == 'dev' %}
+            {% if craft.config.devMode %}
                 <script id="__bs_script__">//<![CDATA[
-                document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.7'><\/script>".replace("HOST", location.hostname));
-            //]]></script>
-        {% endif %}
+                    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));
+                //]]></script>
+            {% endif %}
 
-        {# -- Footer JS --#}
-        {% block _footer_js %}
-        {% endblock %}
+            {# -- Footer JS --#}
+            {% block _footer_js %}
+            {% endblock %}
 
-        {# -- Inline JS -- #}
-        {% block _inline_js %}
-        {% endblock %}
+            {# -- Inline JS -- #}
+            {% block _inline_js %}
+            {% endblock %}
         
         {%- endminify -%}
     </body>
