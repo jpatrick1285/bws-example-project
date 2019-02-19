@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -22,7 +23,22 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+                use: [
+                    MiniCssExtractPlugin.loader, 
+                    'css-loader',
+                    'postcss-loader', 
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: path.resolve(__dirname) + '/web/dist/fonts/'
+                    }
+                }]
             }
         ]
     },
@@ -41,6 +57,12 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
+        }),
+        new WebappWebpackPlugin({
+            logo: './src/img/favicon_src.png',
+            cache: true,
+            prefix: 'img/favicon/',
+            inject: false
         })
     ],
     resolve: {

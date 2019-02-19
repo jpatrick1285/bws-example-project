@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "boyerwebstudios",
+  "description": "Website for boyerwebstudios.com",
+  "icons": {
+    "60": "/img/favicon/firefox_app_60x60.png",
+    "128": "/img/favicon/firefox_app_128x128.png",
+    "512": "/img/favicon/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "John Robert Boyer, boyerwebstudios",
+    "url": null
+  }
+}
