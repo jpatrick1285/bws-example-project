@@ -13,156 +13,76 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 {%- minify -%}
 {% set baseUrl = alias('@baseUrl') ~ '/' %}
-{% set staticAssetsVersion = craft.app.config.general.custom.staticAssetsVersion %}
 {% header "Link: <#{baseUrl}>; rel=dns-prefetch;,<#{baseUrl}>; rel=preconnect; crossorigin;" %}
 <!DOCTYPE html>
 {%- endminify -%}
-<!--# if expr="$HTTP_COOKIE=/fonts\-loaded\=1/" -->
-<html class="fonts-loaded" lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-<!--# else -->
-    <html lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-        <!--# endif -->
+<html lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    {%- minify -%}
+    <head>
+        <link rel="dns-prefetch" href="{{ baseUrl }}">
+        <link rel="preconnect" href="{{ baseUrl }}" crossorigin="crossorigin">
+        {# <meta name="google-site-verification" content="pSIFysvZOVXyWxcXGDBDo1pMuF0UtC-ILBThaI7G7gE" /> #}
+
+
+        {# -- Any <link> tags that should be included in the header #}
+        {% block _head_links %}{% endblock %}
+
+        {# <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title> #}
+        {% hook "seo" %}
+
+        {% import "_partials/_macros.twig" as macro %}
+        {% include "_partials/_global_header.twig" %}
+
+        {%- endminify -%}
+        <link rel="stylesheet" href="{{ baseUrl }}dist/css/main.css"></link>
+        {# -- Inline CSS block used by templates for Critical CSS #}
+        {% block _inline_css %}{% endblock %}
+
+        <noscript><style>.revealer.show { display: none; }</style></noscript> <!-- hide the preloader when scripts are disabled -->
+
         {%- minify -%}
-        <head>
-            <link rel="dns-prefetch" href="{{ baseUrl }}">
-            <link rel="preconnect" href="{{ baseUrl }}" crossorigin="crossorigin">
-            <meta name="google-site-verification" content="pSIFysvZOVXyWxcXGDBDo1pMuF0UtC-ILBThaI7G7gE" />
+        {% if not craft.app.config.general.devMode %}
+           {% include "_partials/_google-analytics.twig" %}
+        {% endif %}
 
+        {# -- Site fonts -- #}
+        <style>
+            {% include "_inlinecss/_site_fonts.css" %}
+        </style>
 
-            {# -- Any <link> tags that should be included in the header #}
-            {% block _head_links %}{% endblock %}
+        {# -- Inline JS -- #}
+        <script type="text/javascript">
+            var assetsBaseUrl = "{{ baseUrl }}";
+            var retina = window.devicePixelRatio > 1;
+            var csrfTokenName = "{{ craft.app.config.general.csrfTokenName | e('js') }}";
+            var csrfTokenValue = "{{ craft.app.request.csrfToken | e('js') }}";
+        </script>
 
-            {# <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title> #}
-            {% hook "seo" %}
+        {# -- </head> JS -- #}
+        {% block _head_js %}{% endblock %}
 
-            {% import "_partials/_macros.twig" as macro %}
-            {% include "_partials/_global_header.twig" %}
+    </head>
 
-            {%- endminify -%}
-            <link rel="stylesheet" href="{{ baseUrl }}dist/css/main.css"></link>
-            {# -- Inline CSS block used by templates for Critical CSS #}
-            {% block _inline_css %}{% endblock %}
-            
-            <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
-            <noscript><style>.revealer.show { display: none; }</style></noscript> <!-- hide the preloader when scripts are disabled -->
+    {# -- HTML Body -- #}
+    <body {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
 
-            
-            <script>
-                {{ source("_inlinejs/loadCSS.min.js") }}
-                {{ source("_inlinejs/cssrelpreload.min.js") }}
-            </script>
-            <!--# endif -->
-            {%- minify -%}
-            {% if not craft.app.config.general.devMode %}
-                {# -- Google Analytics -- #}
-                <script>
-                    (function (i, s, o, g, r, a, m) {
-                        i['GoogleAnalyticsObject'] = r;
-                        i[r] = i[r] || function () {
-                            (i[r].q = i[r].q || []).push(arguments)
-                        },
-                        i[r].l = 1 * new Date();
-                        a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                        a.async = 1;
-                        a.src = g;
-                        m.parentNode.insertBefore(a, m)
-                    })(window, document, 'script', '{{ baseUrl }}js/analytics.js', 'ga');
-                    ga('create', 'UA-XXXXXXXX-X', 'auto');
-                    ga('require', 'displayfeatures');
-                    //ga('send', 'pageview');
-                </script>
-            {% endif %}
+        {% block body %}
+        {% endblock %}
 
-            {# -- PictureFill polyfill -- #}
-            <script>
-                var testImg = document.createElement("img");
-                if (!("srcset" in testImg) || !("sizes" in testImg)) {
-                    document.createElement("picture");
-                    var s = document.createElement("script");
-                    s.setAttribute("src", "{{ baseUrl }}js/picturefill.min.js");
-                    if ("async" in s) 
-                        s.setAttribute("async", true);
-                    document.head.appendChild(s);
-                }
-            </script>
+        {# BrowserSync hook if devmode is enabled #}
+        {% if craft.config.devMode %}
+            <script id="__bs_script__">//<![CDATA[
+                document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));
+            //]]></script>
+        {% endif %}
 
-            {# -- Site fonts -- #}
-            <style>
-                {% include "_inlinecss/_site_fonts.css" %}
-            </style>
-            {%- endminify -%}
-            {# -- FontFaceObserver -- #}
-            <!--# if expr="$HTTP_COOKIE=/fonts\-loaded\=1/" -->
-        <!--# else -->
-            <script>
-                {{ source("_inlinejs/fontfaceobserver.min.js") }}
-                {{ source("_inlinejs/asyncload-site-fonts.min.js") }}
-            </script>
-            <!--# endif -->
-            {%- minify -%}
+        {# -- Footer JS --#}
+        {% block _footer_js %}
+        {% endblock %}
 
-            {# -- Inline JS -- #}
-            <script type="text/javascript">
-                var staticAssetsVersion = "{{ staticAssetsVersion }}";
-                var assetsBaseUrl = "{{ baseUrl }}";
-                var retina = window.devicePixelRatio > 1;
-                var csrfTokenName = "{{ craft.app.config.general.csrfTokenName | e('js') }}";
-                var csrfTokenValue = "{{ craft.app.request.csrfToken | e('js') }}";
-            </script>
-
-            {# -- </head> JS -- #}
-            {% block _head_js %}{% endblock %}
-
-        </head>
-
-        {# -- HTML Body -- #}
-        <body {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
-
-            {% block body %}
-            {% endblock %}
-
-            {# <script>
-                loadjs(['{{ baseUrl }}js/jquery.min.js'], 'jquery');
-                loadjs(['{{ baseUrl }}js/objectFitPolyfill.basic.min.js'], 'object-fit-polyfill');
-            </script> #}
-
-            {# -- VueJS, Barba, and Vue Resource -- #}
-            <script>
-                {# // define a dependency bundle
-                loadjs(['{{ baseUrl }}js/barba.min.js'], 'barba');
-                loadjs(['{{ baseUrl }}js/vue.min.js'], 'vue');
-                loadjs(['{{ baseUrl }}js/vue-resource.min.js'], 'vue-resource');
-                loadjs(['{{ baseUrl }}js/vee-validate.min.js'], 'vee-validate');
-
-                loadjs.ready(['vue', 'vue-resource', 'vee-validate'], function() {
-                   Vue.use(VeeValidate, {
-                        classes: true,
-                        classNames: {
-                            valid: '',
-                            invalid: 'is-danger'
-                        }
-                    });
-
-                    Vue.use(VueResource);
-                }); #}
-            </script>
-
-            {# BrowserSync hook if devmode is enabled #}
-            {% if craft.config.devMode %}
-                <script id="__bs_script__">//<![CDATA[
-                    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));
-                //]]></script>
-            {% endif %}
-
-            {# -- Footer JS --#}
-            {% block _footer_js %}
-            {% endblock %}
-
-            {# -- Inline JS -- #}
-            {% block _inline_js %}
-            {% endblock %}
-        
+        {# -- Inline JS -- #}
+        {% block _inline_js %}
+        {% endblock %}
         {%- endminify -%}
 
         <script src="{{ baseUrl }}dist/main.bundle.js" type="text/javascript"></script>
