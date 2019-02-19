@@ -12,6 +12,11 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname) + '/web/dist'
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     module: {
         rules: [
             {
