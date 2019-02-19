@@ -1,14 +1,6 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 {#-- Global footer --#}
 
-<script>
-loadjs(['{{ baseUrl }}js/scrollMonitor.min.js'], 'scrollMonitor');
-
-loadjs.ready(['scrollMonitor', 'jquery', 'barba'], function() {
-    loadjs(['{{ baseUrl }}js/barba-views.min.js'], 'barba-views');
-});
-</script>
-
 {#-- Browser fixes --#}
 <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
@@ -21,7 +22,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
             }
         ]
     },
@@ -36,6 +37,18 @@ module.exports = {
                 './templates'
             ],
             reloadDelay: 0
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
         })
-    ]
+    ],
+    resolve: {
+        modules: [
+            'node_modules'
+        ],
+        alias: {
+            barba: path.resolve('node_modules', './barba.js/dist/barba.js')
+        }
+    }
 };
