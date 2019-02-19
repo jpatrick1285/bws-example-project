@@ -162,7 +162,13 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! normalize.css */ \"./node_modules/normalize.css/normalize.css\");\n/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(normalize_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _js_site_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/site.js */ \"./src/js/site.js\");\n/* global site imports */\n\n//# sourceURL=webpack:///./src/app.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! normalize.css */ "./node_modules/normalize.css/normalize.css");
+/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(normalize_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/style.scss */ "./src/scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _js_site_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/site.js */ "./src/js/site.js");
+/* global site imports */
 
 /***/ }),
 
@@ -174,7 +180,24 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var norm
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BarbaViews\", function() { return BarbaViews; });\n/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! barba */ \"./node_modules/barba.js/dist/barba.js\");\n/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(barba__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! scrollmonitor */ \"./node_modules/scrollmonitor/scrollMonitor.js\");\n/* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(scrollmonitor__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _RevealerTransition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RevealerTransition */ \"./src/js/RevealerTransition.js\");\nfunction _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError(\"Cannot call a class as a function\");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if(\"value\"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}var BarbaViews=/*#__PURE__*/function(){function BarbaViews(){_classCallCheck(this,BarbaViews);this.scrollMonitor=scrollmonitor__WEBPACK_IMPORTED_MODULE_1___default.a;}_createClass(BarbaViews,[{key:\"init\",value:function init(){/* -- Common View -- */ // Methodology from https://github.com/luruke/barba.js/issues/146\nvar CommonView=barba__WEBPACK_IMPORTED_MODULE_0___default.a.BaseView.extend({namespace:'common',scrollWatchers:[],onEnterCompleted:function onEnterCompleted(){try{$('body').addClass('animations-enabled');window.scrollTo(0,0);var _instance=this;if(typeof ga==='function'){ga('send','pageview',location.pathname);}// run element animations when in viewport\n$('.animatable').each(function(index){// create two watchers - one with an offset for enter events, and one without an offset for exit events\n// lets us add visibility classes with an offset, and remove them when the element is completely outside the visible viewport\nvar enterScrollWatcher=scrollMonitor.create($(this).get(0),-100);var exitScrollWatcher=scrollMonitor.create($(this).get(0),100);_instance.scrollWatchers.push(enterScrollWatcher);_instance.scrollWatchers.push(exitScrollWatcher);enterScrollWatcher.enterViewport(function(){$(this.watchItem).addClass('is-active');});exitScrollWatcher.exitViewport(function(){$(this.watchItem).removeClass('is-active');});// If any of the elements are visible, add the active class (after an initial delay, to facilitate page transition animation)\n$(this).addClass('will-animate');$(this).removeClass('is-active');if(exitScrollWatcher.isInViewport){setTimeout(function(){$(exitScrollWatcher.watchItem).addClass('is-active');},50);}});}catch(e){console.log(e);}},/* Clean up scripts */onLeave:function onLeave(){try{// destroy element animation scroll watchers \nfor(var i=0;i<this.scrollWatchers.length;i++){this.scrollWatchers[i].destroy();}this.scrollWatchers=[];}catch(e){console.log(e);}}});/* -- Home View -- */var HomeView=CommonView.extend({namespace:'home'});// initialize views\nCommonView.init();HomeView.init();// initialize barba\nbarba__WEBPACK_IMPORTED_MODULE_0___default.a.Pjax.init();barba__WEBPACK_IMPORTED_MODULE_0___default.a.Pjax.getTransition=function(){return _RevealerTransition__WEBPACK_IMPORTED_MODULE_2__[\"default\"];};// hide preloader \n$('.revealer').removeClass('show').addClass('animate-out');setTimeout(function(){$('.revealer').removeClass('animate-out');},600);}}]);return BarbaViews;}();\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/js/BarbaViews.js?");
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BarbaViews", function() { return BarbaViews; });
+/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! barba */ "./node_modules/barba.js/dist/barba.js");
+/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(barba__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! scrollmonitor */ "./node_modules/scrollmonitor/scrollMonitor.js");
+/* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(scrollmonitor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _RevealerTransition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RevealerTransition */ "./src/js/RevealerTransition.js");
+function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}var BarbaViews=/*#__PURE__*/function(){function BarbaViews(){_classCallCheck(this,BarbaViews);this.scrollMonitor=scrollmonitor__WEBPACK_IMPORTED_MODULE_1___default.a;}_createClass(BarbaViews,[{key:"init",value:function init(){/* -- Common View -- */ // Methodology from https://github.com/luruke/barba.js/issues/146
+var CommonView=barba__WEBPACK_IMPORTED_MODULE_0___default.a.BaseView.extend({namespace:'common',scrollWatchers:[],onEnterCompleted:function onEnterCompleted(){try{$('body').addClass('animations-enabled');window.scrollTo(0,0);var _instance=this;if(typeof ga==='function'){ga('send','pageview',location.pathname);}// run element animations when in viewport
+$('.animatable').each(function(index){// create two watchers - one with an offset for enter events, and one without an offset for exit events
+// lets us add visibility classes with an offset, and remove them when the element is completely outside the visible viewport
+var enterScrollWatcher=scrollMonitor.create($(this).get(0),-100);var exitScrollWatcher=scrollMonitor.create($(this).get(0),100);_instance.scrollWatchers.push(enterScrollWatcher);_instance.scrollWatchers.push(exitScrollWatcher);enterScrollWatcher.enterViewport(function(){$(this.watchItem).addClass('is-active');});exitScrollWatcher.exitViewport(function(){$(this.watchItem).removeClass('is-active');});// If any of the elements are visible, add the active class (after an initial delay, to facilitate page transition animation)
+$(this).addClass('will-animate');$(this).removeClass('is-active');if(exitScrollWatcher.isInViewport){setTimeout(function(){$(exitScrollWatcher.watchItem).addClass('is-active');},50);}});}catch(e){console.log(e);}},/* Clean up scripts */onLeave:function onLeave(){try{// destroy element animation scroll watchers 
+for(var i=0;i<this.scrollWatchers.length;i++){this.scrollWatchers[i].destroy();}this.scrollWatchers=[];}catch(e){console.log(e);}}});/* -- Home View -- */var HomeView=CommonView.extend({namespace:'home'});// initialize views
+CommonView.init();HomeView.init();// initialize barba
+barba__WEBPACK_IMPORTED_MODULE_0___default.a.Pjax.init();barba__WEBPACK_IMPORTED_MODULE_0___default.a.Pjax.getTransition=function(){return _RevealerTransition__WEBPACK_IMPORTED_MODULE_2__["default"];};// hide preloader 
+$('.revealer').removeClass('show').addClass('animate-out');setTimeout(function(){$('.revealer').removeClass('animate-out');},600);}}]);return BarbaViews;}();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -186,7 +209,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! barba */ \"./node_modules/barba.js/dist/barba.js\");\n/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(barba__WEBPACK_IMPORTED_MODULE_0__);\nvar RevealerTransition=barba__WEBPACK_IMPORTED_MODULE_0___default.a.BaseTransition.extend({start:function start(){Promise.all([this.newContainerLoading,this.animateIn()]).then(this.animateOut.bind(this));},animateIn:function animateIn(){$('.revealer').addClass('animate-in');// TODO: show preloader animation after transition finishes. \nreturn new Promise(function(resolve,reject){var newResolve=resolve;setTimeout(function(){resolve();},600);});},animateOut:function animateOut(){var _this=this;_this.done();// remove old container before transitioning in.\n$('.revealer').removeClass('animate-in').addClass('animate-out');// TODO: show preloader animation after transition finishes. \nreturn new Promise(function(resolve,reject){setTimeout(function(){$('.revealer').removeClass('animate-out');resolve();},600);});}});/* harmony default export */ __webpack_exports__[\"default\"] = (RevealerTransition);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/js/RevealerTransition.js?");
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! barba */ "./node_modules/barba.js/dist/barba.js");
+/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(barba__WEBPACK_IMPORTED_MODULE_0__);
+var RevealerTransition=barba__WEBPACK_IMPORTED_MODULE_0___default.a.BaseTransition.extend({start:function start(){Promise.all([this.newContainerLoading,this.animateIn()]).then(this.animateOut.bind(this));},animateIn:function animateIn(){$('.revealer').addClass('animate-in');// TODO: show preloader animation after transition finishes. 
+return new Promise(function(resolve,reject){var newResolve=resolve;setTimeout(function(){resolve();},600);});},animateOut:function animateOut(){var _this=this;_this.done();// remove old container before transitioning in.
+$('.revealer').removeClass('animate-in').addClass('animate-out');// TODO: show preloader animation after transition finishes. 
+return new Promise(function(resolve,reject){setTimeout(function(){$('.revealer').removeClass('animate-out');resolve();},600);});}});/* harmony default export */ __webpack_exports__["default"] = (RevealerTransition);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -198,7 +228,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _BarbaViews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BarbaViews */ \"./src/js/BarbaViews.js\");\n$(function(){var barbaViews=new _BarbaViews__WEBPACK_IMPORTED_MODULE_0__[\"BarbaViews\"]();barbaViews.init();});\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/js/site.js?");
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _BarbaViews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BarbaViews */ "./src/js/BarbaViews.js");
+$(function(){var barbaViews=new _BarbaViews__WEBPACK_IMPORTED_MODULE_0__["BarbaViews"]();barbaViews.init();});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -209,8 +242,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/scss/style.scss?");
+// extracted by mini-css-extract-plugin
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=main.bundle.js.map
