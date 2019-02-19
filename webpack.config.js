@@ -6,7 +6,7 @@ const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: './src/main.js'
+        main: './src/app.js'
     },
     output: {
         filename: '[name].bundle.js',
@@ -27,7 +27,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
+                test: /\.scss|.css$/,
                 use: [
                     MiniCssExtractPlugin.loader, 
                     'css-loader',
