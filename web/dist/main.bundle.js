@@ -1,1 +1,204 @@
-!function(e){function t(t){for(var r,i,s=t[0],c=t[1],l=t[2],f=0,h=[];f<s.length;f++)i=s[f],a[i]&&h.push(a[i][0]),a[i]=0;for(r in c)Object.prototype.hasOwnProperty.call(c,r)&&(e[r]=c[r]);for(u&&u(t);h.length;)h.shift()();return o.push.apply(o,l||[]),n()}function n(){for(var e,t=0;t<o.length;t++){for(var n=o[t],r=!0,s=1;s<n.length;s++){var c=n[s];0!==a[c]&&(r=!1)}r&&(o.splice(t--,1),e=i(i.s=n[0]))}return e}var r={},a={0:0},o=[];function i(t){if(r[t])return r[t].exports;var n=r[t]={i:t,l:!1,exports:{}};return e[t].call(n.exports,n,n.exports,i),n.l=!0,n.exports}i.m=e,i.c=r,i.d=function(e,t,n){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(i.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)i.d(n,r,function(t){return e[t]}.bind(null,r));return n},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="";var s=window.webpackJsonp=window.webpackJsonp||[],c=s.push.bind(s);s.push=t,s=s.slice();for(var l=0;l<s.length;l++)t(s[l]);var u=c;o.push([5,1]),n()}([,,function(e,t,n){"use strict";(function(e){n.d(t,"a",function(){return l});var r=n(0),a=n.n(r),o=n(3),i=n.n(o),s=n(4);function c(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}var l=function(){function t(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),this.scrollMonitor=i.a}var n,r,o;return n=t,(r=[{key:"init",value:function(){var t=a.a.BaseView.extend({namespace:"common",scrollWatchers:[],onEnterCompleted:function(){try{e("body").addClass("animations-enabled"),window.scrollTo(0,0);var t=this;"function"==typeof ga&&ga("send","pageview",location.pathname),e(".animatable").each(function(n){var r=scrollMonitor.create(e(this).get(0),-100),a=scrollMonitor.create(e(this).get(0),100);t.scrollWatchers.push(r),t.scrollWatchers.push(a),r.enterViewport(function(){e(this.watchItem).addClass("is-active")}),a.exitViewport(function(){e(this.watchItem).removeClass("is-active")}),e(this).addClass("will-animate"),e(this).removeClass("is-active"),a.isInViewport&&setTimeout(function(){e(a.watchItem).addClass("is-active")},50)})}catch(e){console.log(e)}},onLeave:function(){try{for(var e=0;e<this.scrollWatchers.length;e++)this.scrollWatchers[e].destroy();this.scrollWatchers=[]}catch(e){console.log(e)}}}),n=t.extend({namespace:"home"});t.init(),n.init(),a.a.Pjax.init(),a.a.Pjax.getTransition=function(){return s.a},e(".revealer").removeClass("show").addClass("animate-out"),setTimeout(function(){e(".revealer").removeClass("animate-out")},600)}}])&&c(n.prototype,r),o&&c(n,o),t}()}).call(this,n(1))},,function(e,t,n){"use strict";(function(e){var r=n(0),a=n.n(r).a.BaseTransition.extend({start:function(){Promise.all([this.newContainerLoading,this.animateIn()]).then(this.animateOut.bind(this))},animateIn:function(){return e(".revealer").addClass("animate-in"),new Promise(function(e,t){setTimeout(function(){e()},600)})},animateOut:function(){return this.done(),e(".revealer").removeClass("animate-in").addClass("animate-out"),new Promise(function(t,n){setTimeout(function(){e(".revealer").removeClass("animate-out"),t()},600)})}});t.a=a}).call(this,n(1))},function(e,t,n){"use strict";n.r(t),function(e){n(6);var t=n(2);e(function(){(new t.a).init()})}.call(this,n(1))},function(e,t,n){}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/ 		return result;
+/******/ 	}
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"main": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push(["./src/main.js","vendors~main"]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/js/BarbaViews.js":
+/*!******************************!*\
+  !*** ./src/js/BarbaViews.js ***!
+  \******************************/
+/*! exports provided: BarbaViews */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BarbaViews\", function() { return BarbaViews; });\n/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! barba */ \"./node_modules/barba.js/dist/barba.js\");\n/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(barba__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! scrollmonitor */ \"./node_modules/scrollmonitor/scrollMonitor.js\");\n/* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(scrollmonitor__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _RevealerTransition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RevealerTransition */ \"./src/js/RevealerTransition.js\");\nfunction _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError(\"Cannot call a class as a function\");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if(\"value\"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}var BarbaViews=/*#__PURE__*/function(){function BarbaViews(){_classCallCheck(this,BarbaViews);this.scrollMonitor=scrollmonitor__WEBPACK_IMPORTED_MODULE_1___default.a;}_createClass(BarbaViews,[{key:\"init\",value:function init(){/* -- Common View -- */ // Methodology from https://github.com/luruke/barba.js/issues/146\nvar CommonView=barba__WEBPACK_IMPORTED_MODULE_0___default.a.BaseView.extend({namespace:'common',scrollWatchers:[],onEnterCompleted:function onEnterCompleted(){try{$('body').addClass('animations-enabled');window.scrollTo(0,0);var _instance=this;if(typeof ga==='function'){ga('send','pageview',location.pathname);}// run element animations when in viewport\n$('.animatable').each(function(index){// create two watchers - one with an offset for enter events, and one without an offset for exit events\n// lets us add visibility classes with an offset, and remove them when the element is completely outside the visible viewport\nvar enterScrollWatcher=scrollMonitor.create($(this).get(0),-100);var exitScrollWatcher=scrollMonitor.create($(this).get(0),100);_instance.scrollWatchers.push(enterScrollWatcher);_instance.scrollWatchers.push(exitScrollWatcher);enterScrollWatcher.enterViewport(function(){$(this.watchItem).addClass('is-active');});exitScrollWatcher.exitViewport(function(){$(this.watchItem).removeClass('is-active');});// If any of the elements are visible, add the active class (after an initial delay, to facilitate page transition animation)\n$(this).addClass('will-animate');$(this).removeClass('is-active');if(exitScrollWatcher.isInViewport){setTimeout(function(){$(exitScrollWatcher.watchItem).addClass('is-active');},50);}});}catch(e){console.log(e);}},/* Clean up scripts */onLeave:function onLeave(){try{// destroy element animation scroll watchers \nfor(var i=0;i<this.scrollWatchers.length;i++){this.scrollWatchers[i].destroy();}this.scrollWatchers=[];}catch(e){console.log(e);}}});/* -- Home View -- */var HomeView=CommonView.extend({namespace:'home'});// initialize views\nCommonView.init();HomeView.init();// initialize barba\nbarba__WEBPACK_IMPORTED_MODULE_0___default.a.Pjax.init();barba__WEBPACK_IMPORTED_MODULE_0___default.a.Pjax.getTransition=function(){return _RevealerTransition__WEBPACK_IMPORTED_MODULE_2__[\"default\"];};// hide preloader \n$('.revealer').removeClass('show').addClass('animate-out');setTimeout(function(){$('.revealer').removeClass('animate-out');},600);}}]);return BarbaViews;}();\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/js/BarbaViews.js?");
+
+/***/ }),
+
+/***/ "./src/js/RevealerTransition.js":
+/*!**************************************!*\
+  !*** ./src/js/RevealerTransition.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! barba */ \"./node_modules/barba.js/dist/barba.js\");\n/* harmony import */ var barba__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(barba__WEBPACK_IMPORTED_MODULE_0__);\nvar RevealerTransition=barba__WEBPACK_IMPORTED_MODULE_0___default.a.BaseTransition.extend({start:function start(){Promise.all([this.newContainerLoading,this.animateIn()]).then(this.animateOut.bind(this));},animateIn:function animateIn(){$('.revealer').addClass('animate-in');// TODO: show preloader animation after transition finishes. \nreturn new Promise(function(resolve,reject){var newResolve=resolve;setTimeout(function(){resolve();},600);});},animateOut:function animateOut(){var _this=this;_this.done();// remove old container before transitioning in.\n$('.revealer').removeClass('animate-in').addClass('animate-out');// TODO: show preloader animation after transition finishes. \nreturn new Promise(function(resolve,reject){setTimeout(function(){$('.revealer').removeClass('animate-out');resolve();},600);});}});/* harmony default export */ __webpack_exports__[\"default\"] = (RevealerTransition);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/js/RevealerTransition.js?");
+
+/***/ }),
+
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_BarbaViews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/BarbaViews */ \"./src/js/BarbaViews.js\");\n/* global site imports */$(function(){var barbaViews=new _js_BarbaViews__WEBPACK_IMPORTED_MODULE_1__[\"BarbaViews\"]();barbaViews.init();});\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/scss/style.scss":
+/*!*****************************!*\
+  !*** ./src/scss/style.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/scss/style.scss?");
+
+/***/ })
+
+/******/ });
