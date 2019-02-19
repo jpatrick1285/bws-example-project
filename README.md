@@ -1,34 +1,28 @@
 ## Boyer Web Studios
-This project contains the full starter theme for [Boyer Web Studios](https://www.boyerwebstudios.com), built on Craft 3. 
+This project contains the full starter theme for [Boyer Web Studios](https://www.boyerwebstudios.com), built on Craft 3 and Webpack 4. 
 
 ## About 
 In addition to setting up a new Craft 3 CMS project, this project sets up:
  
 * [Craft 3 Multi-Environment](https://github.com/nystudio107/craft3-multi-environment) as described in the [Multi-Environment Config for Craft CMS](https://nystudio107.com/blog/multi-environment-config-for-craft-cms) article
 * [Craft-Scripts](https://github.com/nystudio107/craft-scripts) as described in the [Database & Asset Syncing Between Environments in Craft CMS](https://nystudio107.com/blog/database-asset-syncing-between-environments-in-craft-cms), [Mitigating Disaster via Website Backups](https://nystudio107.com/blog/mitigating-disaster-via-website-backups) & [Hardening Craft CMS Permissions](https://nystudio107.com/blog/hardening-craft-cms-permissions) articles
-  
-...and sets up some other base scaffolding as described to the following articles:
-
-* [A Better package.json for the Frontend](https://nystudio107.com/blog/a-better-package-json-for-the-frontend)
-* [A Gulp Workflow for Frontend Development Automation](https://nystudio107.com/blog/a-gulp-workflow-for-frontend-development-automation)
-* [Implementing Critical CSS on your website](https://nystudio107.com/blog/implementing-critical-css)
-* [Simple Static Asset Versioning in Craft CMS](https://nystudio107.com/blog/simple-static-asset-versioning)
-* [Enhancing a Craft CMS 3 Website with a Custom Module](https://nystudio107.com/blog/simple-static-asset-versioning)
 
 It also installs a few base plugins described in the [Setting up a New Craft 3 CMS Project](https://nystudio107.com/blog/enhancing-a-craft-cms-3-website-with-a-custom-module) article.
 
 ## Installation
 
-First, clone the repository onto your local machine. 
+First, clone the repository onto your local machine and install the project dependencies by running `composer install`. If installing on a production environment, run `yarn install --production`. Otherwise, run `yarn`. 
 
 Then `cd` to your new project directory, and run Craft's `setup` console command to create your `.env` environments and optionally install:
 
     cd PATH
     ./craft setup
 
-Finally, run the `nys-setup` command to configure Craft-Scripts & Craft 3 Multi-Environment based on your newly created `.env` settings:
+Next, run the `nys-setup` command to configure Craft-Scripts & Craft 3 Multi-Environment based on your newly created `.env` settings:
 
     ./nys-setup
+    
+Finally, run `./craft install` to run the craft installation scripts. 
 
 That's it, enjoy!
 
@@ -37,6 +31,10 @@ If you ever delete the `vendor` folder or such, just re-run:
     ./nys-setup
 
 ...and it will re-create the symlink to your `.env.sh`; don't worry, it won't stomp on any changes you've made.
+
+## Build Process
+
+To build for production, make sure `yarn` and `composer` dependencies are installed, then run `yarn build`. To build for a local environment and watch for changes, run `yarn watch`. 
 
 ## About Craft CMS
 
