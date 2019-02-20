@@ -1,11 +1,11 @@
 {
-    "name": "boyerwebstudios",
+    "name": "bws-craft-starter-bootstrap",
     "version": "1.0.0",
-    "description": "Website for boyerwebstudios.com",
-    "main": "gulpfile.js",
+    "description": "A simple project setup for beginning a new Craft CMS site. GPL-3.0-or-later",
+    "main": "src/app.js",
     "author": "John Robert Boyer, boyerwebstudios <john@boyerwebstudios.com>",
     "copyright": "boyerwebstudios.com",
-    "license": "UNLICENSED",
+    "license": "GPL-3.0-or-later",
     "private": true,
     "dependencies": {
         "awesome-sass-easing": "^1.1.2",
@@ -47,6 +47,6 @@
         "build": "webpack --mode production"
     },
     "bugs": {
-        "email": "info@nystudio107.com"
+        "email": "hello@boyerwebstudios.com"
     }
 }
