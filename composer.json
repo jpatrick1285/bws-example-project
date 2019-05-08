@@ -19,6 +19,7 @@
   },
   "minimum-stability": "RC",
   "require": {
+    "aelvan/imager": "v2.1.5.1",
     "craftcms/cms": "^3.0.0",
     "craftcms/contact-form": "^2.2",
     "craftcms/mailgun": "^1.2",

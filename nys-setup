@@ -21,6 +21,7 @@ const INSTALL_PLUGINS = [
     'eager-beaver',
     'field-manager', // https://github.com/verbb/field-manager
     'image-optimize',
+    'imager', // https://github.com/aelvan/Imager-Craft
     'logs', // https://github.com/ethercreative/logs
     'typedlinkfield', // https://github.com/sebastian-lenz/craft-linkfield
     'mailgun', // https://github.com/craftcms/mailgun

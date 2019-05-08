@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
+const WebpackBar = require('webpackbar');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = (env, argv) => {
 
@@ -71,6 +73,10 @@ module.exports = (env, argv) => {
                 cache: true,
                 prefix: 'img/favicon/',
                 inject: false
+            }),
+            new WebpackBar(),
+            new FriendlyErrorsWebpackPlugin({
+                clearConsole: false
             })
         ],
         resolve: {
