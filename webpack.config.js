@@ -22,6 +22,7 @@ module.exports = (env, argv) => {
             }
         },
         devtool: argv.mode === 'production' ? false : 'source-map',
+        stats: 'none',
         module: {
             rules: [
                 {
@@ -62,6 +63,8 @@ module.exports = (env, argv) => {
                     './src',
                     './templates'
                 ],
+                logSnippet: false,
+                logLevel: 'warn',
                 reloadDelay: 0
             }),
             new webpack.ProvidePlugin({

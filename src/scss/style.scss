@@ -4,34 +4,32 @@
 @import "variables";
 @import "animations";
 
-@import "~bulma/sass/utilities/_all";
-@import "~bulma/sass/base/_all";
-//@import "~bulma/sass/components/_all";
-@import "~bulma/sass/grid/_all";
-@import "~bulma/sass/layout/_all";
+@import "foundation-settings";
+@import '~foundation-sites/scss/foundation';
 
-/* Modified imports for ~bulma/sass/elements/_all.scss */
-//@import "~bulma/sass/elements/_all";
-@import "~bulma/sass/elements/box.sass";
-@import "~bulma/sass/elements/button.sass";
-@import "~bulma/sass/elements/container.sass";
-@import "~bulma/sass/elements/content.sass";
-@import "~bulma/sass/elements/form.sass";
-@import "~bulma/sass/elements/icon.sass";
-@import "~bulma/sass/elements/image.sass";
-@import "~bulma/sass/elements/notification.sass";
-@import "~bulma/sass/elements/progress.sass";
-@import "~bulma/sass/elements/table.sass";
-@import "~bulma/sass/elements/tag.sass";
-@import "~bulma/sass/elements/title.sass";
-@import "~bulma/sass/elements/other.sass";
+// Global styles
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+
+// Grids
+@include foundation-xy-grid-classes;
+
+// Generic components
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-close-button;
+@include foundation-label;
+@include foundation-table;
+
+// Helpers
+@include foundation-visibility-classes;
 
 html {
-  background: #e5e6eb;
+  background: #FFFFFF;
 }
 
 body {
-
   margin: auto;
   background: #FFFFFF;
 }
@@ -64,11 +62,11 @@ h1.is-large {
   hyphens: auto;
   margin-bottom: 0.8em;
 
-  @include tablet {
+  @include breakpoint(medium down) {
     font-size: 3.25rem;
   }
 
-  @include desktop {
+  @include breakpoint(large up) {
     font-size: 4rem;
   }
 }
@@ -80,7 +78,7 @@ h1 {
   line-break: break-word;
   hyphens: auto;
 
-  @include desktop {
+  @include breakpoint(large up) {
     font-size: 2.2rem;
   }
 }
@@ -90,7 +88,7 @@ h2 {
   font-size: 1.5rem;
   color: $heading-copy-color;
 
-  @include desktop {
+  @include breakpoint(large up) {
     font-size: 1.75rem;
   }
 }
@@ -120,7 +118,7 @@ p.is-subheading {
 }
 
 p.is-multi-column {
-  @include desktop {
+  @include breakpoint(large up) {
     column-count: 2;
     column-gap: 2.8em;
     word-break: break-word;
@@ -192,22 +190,11 @@ img.cover {
   }
 }
 
-.container {
+.grid-container {
   //width: 81%;
   //margin: 0 $container-margin;
   //margin: 0 auto;
   position: relative;
-  padding: 0 1rem;
-
-  &.is-full {
-    max-width: none;
-    width: 100%;
-    margin: 0;
-  }
-
-  // &.is-large {
-  //   margin: 0 $container-large-margin;
-  // }
 
   &.is-small {
     padding: 0 $container-small-margin;
@@ -222,7 +209,7 @@ img.cover {
   }
 
   &.is-small-desktop {
-    @include desktop {
+    @include breakpoint(large up) {
       padding: $small-spacing 0;
     }
   }
@@ -243,7 +230,7 @@ img.cover {
   }
 
   &.is-medium-desktop {
-    @include desktop {
+    @include breakpoint(large up) {
       padding: $medium-spacing 0;
     }
   }
@@ -264,7 +251,7 @@ img.cover {
   }
 
   &.is-large-desktop {
-    @include desktop {
+    @include breakpoint(large up) {
       padding: $large-spacing 0;
     }
   }
@@ -283,7 +270,7 @@ img.cover {
 
 .columns {
   &.is-reversed-desktop {
-    @include tablet {
+    @include breakpoint(medium up) {
       flex-direction: row-reverse;
     }
   }
@@ -324,7 +311,7 @@ img.cover {
 .transition-helper {
   width: 100%;
   height: 100%;
-  background: $black;
+  background: #000000;
 
   &.is-transparent {
     background: none;

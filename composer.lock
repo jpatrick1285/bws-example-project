@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dd138d05e2746227b1413b0c0f3a650",
+    "content-hash": "d6fc60976239685cfb4affb812beba08",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -2629,6 +2629,57 @@
             ],
             "description": "The Mailgun SDK provides methods for all API functions.",
             "time": "2019-02-02T07:14:32+00:00"
+        },
+        {
+            "name": "marionnewlevant/twig-perversion",
+            "version": "2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marionnewlevant/craft-twig_perversion.git",
+                "reference": "8644b70ab9de13c4f604694067e01cc49f2735e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marionnewlevant/craft-twig_perversion/zipball/8644b70ab9de13c4f604694067e01cc49f2735e3",
+                "reference": "8644b70ab9de13c4f604694067e01cc49f2735e3",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "twig-perversion",
+                "name": "Twig Perversion",
+                "schemaVersion": "1.0.0",
+                "hasSettings": false,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/marionnewlevant/craft-twig_perversion/blob/v2/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/marionnewlevant/craft-twig_perversion/v2/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "marionnewlevant\\twigperversion\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marion Newlevant",
+                    "homepage": "http://marion.newlevant.com"
+                }
+            ],
+            "description": "Making twig do things it really shouldn't",
+            "keywords": [
+                "Craft",
+                "craftcms",
+                "plugin",
+                "twigperversion"
+            ],
+            "time": "2019-02-03T05:56:49+00:00"
         },
         {
             "name": "masterminds/html5",

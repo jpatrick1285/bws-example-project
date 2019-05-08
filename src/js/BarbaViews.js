@@ -1,11 +1,13 @@
 import Barba from 'barba';
 import ScrollMonitor from 'scrollmonitor';
+import { Foundation } from 'foundation-sites/js/foundation.core';
 
 import RevealerTransition from './RevealerTransition';
 
 class BarbaViews {
     constructor() {
         this.scrollMonitor = ScrollMonitor;
+        Foundation.addToJquery($);
     }
     
     init() {
@@ -17,6 +19,7 @@ class BarbaViews {
 
             onEnterCompleted: function () {
                 try {
+                    $(document).foundation();
                     $('body').addClass('animations-enabled');
                     window.scrollTo(0, 0);
                     var _instance = this;
@@ -67,6 +70,7 @@ class BarbaViews {
                     }
 
                     this.scrollWatchers = [];
+                    //$(document).foundation('destroy');
                 } catch(e) {
                     console.log(e);
                 }
