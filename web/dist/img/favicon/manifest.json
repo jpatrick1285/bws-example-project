@@ -1,7 +1,7 @@
 {
-  "name": "boyerwebstudios",
-  "short_name": "boyerwebstudios",
-  "description": "Website for boyerwebstudios.com",
+  "name": "bws-craft-starter-bootstrap",
+  "short_name": "bws-craft-starter-bootstrap",
+  "description": "A simple project setup for beginning a new Craft CMS site. GPL-3.0-or-later",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
