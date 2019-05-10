@@ -1,3 +1,4 @@
+import { LazySizes } from 'lazysizes';
 import { BarbaViews } from './BarbaViews';
 
 $(function() {

@@ -4138,6 +4138,11 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
+lazysizes@^5.0.0-rc2:
+  version "5.0.0-rc2"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.0.0-rc2.tgz#4ee2435ebde135a8a4ebe4cd11f8b619109d9cda"
+  integrity sha512-mg8+zbtz+HproNmNDcwME4p4PS4nQnYSLJLzbt7vO1aB9H4noWiDrnSXPB7MJjOOBBYRnGn3HrsdhbsdUWX1lw==
+
 lcid@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lcid/-/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835"
