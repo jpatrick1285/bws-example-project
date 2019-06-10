@@ -13605,17 +13605,6 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./node_modules/normalize.css/normalize.css":
-/*!**************************************************!*\
-  !*** ./node_modules/normalize.css/normalize.css ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "./node_modules/scrollmonitor/scrollMonitor.js":
 /*!*****************************************************!*\
   !*** ./node_modules/scrollmonitor/scrollMonitor.js ***!

@@ -67,7 +67,7 @@
 
 $global-font-size: 100%;
 $global-width: rem-calc(1400);
-$global-lineheight: 1.5;
+$global-lineheight: 1.69;
 $foundation-palette: (
   primary: #1779ba,
   secondary: #767676,
@@ -130,7 +130,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: $heading-copy-font;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;

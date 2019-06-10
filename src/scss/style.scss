@@ -2,6 +2,7 @@
 
 @import "fonts";
 @import "variables";
+@import "functions";
 @import "animations";
 
 @import "foundation-settings";
@@ -34,11 +35,24 @@ body {
   background: #FFFFFF;
 }
 
+html {
+  background: #FFFFFF;
+}
+
+body {
+  margin: auto;
+  background: #FFFFFF;
+}
+
+object.svg {
+  pointer-events: none;
+}
+
 /* Global Typography Styles */
 body, html {
   font-family: $body-copy-font;
   color: $body-copy-color;
-  font-size: 18px;
+  font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -46,75 +60,32 @@ body, html {
   @media (max-width: 1000px) {
     font-size: calc(15px + .4vw);
   }
-}
 
-h1, h2, h3, h4, h5, h6, p.is-subheading {
-  line-height: 1.2em;
-  margin-bottom: 1em;
-}
-
-h1.is-large {
-  font-family: $heading-copy-font;
-  font-size: 2.3rem;
-  color: $heading-copy-color;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  margin-bottom: 0.8em;
-
-  @include breakpoint(medium down) {
-    font-size: 3.25rem;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-copy-font;
+    color: $heading-copy-color;
   }
 
-  @include breakpoint(large up) {
-    font-size: 4rem;
+  p {
+    margin-bottom: 1.6em;
   }
-}
 
-h1 {
-  font-family: $heading-copy-font;
-  font-size: 2rem;
-  color: $heading-copy-color;
-  line-break: break-word;
-  hyphens: auto;
-
-  @include breakpoint(large up) {
-    font-size: 2.2rem;
+  .is-dark h1, h2, h3, h4, h5, h6 {
+    color: $dark-heading-copy-color;
   }
-}
 
-h2 {
-  font-family: $heading-copy-font;
-  font-size: 1.5rem;
-  color: $heading-copy-color;
-
-  @include breakpoint(large up) {
-    font-size: 1.75rem;
+  .is-dark p {
+    color: #FFFFFF;
+    opacity: 0.9;
   }
-}
-
-h3 {
-  font-family: $subheading-copy-font;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: $heading-copy-color;
-}
-
-h4, h5, h6 {
-  font-weight: bold;
-  color: $heading-copy-color;
-}
-
-p {
-  line-height: 1.65em;
-  margin-bottom: 1em;
 }
 
 p.is-subheading {
   font-family: $subheading-copy-font;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  color: $heading-copy-color;
+  letter-spacing: 0.03em;
+  color: #887F74;
+  font-size: px-to-em(20px);
+  max-width: 36rem;
 }
 
 p.is-multi-column {
@@ -126,11 +97,7 @@ p.is-multi-column {
 }
 
 a {
-  font-weight: bold;
-  letter-spacing: 0.03em;
   color: $heading-copy-color;
-  font-size: 0.9em;
-  line-height: 1.65em;
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -337,4 +304,18 @@ a.logo {
     bottom: 0;
     left: 0;
   }
+}
+
+/* Navigation Styles */
+.main-nav {
+  background: #F0F0F0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Footer Styles */
+footer.footer-section {
+  background: #F0F0F0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
