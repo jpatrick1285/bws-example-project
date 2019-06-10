@@ -12,58 +12,15 @@
 
 {% extends "_layouts/_base" %}
 
-{# Define the site navigation #}
-{% set nav = {
-    home: {
-        title: "Home",
-        namespace: 'home'
-    },
-    work: {
-        title: "Work",
-        namespace: 'work'
-    },
-    about: {
-        title: "About",
-        namespace: 'about'
-    },
-    services: {
-        title: "Services",
-        namespace: 'services'
-    },
-    contact: {
-        title: "Hire Us",
-        namespace: 'contact'
-    }
-} %}
-
-{# Set the `bodyClass` variable to the entry's section handle if there is one,
-   or the first URI segment (this is used by the parent template) #}
-{% if bodyClass is not defined %}
-    {% set bodyClass = entry is defined? entry.section.handle: craft.app.request.segments | first %}
-    {% if bodyClass == "" %}
-        {% set bodyClass = "home" %}
-    {% endif %}
-{% endif %}
-
-{# Set the `title` variable to the nav item that matches the first segment #}
-{% if nav[bodyClass] is defined %}
-    {% set title %}
-        {% if title is defined %}{{ title }}
-        {% else %}
-            {{ nav[bodyClass].title }}
-        {% endif %}
-    {% endset %}
-{% endif %}
-
 {# Set the namespace we'll use for Barba.js views to match our namespace in the nav. If it's not defined, use 'common' #}
-{% set namespace = nav[bodyClass] is defined? nav[bodyClass].namespace : 'common' %}
+{% set namespace = 'common' %}
 
 {# Set the block prefix that we'll use for the content builder fields #}
 {% set blockPrefix = '' %}
 
 {% block body %}
 
-    {# {% include "_partials/_page_revealer.twig" %} #}
+    {% include "_partials/_page_revealer.twig" %}
 
     <div id="barba-wrapper">
         <div class="barba-container" data-namespace="{{ namespace }}">

@@ -68,3 +68,4 @@ config.codekit3
 prepros-6.config
 .ftpquota
 .htaccess
+/config/license.key

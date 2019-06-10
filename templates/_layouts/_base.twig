@@ -13,6 +13,7 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 {%- minify -%}
 {% set baseUrl = alias('@baseUrl') ~ '/' %}
+{% set craftEnvironment = getenv('CRAFTENV_CRAFT_ENVIRONMENT') %}
 {% header "Link: <#{baseUrl}>; rel=dns-prefetch;,<#{baseUrl}>; rel=preconnect; crossorigin;" %}
 <!DOCTYPE html>
 {%- endminify -%}
@@ -42,7 +43,7 @@
         <noscript><style>.revealer.show { display: none; }</style></noscript> <!-- hide the preloader when scripts are disabled -->
 
         {%- minify -%}
-        {% if not craft.app.config.general.devMode %}
+        {% if craftEnvironment != 'staging' and craftEnvironment != 'local' %}
            {% include "_partials/_google-analytics.twig" %}
         {% endif %}
         
@@ -65,7 +66,7 @@
         {% endblock %}
 
         {# BrowserSync hook if devmode is enabled #}
-        {% if craft.config.devMode %}
+        {% if craftEnvironment == 'local' %}
             <script id="__bs_script__">//<![CDATA[
                 document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));
             //]]></script>

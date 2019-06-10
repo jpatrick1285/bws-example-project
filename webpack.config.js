@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
@@ -35,9 +36,9 @@ module.exports = (env, argv) => {
                 {
                     test: /\.scss|.css$/,
                     use: [
-                        MiniCssExtractPlugin.loader, 
+                        MiniCssExtractPlugin.loader,
                         'css-loader',
-                        'postcss-loader', 
+                        'postcss-loader',
                         'sass-loader'
                     ]
                 },
@@ -60,7 +61,6 @@ module.exports = (env, argv) => {
             }),
             new BrowserSyncPlugin({
                 files: [
-                    './src',
                     './templates'
                 ],
                 logSnippet: false,
@@ -77,6 +77,9 @@ module.exports = (env, argv) => {
                 prefix: 'img/favicon/',
                 inject: false
             }),
+            new CopyPlugin([{
+                from: './src/img/static', to: './img/static'
+            }]),
             new WebpackBar(),
             new FriendlyErrorsWebpackPlugin({
                 clearConsole: false
@@ -87,7 +90,8 @@ module.exports = (env, argv) => {
                 'node_modules'
             ],
             alias: {
-                barba: path.resolve('node_modules', './barba.js/dist/barba.js')
+                barba: path.resolve('node_modules', './barba.js/dist/barba.js'),
+                vue: argv.mode === 'development' ? 'vue/dist/vue.esm.js' : 'vue/dist/vue.min.js'
             }
         }
     };

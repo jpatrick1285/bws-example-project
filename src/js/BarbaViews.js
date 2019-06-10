@@ -2,6 +2,7 @@ import Barba from 'barba';
 import ScrollMonitor from 'scrollmonitor';
 import { Foundation } from 'foundation-sites/js/foundation.core';
 
+import NavigationController from './NavigationController';
 import RevealerTransition from './RevealerTransition';
 
 class BarbaViews {
@@ -16,6 +17,7 @@ class BarbaViews {
         let CommonView = Barba.BaseView.extend({
             namespace: 'common',
             scrollWatchers: [],
+            navigationController: null,
 
             onEnterCompleted: function () {
                 try {
@@ -27,6 +29,10 @@ class BarbaViews {
                     if (typeof ga === 'function') {
                         ga('send', 'pageview', location.pathname);
                     }
+
+                    // initialize navigation controller
+                    // this.navigationController = new NavigationController();
+                    // this.navigationController.init();
 
                     // run element animations when in viewport
                     $('.animatable').each(function (index) {
@@ -64,6 +70,10 @@ class BarbaViews {
             /* Clean up scripts */
             onLeave: function() {
                 try {
+                    // destroy navigation controller
+                    // this.navigationController.destroy();
+                    // this.navigationController = null;
+                    
                     // destroy element animation scroll watchers 
                     for (let i = 0; i < this.scrollWatchers.length; i++) {
                         this.scrollWatchers[i].destroy();
