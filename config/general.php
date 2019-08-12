@@ -57,7 +57,7 @@ return [
         'backupOnUpdate' => false,
         'devMode' => false,
         'enableTemplateCaching' => true,
-        'isSystemOn' => true,
+        'isSystemLive' => true,
         // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
         'aliases' => [
         ],
@@ -73,7 +73,7 @@ return [
         'backupOnUpdate' => false,
         'devMode' => false,
         'enableTemplateCaching' => true,
-        'isSystemOn' => false,
+        'isSystemLive' => false,
         // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
         'aliases' => [
         ],
@@ -89,7 +89,7 @@ return [
         'backupOnUpdate' => true,
         'devMode' => true,
         'enableTemplateCaching' => false,
-        'isSystemOn' => true,
+        'isSystemLive' => true,
         // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
         'aliases' => [
         ],
