@@ -17,8 +17,8 @@
         height: 100%;
         z-index: 1001;
 
-        .transition-helper img {
-            max-width: 15rem;
+         img, svg {
+            max-width: 6rem;
             width: 80%;
             margin: 0px auto;
             display: flex;
@@ -32,7 +32,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: #FFFFFF;
+        background: darken(#545b64, 20);
     }
 
     &.show, &.animate-in {
@@ -41,7 +41,7 @@
         .logo-animation {
             opacity: 0;
             animation: revealer-fade-in 800ms $easeInOutCubic forwards;
-            animation-delay: 1500ms;
+            animation-delay: 1000ms;
         }
     }
 
@@ -50,7 +50,7 @@
 
         .revealer-layer {
             
-            animation: revealer-fade-in 400ms $easeInOutCubic forwards;
+            animation: revealer-fade-in 800ms $easeInOutCubic forwards;
             //animation: revealer-slide-in-1 600ms $easeInSine forwards;
         }
     }
@@ -65,7 +65,7 @@
         }
 
         .revealer-layer {
-            animation: revealer-fade-out 400ms $easeInOutCubic forwards;
+            animation: revealer-fade-out 800ms $easeInOutCubic forwards;
             // animation: revealer-slide-out-1 600ms $easeInSine forwards;
         }
     }

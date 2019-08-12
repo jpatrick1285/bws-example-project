@@ -22,8 +22,8 @@
 
     {% include "_partials/_page_revealer.twig" %}
 
-    <div id="barba-wrapper">
-        <div class="barba-container" data-namespace="{{ namespace }}">
+    <main data-router-wrapper>
+        <div data-router-view="{{ namespace }}">
             <div class="page-wrapper">
                 {# -- Info header, including _navbar.twig -- #}
                 {% include "_partials/_info_header.twig" %}
@@ -41,8 +41,8 @@
                 </div>
             </div>
         </div>
+    </main>
+    {# -- HTML Footer -- #}
+    {% include "_partials/_global_footer.twig" %}
 
-        {# -- HTML Footer -- #}
-        {% include "_partials/_global_footer.twig" %}
-    </div>
 {% endblock %}

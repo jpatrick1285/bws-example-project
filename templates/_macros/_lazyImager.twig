@@ -54,6 +54,8 @@ https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.ratio.scss
         background: false,
         class: '',
         containerClass: '',
+        wrapImage: true,
+        transparent: false,
         cover: true,
         format: 'jpg',
         interlace: true,
@@ -95,18 +97,18 @@ https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.ratio.scss
 
         {% if options.lazy %}
             {% if options.background %}
-                <div class="background-image-container {{ options.containerClass }}">
-                    <div class="transition-helper">
+                {% if options.wrapImage %}<div class="background-image-container {{ options.containerClass }}">
+                    <div class="transition-helper {% if not options.cover %}no-cover{% endif %} {% if options.transparent %}is-transparent{% endif %}">{% endif %}
                         <img data-sizes="auto"
                                 src="{{ craft.imager.base64Pixel(base64Ratio|first, base64Ratio|last) }}"
                                 data-srcset="{{ craft.imager.srcset(images) }}"
                                 class="{{ options.class }} {% if options.cover %}cover{% endif %} lazyload"
                                 alt="{{ options.alt }}" 
                                 {% if options.cover %}data-object-fit{% endif %}>
-                    </div>
-                </div>
+                    {% if options.wrapImage %}</div>
+                </div>{% endif %}
             {% else %}
-                <div class="transition-helper {{ options.containerClass }}">
+                {% if options.wrapImage %}<div class="transition-helper {% if not options.cover %}no-cover{% endif %} {{ options.containerClass }} {% if options.transparent %}is-transparent{% endif %}">{% endif %}
                     <img data-sizes="auto"
                         src="{{ craft.imager.base64Pixel(base64Ratio|first, base64Ratio|last) }}"
                         data-srcset="{{ craft.imager.srcset(images) }}"
@@ -114,29 +116,29 @@ https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.ratio.scss
                         alt="{{ options.alt }}"
                         {% if options.cover %}data-object-fit{% endif %} />
                     </img>
-                </div>
+                {% if options.wrapImage %}</div>{% endif %}
             {% endif %}
         {% else %}
             {% if options.background %}
-                <div class="background-image-container {{ options.containerClass }}">
-                    <div class="transition-helper">
+                {% if options.wrapImage %}<div class="background-image-container {{ options.containerClass }}">
+                    <div class="transition-helper {% if not options.cover %}no-cover{% endif %} {% if options.transparent %}is-transparent{% endif %}">{% endif %}
                         <img sizes="auto"
                             src="{{ images|last.url }}"
                             srcset="{{ craft.imager.srcset(images) }}"
                             class="{{ options.class }} {% if options.cover %}cover{% endif %}"  
                             alt="{{ options.alt }}" 
                             {% if options.cover %}data-object-fit{% endif %}>
-                    </div>
-                </div>
+                    {% if options.wrapImage %}</div>
+                </div>{% endif %}
             {% else %}
-                <div class="transition-helper {{ options.containerClass }}">
+                {% if options.wrapImage %}<div class="transition-helper {% if not options.cover %}no-cover{% endif %} {{ options.containerClass }} {% if options.transparent %}is-transparent{% endif %}">{% endif %}
                     <img sizes="auto"
                         src="{{ images|last.url }}"
                         srcset="{{ craft.imager.srcset(images) }}"
                         class="{{ options.class }} {% if options.cover %}cover{% endif %}"  
                         alt="{{ options.alt }}"
                         {% if options.cover %}data-object-fit{% endif %}>
-                </div>
+                {% if options.wrapImage %}</div>{% endif %}
             {% endif %}
         {% endif %}
     {% endif %}

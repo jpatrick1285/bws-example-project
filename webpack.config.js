@@ -90,7 +90,6 @@ module.exports = (env, argv) => {
                 'node_modules'
             ],
             alias: {
-                barba: path.resolve('node_modules', './barba.js/dist/barba.js'),
                 vue: argv.mode === 'development' ? 'vue/dist/vue.esm.js' : 'vue/dist/vue.min.js'
             }
         }
