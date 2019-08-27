@@ -66,12 +66,12 @@ const CRAFT_SCRIPTS_SETUP = [
         'LOCAL_DB_PASSWORD="REPLACE_ME"' => [
             'substr'  => '"REPLACE_ME"',
             'env'     => 'DB_PASSWORD',
-            'default' => 'REPLACE_ME',
+            'default' => 'root',
         ],
         'LOCAL_DB_USER="REPLACE_ME"' => [
             'substr'  => '"REPLACE_ME"',
             'env'     => 'DB_USER',
-            'default' => 'REPLACE_ME',
+            'default' => 'root',
         ],
         'LOCAL_DB_HOST="localhost"' => [
             'substr'  => '"localhost"',
@@ -92,6 +92,18 @@ const CRAFT_SCRIPTS_SETUP = [
 ];
 
 const CRAFT_MULTI_ENVIRONMENT_SETUP = [
+    [
+        'srcpath'      => '.htaccess.example',
+        'destpath'     => '.htaccess',
+        'replacements' => [
+        ],
+    ],
+    [
+        'srcpath'      => 'web/.htaccess.example',
+        'destpath'     => 'web/.htaccess',
+        'replacements' => [
+        ],
+    ],
     [
         'srcpath'      => 'vendor/nystudio107/craft3-multi-environment/config/db.php',
         'destpath'     => 'config/db.php',
@@ -144,12 +156,12 @@ const CRAFT_MULTI_ENVIRONMENT_SETUP = [
             'REPLACE_ME_DB_USER'           => [
                 'substr'  => '',
                 'env'     => 'DB_USER',
-                'default' => 'REPLACE_ME',
+                'default' => 'root',
             ],
             'REPLACE_ME_DB_PASSWORD'       => [
                 'substr'  => '',
                 'env'     => 'DB_PASSWORD',
-                'default' => 'REPLACE_ME',
+                'default' => 'root',
             ],
             'REPLACE_ME_DB_DATABASE'       => [
                 'substr'  => '',

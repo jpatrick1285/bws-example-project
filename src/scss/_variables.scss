@@ -1,15 +1,16 @@
-@charset "utf-8";
+ @charset "utf-8";
 
 /* Color and font variables */
-$primary-accent: #9D723F;
-$secondary-accent: #223143;
+$primary-accent: #0076CC;
 
-$body-copy-font: 'Source Sans Pro', sans-serif;
-$body-copy-color: #555555;
-$subheading-copy-font: "PT Serif", serif;
-$heading-copy-font: "PT Serif", serif;
-$heading-copy-color: $primary-accent;
-$dark-heading-copy-color: #D09C5F;
+$body-copy-font: 'Muli', sans-serif;
+$body-text-color: #000000;
+$body-copy-color: rgba($body-text-color, 0.8);
+$subheading-copy-font: "Muli", sans-serif;
+$heading-copy-font: "Muli", sans-serif;
+$heading-text-color: #000000;
+$heading-copy-color: $heading-text-color;
+$dark-heading-copy-color: #FFFFFF;
 
 /* Container Margins */
 $container-small-margin: 7.5%; // width: 85%;
@@ -21,8 +22,8 @@ $mobile-nav-width: 15rem;
 $base-font-size: 19px;
 $page-container-spacing: 1rem;
 $small-spacing: 4rem;
-$medium-spacing: 8rem;
-$large-spacing: 12rem;
+$medium-spacing: 7rem;
+$large-spacing: 10rem;
 
 $numbered-heading-offset: 2.5rem;
 

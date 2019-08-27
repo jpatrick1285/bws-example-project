@@ -172,6 +172,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/ContactFormController.js":
+/*!*****************************************!*\
+  !*** ./src/js/ContactFormController.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
+/* harmony import */ var core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
+/* harmony import */ var core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_symbol_iterator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
+/* harmony import */ var core_js_modules_es_symbol_iterator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_iterator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_array_iterator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
+/* harmony import */ var core_js_modules_es_array_iterator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.function.name */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_resource__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-resource.esm.js");
+/* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
+function _typeof(obj){if(typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"){_typeof=function _typeof(obj){return typeof obj;};}else{_typeof=function _typeof(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};}return _typeof(obj);}function _slicedToArray(arr,i){return _arrayWithHoles(arr)||_iterableToArrayLimit(arr,i)||_nonIterableRest();}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[Symbol.iterator](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break;}}catch(err){_d=true;_e=err;}finally{try{if(!_n&&_i["return"]!=null)_i["return"]();}finally{if(_d)throw _e;}}return _arr;}function _arrayWithHoles(arr){if(Array.isArray(arr))return arr;}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}var ContactFormController=/*#__PURE__*/function(){function ContactFormController(){_classCallCheck(this,ContactFormController);vue__WEBPACK_IMPORTED_MODULE_9__["default"].use(vue_resource__WEBPACK_IMPORTED_MODULE_10__["default"]);vue__WEBPACK_IMPORTED_MODULE_9__["default"].use(vee_validate__WEBPACK_IMPORTED_MODULE_11__["default"],{classes:true});vee_validate__WEBPACK_IMPORTED_MODULE_11__["default"].Validator.extend('minLength',{getMessage:function getMessage(field,_ref){var _ref2=_slicedToArray(_ref,1),length=_ref2[0];return"At least "+length+" items must be selected.";},validate:function validate(value,_ref3){var _ref4=_slicedToArray(_ref3,1),length=_ref4[0];return value.length>=length;}});this._vm=null;}_createClass(ContactFormController,[{key:"init",value:function init(){this._vm=new vue__WEBPACK_IMPORTED_MODULE_9__["default"]({el:".contact-form-container form.contact-form",delimiters:['${','}'],data:{ajaxError:false,submitting:false,submitted:false,buttonLabel:'SEND MESSAGE',name:'',email:'',phone:'',organization:'',message:''},methods:{onSubmit:function onSubmit(){var _this=this;this.submitting=true;this.submitted=false;this.ajaxError=false;this.buttonLabel='SENDING...';this.$validator.validateAll().then(function(valid){if(valid){_this.$http.post('/',_this.getData(),{responseType:'json',emulateJSON:true}).then(function(res){_this.submitting=false;_this.submitted=true;_this.buttonLabel='MESSAGE SENT!';try{if((typeof ga==="undefined"?"undefined":_typeof(ga))!==undefined){ga('send','event','Forms','Contact Submission','Contact form submitted');}}catch(e){console.log(e);}},function(err){_this.buttonLabel='SEND MESSAGE';_this.submitting=false;_this.ajaxError=true;console.log(err);});}else{_this.buttonLabel='SEND MESSAGE';_this.submitting=false;}});},getData:function getData(){var data={'fromName':this.name,'fromEmail':this.email,'message[Phone]':this.phone,'message[Organization]':this.organization,'message[body]':this.message};data[csrfTokenName]=csrfTokenValue;data['action']='contact-form/send';return data;}}});}},{key:"destroy",value:function destroy(){this._vm.$destroy(true);this._vm=null;}}]);return ContactFormController;}();/* harmony default export */ __webpack_exports__["default"] = (ContactFormController);
+
+/***/ }),
+
 /***/ "./src/js/DefaultRenderer.js":
 /*!***********************************!*\
   !*** ./src/js/DefaultRenderer.js ***!
@@ -266,18 +300,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_timers__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! scrollmonitor */ "./node_modules/scrollmonitor/scrollMonitor.js");
 /* harmony import */ var scrollmonitor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(scrollmonitor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! foundation-sites/js/foundation.core */ "./node_modules/foundation-sites/js/foundation.core.js");
-/* harmony import */ var _NavigationController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NavigationController */ "./src/js/NavigationController.js");
-function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}var MainController=/*#__PURE__*/function(){// main class initialization - runs once on site load
-function MainController(){_classCallCheck(this,MainController);this.scrollMonitor=scrollmonitor__WEBPACK_IMPORTED_MODULE_2___default.a;foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_3__["Foundation"].addToJquery($);this.scrollWatchers=[];this.navigationController=null;// hide preloader 
-$('.revealer').removeClass('show').addClass('animate-out');setTimeout(function(){$('.revealer').removeClass('animate-out');},600);}_createClass(MainController,[{key:"init",value:function init(){try{$(document).foundation();$('body').addClass('animations-enabled');var _instance=this;if(typeof ga==='function'){ga('send','pageview',location.pathname);}// initialize navigation controller
+/* harmony import */ var _NavigationController__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NavigationController */ "./src/js/NavigationController.js");
+/* harmony import */ var _ContactFormController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ContactFormController */ "./src/js/ContactFormController.js");
+function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}//import { Foundation } from 'foundation-sites/js/foundation.core';
+// NOTE: Foundation scripts break IE11 and down, so don't use them.
+var MainController=/*#__PURE__*/function(){// main class initialization - runs once on site load
+function MainController(){_classCallCheck(this,MainController);// Create class variables
+this.scrollMonitor=scrollmonitor__WEBPACK_IMPORTED_MODULE_2___default.a;//Foundation.addToJquery($);
+this.scrollWatchers=[];this.navigationController=null;this.contactFormController=null;// hide preloader 
+$('.revealer').removeClass('show').addClass('animate-out');setTimeout(function(){$('.revealer').removeClass('animate-out');},600);}// initialization - runs each time a new page is loaded
+_createClass(MainController,[{key:"init",value:function init(){try{//$(document).foundation();
+$('body').addClass('animations-enabled');var _instance=this;if(typeof ga==='function'){ga('send','pageview',location.pathname);}// initialize navigation controller
 // this.navigationController = new NavigationController();
 // this.navigationController.init();
-// run element animations when in viewport
+// run element animations when in viewport (adds .is-active to visible elements as you scroll)
 $('.animatable').each(function(index){// create two watchers - one with an offset for enter events, and one without an offset for exit events
 // lets us add visibility classes with an offset, and remove them when the element is completely outside the visible viewport
 var enterScrollWatcher=scrollMonitor.create($(this).get(0),-100);var exitScrollWatcher=scrollMonitor.create($(this).get(0),100);_instance.scrollWatchers.push(enterScrollWatcher);_instance.scrollWatchers.push(exitScrollWatcher);enterScrollWatcher.enterViewport(function(){$(this.watchItem).addClass('is-active');});exitScrollWatcher.exitViewport(function(){$(this.watchItem).removeClass('is-active');});// If any of the elements are visible, add the active class (after an initial delay, to facilitate page transition animation)
-$(this).addClass('will-animate');$(this).removeClass('is-active');if(exitScrollWatcher.isInViewport){setTimeout(function(){$(exitScrollWatcher.watchItem).addClass('is-active');},50);}});}catch(e){console.log(e);}}},{key:"destroy",value:function destroy(){try{// destroy navigation controller
+$(this).addClass('will-animate');$(this).removeClass('is-active');if(exitScrollWatcher.isInViewport){setTimeout(function(){$(exitScrollWatcher.watchItem).addClass('is-active');},50);}});}catch(e){console.log(e);}}// Runs every time a new page replaces the current one
+// Destroys all scripts on the page, so they can be reinitialized on the new one
+},{key:"destroy",value:function destroy(){try{// destroy navigation controller
 // this.navigationController.destroy();
 // this.navigationController = null;
 // destroy element animation scroll watchers 
@@ -342,12 +384,14 @@ this.mobileNavToggle=null;this.scrollTimeout=null;this.navigationContainer=null;
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
 /* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _dogstudio_highway__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dogstudio/highway */ "./node_modules/@dogstudio/highway/build/highway.js");
-/* harmony import */ var _dogstudio_highway__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dogstudio_highway__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _DefaultRenderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DefaultRenderer */ "./src/js/DefaultRenderer.js");
-/* harmony import */ var _DefaultTransition__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DefaultTransition */ "./src/js/DefaultTransition.js");
-/* harmony import */ var _MainController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MainController */ "./src/js/MainController.js");
-$(function(){var H=new _dogstudio_highway__WEBPACK_IMPORTED_MODULE_1___default.a.Core({renderers:{common:_DefaultRenderer__WEBPACK_IMPORTED_MODULE_2__["default"]},transitions:{common:_DefaultTransition__WEBPACK_IMPORTED_MODULE_3__["default"],default:_DefaultTransition__WEBPACK_IMPORTED_MODULE_3__["default"]}});});
+/* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lazysizes/plugins/respimg/ls.respimg */ "./node_modules/lazysizes/plugins/respimg/ls.respimg.js");
+/* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dogstudio_highway__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dogstudio/highway */ "./node_modules/@dogstudio/highway/build/highway.js");
+/* harmony import */ var _dogstudio_highway__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_dogstudio_highway__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _DefaultRenderer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DefaultRenderer */ "./src/js/DefaultRenderer.js");
+/* harmony import */ var _DefaultTransition__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DefaultTransition */ "./src/js/DefaultTransition.js");
+/* harmony import */ var _MainController__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MainController */ "./src/js/MainController.js");
+$(function(){var H=new _dogstudio_highway__WEBPACK_IMPORTED_MODULE_2___default.a.Core({renderers:{common:_DefaultRenderer__WEBPACK_IMPORTED_MODULE_3__["default"]},transitions:{common:_DefaultTransition__WEBPACK_IMPORTED_MODULE_4__["default"],default:_DefaultTransition__WEBPACK_IMPORTED_MODULE_4__["default"]}});});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -360,6 +404,17 @@ $(function(){var H=new _dogstudio_highway__WEBPACK_IMPORTED_MODULE_1___default.a
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 1:
+/*!*********************!*\
+  !*** got (ignored) ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

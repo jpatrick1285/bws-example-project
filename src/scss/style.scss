@@ -1,5 +1,12 @@
+/* 
+** style.scss - you'll be making most of your changes here.
+**
+** Refer to the _variables.scss file to set up some of the more 
+** commonly-used settings for individual sites! 
+*/
 @charset "utf-8";
 
+/******************** Imports ********************/
 @import "fonts";
 @import "variables";
 @import "functions";
@@ -7,6 +14,9 @@
 
 @import "foundation-settings";
 @import '~foundation-sites/scss/foundation';
+
+@import 'lity/dist/lity.css';
+@import 'slick-slider/slick/slick.scss';
 
 // Global styles
 @include foundation-global-styles;
@@ -26,413 +36,27 @@
 // Helpers
 @include foundation-visibility-classes;
 
-html {
-  background: #FFFFFF;
-}
-
-body {
-  margin: auto;
-  background: #FFFFFF;
-}
-
-html {
-  background: #FFFFFF;
-}
-
-body {
-  margin: auto;
-  background: #FFFFFF;
-}
-
-object.svg {
-  pointer-events: none;
-}
-
-/* Global Typography Styles */
-body, html {
-  font-family: $body-copy-font;
-  color: $body-copy-color;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  // scale down font size responsively on smaller screens
-  @media (max-width: 1000px) {
-    font-size: calc(15px + .4vw);
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-copy-font;
-    color: $heading-copy-color;
-  }
-
-  p {
-    margin-bottom: 1.6em;
-  }
-
-  .is-dark h1, h2, h3, h4, h5, h6 {
-    color: $dark-heading-copy-color;
-  }
-
-  .is-dark p {
-    color: #FFFFFF;
-    opacity: 0.9;
-  }
-}
-
-p.is-subheading {
-  font-family: $subheading-copy-font;
-  letter-spacing: 0.03em;
-  color: #887F74;
-  font-size: px-to-em(20px);
-  max-width: 36rem;
-}
-
-p.is-multi-column {
-  @include breakpoint(large up) {
-    column-count: 2;
-    column-gap: 2.8em;
-    word-break: break-word;
-  }
-}
-
-a {
-  color: $heading-copy-color;
-}
-
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
- 
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
- 
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
- 
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
- 
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
- 
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
- 
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
- 
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
-
-/* Common Layout Classes */
-img, audio, video {
-  display: block;
-}
-
-img.cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.clearfix {
-  &:before, &:after {
-      content: "";
-      display: table;
-  }
-
-  &:after {
-      clear: both;
-  }
-}
-
-.grid-container, .page-container {
-  //width: 81%;
-  //margin: 0 $container-margin;
-  //margin: 0 auto;
-  max-width: $global-width;
-  margin-right: auto;
-  margin-left: auto;
-  //overflow-x: hidden;
-  overflow-y: visible;
-
-  &.is-small {
-    padding-left: $container-small-margin;
-    padding-right: $container-small-margin;
-  }
-
-  &.is-tiny {
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    @include breakpoint(medium) {
-      padding-left: 5rem;
-      padding-right: 5rem;
-    }
-
-    @include breakpoint(large up) {
-      padding-left: 12rem;
-      padding-right: 12rem;
-    }
-  }
-
-  &.is-tiny-desktop {
-    @include breakpoint(large up) {
-      padding-left: 12rem;
-      padding-right: 12rem;
-    }
-  }
-
-  &.is-small-desktop {
-    @include breakpoint(large up) {
-      padding-left: $container-small-margin;
-      padding-right: $container-small-margin;
-    }
-  }
-
-  .grid-margin-x {
-    margin-right: rem-calc(map-get($grid-column-gutter, "small")) * -1;
-    margin-left: rem-calc(map-get($grid-column-gutter, "small")) * -1;
-
-    @include breakpoint(medium up) {
-      margin-right: rem-calc(map-get($grid-column-gutter, "medium")) * -1;
-      margin-left: rem-calc(map-get($grid-column-gutter, "medium")) * -1;
-    }
-  }
-}
-
-.page-container {
-  padding-right: rem-calc(map-get($grid-column-gutter, "small")) / 2;
-  padding-left: rem-calc(map-get($grid-column-gutter, "small")) / 2;
-
-  @include breakpoint(medium up) {
-    padding-right: rem-calc(map-get($grid-column-gutter, "medium")) / 2;
-    padding-left: rem-calc(map-get($grid-column-gutter, "medium")) / 2;
-  }
-}
-
-.grid-x {
-  &.is-reversed-desktop {
-    @include breakpoint(medium up) {
-      flex-direction: row-reverse;
-    }
-  }
-}
-
-.section {
-  padding: 0;
-
-  &.is-small {
-    padding: $small-spacing 0;
-  }
-
-  &.is-small-desktop {
-    @include breakpoint(large up) {
-      padding: $small-spacing 0;
-    }
-  }
-
-  &.is-small-spaced:not(:first-child) {
-    padding-top: $small-spacing;
-  }
-
-  &.is-small-top {
-    padding-top: $small-spacing;
-  }
-  &.is-small-bottom {
-    padding-bottom: $small-spacing;
-  }
-
-  &.is-medium {
-    padding: $medium-spacing 0;
-  }
-
-  &.is-medium-desktop {
-    @include breakpoint(large up) {
-      padding: $medium-spacing 0;
-    }
-  }
-
-  &.is-medium-spaced:not(:first-child) {
-    padding-top: $medium-spacing;
-  }
-
-  &.is-medium-top {
-    padding-top: $medium-spacing;
-  }
-  &.is-medium-bottom {
-    padding-bottom: $medium-spacing;
-  }
-
-  &.is-large {
-    padding: $large-spacing 0;
-  }
-
-  &.is-large-desktop {
-    @include breakpoint(large up) {
-      padding: $large-spacing 0;
-    }
-  }
-
-  &.is-large-spaced:not(:first-child) {
-    padding-top: $large-spacing;
-  }
-
-  &.is-large-top {
-    padding-top: $large-spacing;
-  }
-  &.is-large-bottom {
-    padding-bottom: $large-spacing;
-  }
-
-  &.is-secondary-section {
-    background: #F8F8F8;
-  }
-}
-
-[v-cloak] {
-  display: none;
-}
-
-form {
-  input::placeholder, textarea::placeholder {
-    color: #888888;
-  }
-
-  input.invalid, textarea.invalid {
-    border-color: #d10e0e;
-    color: #d10e0e;
-
-    &::placeholder {
-      color: #d10e0e;
-    }
-  }
-
-  .field-group {
-    display: flex; 
-    flex-direction: row;
-
-    @include breakpoint(small down) {
-      flex-direction: column;
-    }
-
-    .field {
-      flex: 1;
-      
-      @include breakpoint(medium up) {
-        &:not(:last-of-type) {
-          margin-right: 0.5rem;
-        }
-
-        &:not(:first-of-type) {
-          margin-left: 0.5rem;
-        }
-      }
-    }
-  }
-
-  .buttons .button {
-    width: 100%;
-
-    background: $primary-accent;
-    border-color: $primary-accent;
-    color: #FFFFFF;
-
-    &:hover {
-      background: darken($primary-accent, 5);
-      border-color: darken($primary-accent, 5);
-    }
-  }
-}
-
-/* Utility Classes */
-.is-vertical-center {
-  display: flex;
-  justify-content: center;
-}
-
-.is-background-container {
-  position: relative;
-  z-index: 1;
-}
-
-.background-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width:100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-
-  img, video {
-    position: relative;
-    max-width: none;
-    object-fit: cover;
-    object-position: center;
-    left: -5%;
-    top: -5%;
-    width: 110%;
-    height: 110%;
-  }
-}
-
-.transition-helper {
-  width: 100%;
-  height: 100%;
-  background: #000000;
-
-  &.is-transparent {
-    background: none;
-  }
-}
-
-.background-video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  //padding-bottom: 56.25%;
-  height: 100%;
-  width: 100%;
-  transition: 1s opacity ease;
-  z-index: -1;
-  opacity: 0;
-  background: #545b64;
-
-  &.loaded {
-    opacity: 1;
-  }
-
-  .background-video, .background-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-}
-
-/* General Styles */
+// Hamburger Icons
+$hamburger-padding-x: 10px;
+$hamburger-padding-y: 10px;
+$hamburger-layer-width: 35px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-spacing: 6px;
+$hamburger-types: ('squeeze');
+$hamburger-layer-color: #FFFFFF;
+$hamburger-hover-opacity: 1;
+@import 'hamburgers/_sass/hamburgers/hamburgers';
+
+// Common Styles (overrides and utilities)
+@import "common";
+
+/******************** General Styles ********************/
 a.logo {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 
-
-  .svg {
+  .svg, img {
     height: 35px;
     width: auto;
   }
@@ -447,16 +71,134 @@ a.logo {
   }
 }
 
-/* Navigation Styles */
-.main-nav {
-  background: #F0F0F0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.rtf li {
+  margin-bottom: 1em;
 }
 
-/* Footer Styles */
-footer.footer-section {
-  background: #F0F0F0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.hamburger {
+  padding-bottom: 5px;
 }
+
+// Buttons 
+.button {
+  padding: 0.8rem 1.3rem;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+  //min-width: 12rem;
+
+  background: $primary-accent;
+  border: 1px solid $primary-accent;
+  border-radius: 3px;
+
+  font-size: px-to-em(16px);
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  
+  &:not(:only-of-type, :last-of-type) {
+    margin-right: 0.7rem;
+  }
+
+  transition: transform $fast-transition-speed $easeInOutCubic, background-color $fast-transition-speed $easeInOutCubic, border $fast-transition-speed $easeInOutCubic, color $fast-transition-speed $easeInOutCubic;
+
+  &:hover {
+    background: darken($primary-accent, 20);
+    border-color: darken($primary-accent, 20);
+    transform: translateY(-0.1rem);
+  }
+
+  &.no-outline {
+    border: none;
+  }
+
+  &.no-padding {
+    max-width: none;
+  }
+}
+
+.buttons .button:not(.text) {
+  @include breakpoint(small down) {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+.button.secondary {
+  font-weight: 700;
+  background: rgba($primary-accent, 0);
+  border-color: $primary-accent;
+  color: $primary-accent;
+
+  &:hover, &:active {
+    background: rgba($primary-accent, 1);
+    color: #FFFFFF;
+  }
+}
+
+.button.text {
+  padding: 0.4rem 0;
+  background: none;
+  
+  color: rgba($body-text-color, 1);
+  border: none;
+  border-bottom: 2px solid rgba($body-text-color, 1);
+  border-radius: 0;
+
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem + 0.5rem;
+  transition: transform $fast-transition-speed $easeInOutCubic, opacity $fast-transition-speed $easeInOutCubic;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.is-dark .button, .button.is-light {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: $primary-accent;
+
+  &:hover, &:active {
+    border-color: #DFDFDF;
+    background: #DFDFDF;
+    color: $primary-accent;
+  }
+}
+
+.is-dark .button.text, .button.is-light.text {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #FFFFFF;
+  color: rgba(#FFFFFF, 1);
+}
+
+.is-dark .button.secondary, .button.is-light.secondary {
+  background: rgba(#FFFFFF, 0);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+
+  &:hover, &:active {
+    border-color: #FFFFFF;
+    background: #FFFFFF;
+    color: $primary-accent;
+  }
+}
+
+// Navigation
+header.site-header {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #DDDDDD;
+
+  nav.main-nav .nav-logo {
+    display: inline-block;
+  }
+} 
+
+// Footer
+
+footer.site-footer {
+  padding: 1rem 0;
+  border-top: 1px solid #DDDDDD;
+}
+
+/******************** Block Styles ********************/

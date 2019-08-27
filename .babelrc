@@ -3,5 +3,6 @@
     useBuiltIns: "usage",
     corejs: 3
   }]],
+  "plugins": ["transform-es2015-template-literals"],
   "compact": true
 }

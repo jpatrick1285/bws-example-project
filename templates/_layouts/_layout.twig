@@ -20,13 +20,13 @@
 
 {% block body %}
 
-    {% include "_partials/_page_revealer.twig" %}
+    {% include "_partials/components/_page_revealer.twig" %}
 
     <main data-router-wrapper>
         <div data-router-view="{{ namespace }}">
             <div class="page-wrapper">
-                {# -- Info header, including _navbar.twig -- #}
-                {% include "_partials/_info_header.twig" %}
+                {# -- Header -- #}
+                {% include "_partials/components/_header.twig" %}
 
                 <div id="page-content-container">
                     {# {% include "_partials/_notification_banner.twig" %} #}
@@ -35,14 +35,14 @@
 
                     {# -- Content that appears below the primary content block -- #}
                     {% block subcontent %}{% endblock %}
-
-                    {# -- Info footer -- #}
-                    {% include "_partials/_info_footer.twig" %}
                 </div>
+
+                {# -- Footer -- #}
+                {% include "_partials/components/_footer.twig" %}
             </div>
         </div>
     </main>
-    {# -- HTML Footer -- #}
-    {% include "_partials/_global_footer.twig" %}
+    {# -- Global HTML Footer -- #}
+    {% include "_partials/global/_global_footer.twig" %}
 
 {% endblock %}

@@ -1,80 +1,25 @@
+# ----------------------------------------------------------------------
+# | Cleaning URLs                                                      |
+# ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
 	RewriteEngine On
+
+	# Remove www from URL's
+	RewriteCond %{HTTP_HOST} ^www\.(.+)
+	# RewriteCond %{HTTPS}s/%1 ^(on(s)|offs)/(.+)
+	RewriteRule ^ http%2://%3%{REQUEST_URI} [L,R=301]
+
+	# Make all traffic go over https
+	# RewriteCond %{HTTP:X-Forwarded-Proto} !https
+	# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+	# Remove trailing slashes
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)/$ /$1 [L,R=301]
 
 	# Send would-be 404 requests to Craft
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
 	RewriteRule (.+) index.php?p=$1 [QSA,L]
-
-	# Enable loading versioned assets (https://nystudio107.com/blog/simple-static-asset-versioning)
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*?\/)*?([a-z\.\-]+)(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest)$ $1$2$4 [L]
-
-	# Enable https redirects
-	RewriteCond %{HTTP:X-Forwarded-Proto} =http
-	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
-
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule ^ index.php [L]
 </IfModule>
-
-# mime-types for font files
-AddType application/x-font-ttf           ttc ttf
-AddType application/x-font-otf           otf
-AddType application/font-woff            woff
-AddType application/font-woff2           woff2
-AddType application/vnd.ms-fontobject    eot
-
-# CORS rules for font files
-<FilesMatch ".(eot|ttf|otf|woff|woff2)">
-	Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
-
-# Asset compression
-<IfModule mod_deflate.c>
-    # HTML, TXT, CSS, JavaScript, JSON, XML, HTC:
-	<IfModule filter_module>
-		FilterDeclare   COMPRESS
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/html
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/css
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/plain
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/xml
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/x-component
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/javascript
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/json
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/xml
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/xhtml+xml
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/rss+xml
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/atom+xml
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/vnd.ms-fontobject
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $image/svg+xml
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $image/x-icon
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/x-font-ttf
-		FilterProvider  COMPRESS  DEFLATE resp=Content-Type $font/opentype
-		FilterChain     COMPRESS
-		FilterProtocol  COMPRESS  DEFLATE change=yes;byteranges=no
-	</IfModule>
-	<IfModule !mod_filter.c>
-	# Legacy versions of Apache
-		AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
-		AddOutputFilterByType DEFLATE application/javascript
-		AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
-		AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml application/atom+xml
-		AddOutputFilterByType DEFLATE image/x-icon image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype
-	</IfModule>
-</IfModule>
-
-# Block access to "hidden" directories or files starting with period.
-<IfModule mod_rewrite.c>
-   RewriteCond %{SCRIPT_FILENAME} -d [OR]
-   RewriteCond %{SCRIPT_FILENAME} -f
-   RewriteRule "(^|/)\." - [F]
-</IfModule>
-
-#Block access to backup and source files
-<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
-   Order allow,deny
-   Deny from all
-   Satisfy All
-</FilesMatch>

@@ -31,8 +31,7 @@
         {# <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title> #}
         {% hook "seo" %}
 
-        {% import "_partials/_macros.twig" as macro %}
-        {% include "_partials/_global_header.twig" %}
+        {% include "_partials/global/_global_header.twig" %}
 
         {%- endminify -%}
         <link rel="stylesheet" href="{{ baseUrl }}dist/vendors~main.css"></link>
@@ -44,7 +43,7 @@
 
         {%- minify -%}
         {% if craftEnvironment != 'staging' and craftEnvironment != 'local' %}
-           {% include "_partials/_google-analytics.twig" %}
+           {% include "_partials/global/_google-analytics.twig" %}
         {% endif %}
         
         <script type="text/javascript">

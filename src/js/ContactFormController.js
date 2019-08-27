@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VeeValidate from 'vee-validate';
 
-class OrderFormController {
+class ContactFormController {
     constructor() {
         Vue.use(VueResource);
         Vue.use(VeeValidate, {
@@ -10,11 +10,11 @@ class OrderFormController {
         });
 
         VeeValidate.Validator.extend('minLength', {
-            getMessage(field, [length]) {
+            getMessage (field, [length]) {
                 return `At least ${length} items must be selected.`;
             },
-            validate(value, [length]) {
-                return value.length >= length;
+            validate (value, [length]) {
+                    return value.length >= length;
             }
         });
 
@@ -23,17 +23,17 @@ class OrderFormController {
 
     init() {
         this._vm = new Vue({
-            el: ".section.order-form-section .section-content-container",
+            el: ".contact-form-container form.contact-form",
             delimiters: ['${', '}'],
             data: {
                 ajaxError: false,
                 submitting: false,
                 submitted: false,
+                buttonLabel: 'SEND MESSAGE',
                 name: '',
                 email: '',
                 phone: '',
-                company: '',
-                products: [],
+                organization: '',
                 message: ''
             },
             methods: {
@@ -41,6 +41,7 @@ class OrderFormController {
                     this.submitting = true;
                     this.submitted = false;
                     this.ajaxError = false;
+                    this.buttonLabel = 'SENDING...';
 
                     this.$validator.validateAll().then(valid => {
                         if (valid) {
@@ -48,22 +49,25 @@ class OrderFormController {
                                 responseType: 'json',
                                 emulateJSON: true,
                             })
-                                .then((res) => {
-                                    this.submitting = false;
-                                    this.submitted = true;
-                                    try {
-                                        if (typeof (ga) !== undefined) {
-                                            ga('send', 'event', 'Forms', 'Quote Submission', 'Quote form submitted');
-                                        }
-                                    } catch (e) {
-                                        console.log(e);
+                            .then((res) => {
+                                this.submitting = false;
+                                this.submitted = true;
+                                this.buttonLabel = 'MESSAGE SENT!';
+                                try {
+                                    if (typeof(ga) !== undefined) {
+                                        ga('send', 'event', 'Forms', 'Contact Submission', 'Contact form submitted');
                                     }
-                                }, (err) => {
-                                    this.submitting = false;
-                                    this.ajaxError = true;
-                                    console.log(err);
-                                });
+                                } catch (e) {
+                                    console.log(e);
+                                }
+                            }, (err) => {
+                                this.buttonLabel = 'SEND MESSAGE';
+                                this.submitting = false;
+                                this.ajaxError = true;
+                                console.log(err);
+                            });
                         } else {
+                            this.buttonLabel = 'SEND MESSAGE';
                             this.submitting = false;
                         }
                     });
@@ -73,8 +77,7 @@ class OrderFormController {
                         'fromName': this.name,
                         'fromEmail': this.email,
                         'message[Phone]': this.phone,
-                        'message[Products]': this.products,
-                        'message[Company]': this.company,
+                        'message[Organization]': this.organization,
                         'message[body]': this.message
                     };
 
@@ -93,4 +96,4 @@ class OrderFormController {
     }
 }
 
-export default OrderFormController;
+export default ContactFormController;

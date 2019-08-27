@@ -1,6 +1,13 @@
+/* _functions.scss - some handy SCSS functions to make things easier */
 
 // Convert PX to EM global function
 // relies on $base-font-size set in _variables.scss
 @function px-to-em($px) {
     @return ($px/$base-font-size)+0em;
+}
+
+// Convert PX to REM global function
+// relies on $base-font-size set in _variables.scss
+@function px-to-rem($px) {
+    @return ($px/$base-font-size)+0rem;
 }

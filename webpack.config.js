@@ -22,7 +22,7 @@ module.exports = (env, argv) => {
                 chunks: 'all'
             }
         },
-        devtool: argv.mode === 'production' ? false : 'source-map',
+        devtool: 'source-map',
         stats: 'none',
         module: {
             rules: [

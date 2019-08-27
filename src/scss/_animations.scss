@@ -1,3 +1,5 @@
+/* CSS3 Animations - used to animate stuff. I need to clean this up one day. */
+
 /* Page Revealer */
 .revealer {
     width: 100vw;
@@ -105,7 +107,7 @@
     }
 }
 
-/* Hero */
+/* Hero (Example of how the animation system works) */
 .animations-enabled {
     // Initial State
     .hero.will-animate {

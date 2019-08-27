@@ -1,4 +1,6 @@
 import { LazySizes } from 'lazysizes';
+import 'lazysizes/plugins/respimg/ls.respimg';
+
 import Highway from '@dogstudio/highway';
 import DefaultRenderer from './DefaultRenderer';
 import DefaultTransition from './DefaultTransition';
